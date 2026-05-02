@@ -2,7 +2,7 @@
 
 A premium, Apple-inspired personal portfolio showcasing product management experience, strategic case studies, and technical certifications.
 
-**🔗 Live Site → [luke-christensen1.github.io](https://luke-christensen1.github.io)**
+**🔗 Live Site → [luke-christensen1.github.io/PersonalPortfolioLChristensen](https://luke-christensen1.github.io/PersonalPortfolioLChristensen/)**
 
 ---
 
