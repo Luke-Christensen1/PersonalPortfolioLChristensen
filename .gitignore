@@ -1,0 +1,17 @@
+scratch/
+*.pyc
+__pycache__/
+assets/resume_latest.pdf
+resume_temp/
+resume.zip
+resume_text.txt
+resume2.txt
+extracted_resume.txt
+pdf_output.txt
+read_pdf.py
+serve.ps1
+assets/mcom_summary_ext/
+assets/mcom_summary.zip
+assets/mcom_clean.txt
+assets/mcom_summary_text.txt
+assets/article_text.txt
