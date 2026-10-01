@@ -27,6 +27,8 @@ This portfolio highlights my professional experience, featured work, and the ski
 
 ## Experience
 
+- **TrailRunner International** — Analyst Intern
+- **FamilySearch** — Product Manager Intern
 - **BYU Music Group** — Product and Strategy Manager
 - **Zark Parking Solutions** — Product Manager and Data Intern
 - **MOTYV8** — Product Manager Intern
