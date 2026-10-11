@@ -30,11 +30,11 @@ This portfolio highlights my professional experience, featured work, and the ski
 - **TrailRunner International** — Analyst Intern
 - **FamilySearch** — Product Manager Intern
 - **BYU Music Group** — Product and Strategy Manager
-- **Zark Parking Solutions** — Product Manager and Data Intern
+- **Zark Parking Solutions** — Product Manager Intern
 - **MOTYV8** — Product Manager Intern
 - **Councyl Capital** — Business Analyst Intern
 
 ## Connect
 
-- **LinkedIn** → [linkedin.com/in/christensen-luke](https://www.linkedin.com/in/christensen-luke)
+- **LinkedIn** → [linkedin.com/in/christensen-luke-r](https://www.linkedin.com/in/christensen-luke-r)
 - **Email** → luke.r.christensen@gmail.com
