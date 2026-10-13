@@ -99,12 +99,12 @@ document.addEventListener('DOMContentLoaded', () => {
         activateView('overview', false);
     }
 
-    // --- Interactive System Architecture & Pipeline Workbench Tabs ---
-    const workbenchTabs = document.querySelectorAll('.workbench-tab-btn');
-    const systemPanes = document.querySelectorAll('.system-pane');
+    // --- Technical Work Simple Tabs Logic ---
+    const techTabs = document.querySelectorAll('.tech-tab-btn');
+    const techPanes = document.querySelectorAll('.tech-pane');
 
-    window.switchSystemTab = function(tabId) {
-        workbenchTabs.forEach(tab => {
+    window.switchTechTab = function(tabId) {
+        techTabs.forEach(tab => {
             if (tab.dataset.tab === tabId) {
                 tab.classList.add('active');
             } else {
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        systemPanes.forEach(pane => {
+        techPanes.forEach(pane => {
             if (pane.id === tabId) {
                 pane.classList.add('active');
             } else {
@@ -121,11 +121,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    workbenchTabs.forEach(tab => {
+    techTabs.forEach(tab => {
         tab.addEventListener('click', () => {
             const tabId = tab.dataset.tab;
             if (tabId) {
-                window.switchSystemTab(tabId);
+                window.switchTechTab(tabId);
             }
         });
     });
