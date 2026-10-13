@@ -227,6 +227,7 @@ h1, h2, h3, h4, h5 {
     height: 140px;
     border-radius: 50%;
     object-fit: cover;
+    object-position: center 15%;
     border: 2px solid rgba(255, 255, 255, 0.15);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(99, 102, 241, 0.25);
     transition: transform 0.3s ease, border-color 0.3s ease;
@@ -1525,6 +1526,237 @@ footer {
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* ==========================================================================
+   GUIDED VIEW CONTROLLER & PROGRESSIVE DISCLOSURE
+   ========================================================================== */
+
+.view-pane {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.view-pane.active {
+    display: block;
+    opacity: 1;
+}
+
+.nav-links a.active {
+    color: #ffffff;
+    background: rgba(99, 102, 241, 0.15);
+    border: 1px solid rgba(99, 102, 241, 0.35);
+}
+
+/* Breadcrumb Header Bar on Sub-Views */
+.view-breadcrumb-bar {
+    max-width: 1100px;
+    margin: 5.5rem auto 1.5rem;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.45rem 1rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-subtle);
+    transition: all 0.2s ease;
+}
+
+.btn-breadcrumb:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.09);
+    border-color: var(--border-medium);
+    transform: translateX(-3px);
+}
+
+.breadcrumb-tag {
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+}
+
+/* ==========================================================================
+   OVERVIEW: GUIDED PATHWAY TRACKS (Generate Interest & Curated Exploration)
+   ========================================================================== */
+
+.guided-tracks-section {
+    max-width: 1050px;
+    margin: 0 auto 5rem;
+    padding: 0 2rem;
+}
+
+.guided-tracks-header {
+    text-align: center;
+    margin-bottom: 2.2rem;
+}
+
+.guided-tracks-header h3 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 0.4rem;
+}
+
+.guided-tracks-header p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+}
+
+.guided-tracks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.track-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border-subtle);
+    border-radius: 20px;
+    padding: 2.2rem 1.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.track-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.12), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.track-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(99, 102, 241, 0.15);
+}
+
+.track-card:hover::before {
+    opacity: 1;
+}
+
+.track-icon-box {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.4rem;
+    color: #38bdf8;
+}
+
+.track-card h4 {
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-bottom: 0.6rem;
+}
+
+.track-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
+}
+
+.track-link-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: #38bdf8;
+    margin-top: auto;
+    transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.track-card:hover .track-link-cta {
+    gap: 0.7rem;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   OVERVIEW: CURATED FLAGSHIP TEASERS (Leave Them Wanting More)
+   ========================================================================== */
+
+.flagship-teaser-section {
+    max-width: 1050px;
+    margin: 0 auto 5rem;
+    padding: 0 2rem;
+}
+
+.flagship-teaser-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.flagship-card {
+    background: rgba(14, 19, 31, 0.6);
+    border: 1px solid var(--border-subtle);
+    border-radius: 18px;
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.25s ease;
+}
+
+.flagship-card:hover {
+    border-color: rgba(99, 102, 241, 0.35);
+    background: rgba(18, 24, 38, 0.85);
+    transform: translateY(-2px);
+}
+
+.flagship-tag {
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #818cf8;
+    margin-bottom: 0.6rem;
+}
+
+.flagship-card h4 {
+    font-size: 1.15rem;
+    color: #ffffff;
+    margin-bottom: 0.6rem;
+    line-height: 1.35;
+}
+
+.flagship-card p {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    margin-bottom: 1.2rem;
 }
 
 /* ==========================================================================

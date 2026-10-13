@@ -6,9 +6,9 @@
     <title>Luke Christensen | Product Manager &amp; Technical Strategist</title>
     
     <!-- SEO & Social Media (Open Graph) Tags -->
-    <meta name="description" content="Executive portfolio of Luke Christensen, Product Manager and Technical Strategist specializing in data engineering pipelines, econometric modeling, multi-agent AI systems, and product discovery.">
+    <meta name="description" content="Portfolio of Luke Christensen, Product Manager and Technical Strategist specializing in data engineering pipelines, econometric modeling, multi-agent AI systems, and product discovery.">
     <meta property="og:title" content="Luke Christensen | Product Manager &amp; Technical Strategist">
-    <meta property="og:description" content="Portfolio of Luke Christensen — BYU Marriott Strategic Management (3.87 GPA). Data-driven product development, SQL pipelines, AI systems, and quantitative strategy.">
+    <meta property="og:description" content="Portfolio of Luke Christensen — Strategic Management at BYU Marriott. Data-driven product development, SQL pipelines, AI systems, and quantitative strategy.">
     <meta property="og:image" content="https://ui-avatars.com/api/?name=Luke+Christensen&size=800&background=0e131f&color=6366f1&font-size=0.33">
     <meta property="og:type" content="website">
 
@@ -24,17 +24,16 @@
     <!-- Floating Frosted Island Navbar -->
     <nav class="navbar" id="navbar">
         <div class="nav-content">
-            <a href="#about" class="logo">
+            <a href="#view-overview" class="logo" data-navigate="overview">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
                 Luke Christensen
             </a>
             <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#systems">Systems &amp; Architecture</a>
-                <a href="#experience">Track Record</a>
-                <a href="#work">Featured Work</a>
-                <a href="#certifications">Certifications</a>
-                <a href="#life">Life</a>
+                <a href="#view-overview" class="active">Overview</a>
+                <a href="#view-systems">Systems</a>
+                <a href="#view-experience">Track Record</a>
+                <a href="#view-work">Work</a>
+                <a href="#view-life">Life</a>
                 <a href="#" class="btn-primary open-modal-btn">
                     <span class="pulse-dot" style="width:6px;height:6px;"></span>
                     Connect
@@ -44,183 +43,268 @@
     </nav>
 
     <main>
-        <!-- Hero Section: Executive Technical PM -->
-        <section id="about" class="hero fade-in">
-            <div class="hero-content">
-                <div class="headshot-container">
-                    <img src="./BYU-Marriott-Student-Headshots-Cam2-(192 of 377).jpg" alt="Luke Christensen Headshot" class="headshot" onerror="this.outerHTML='<svg class=\'headshot\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\'><circle cx=\'12\' cy=\'8\' r=\'5\'/><path d=\'M20 21a8 8 0 1 0-16 0\'/></svg>'">
-                </div>
-                
-                <!-- Live Status Pulse Badge -->
-                <div>
-                    <div class="hero-status-pill">
-                        <span class="pulse-dot"></span>
-                        Available for Product &amp; Strategy Roles
+        <!-- ===================================================================
+             VIEW 1: OVERVIEW (Curated Guided Home — Clean, Breathable, Engaging)
+             =================================================================== -->
+        <section id="view-overview" class="view-pane active">
+            <!-- Hero -->
+            <div class="hero fade-in">
+                <div class="hero-content">
+                    <div class="headshot-container">
+                        <img src="./BYU-Marriott-Student-Headshots-Cam2-(192 of 377).jpg" alt="Luke Christensen Headshot" class="headshot" onerror="this.outerHTML='<svg class=\'headshot\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\'><circle cx=\'12\' cy=\'8\' r=\'5\'/><path d=\'M20 21a8 8 0 1 0-16 0\'/></svg>'">
                     </div>
+                    
+                    <div>
+                        <div class="hero-status-pill">
+                            <span class="pulse-dot"></span>
+                            Available for Product &amp; Strategy Roles
+                        </div>
+                    </div>
+
+                    <h1 class="hero-title">Luke Christensen</h1>
+                    <div class="hero-subtitle">Product Manager &amp; Technical Strategist</div>
+                    
+                    <p class="hero-bio">
+                        Strategic Management at the <b>BYU Marriott School of Business</b>. I bridge product strategy, customer discovery, and quantitative engineering—from scaling conversion on a <b>22B-record platform</b> and orchestrating <b>multi-agent AI systems</b> to modeling <b>DOJ antitrust merger concentration</b> across 10,000+ flight routes.
+                    </p>
+
+                    <!-- Tech Stack Micro-Pills -->
+                    <div class="hero-tech-stack">
+                        <span class="tech-pill"><span class="dot-indicator"></span>SQL (Window Partitioning)</span>
+                        <span class="tech-pill"><span class="dot-indicator"></span>Python / Pandas</span>
+                        <span class="tech-pill"><span class="dot-indicator"></span>Econometric Demand in R</span>
+                        <span class="tech-pill"><span class="dot-indicator"></span>US Census API</span>
+                        <span class="tech-pill"><span class="dot-indicator"></span>Tableau BI</span>
+                        <span class="tech-pill"><span class="dot-indicator"></span>Siemens Mendix Certified</span>
+                        <span class="tech-pill"><span class="dot-indicator"></span>Adobe Analytics</span>
+                        <span class="tech-pill"><span class="dot-indicator"></span>Figma Prototyping</span>
+                        <span class="tech-pill"><span class="dot-indicator"></span>Autonomous AI Swarms</span>
+                    </div>
+
+                    <!-- Action CTAs -->
+                    <div class="hero-actions">
+                        <a href="./Resume/Luke_Christensen_Resume.pdf" target="_blank" class="btn-hero-primary">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                            View Resume PDF
+                        </a>
+                        <button class="btn-hero-secondary open-modal-btn">
+                            Get In Touch
+                        </button>
+                        <a href="https://www.linkedin.com/in/christensen-luke-r" target="_blank" class="btn-hero-icon" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                        <a href="https://github.com/Luke-Christensen1" target="_blank" class="btn-hero-icon" aria-label="GitHub">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guided Pathways: Choose Your Track -->
+            <div class="guided-tracks-section fade-in">
+                <div class="guided-tracks-header">
+                    <span class="section-tag-badge">Guided Pathways</span>
+                    <h3>Explore by Track</h3>
+                    <p>Select an area of focus to dive deeper into technical blueprints, enterprise experience, or products.</p>
                 </div>
 
-                <h1 class="hero-title">Luke Christensen</h1>
-                <div class="hero-subtitle">Product Manager &amp; Technical Strategist</div>
-                
-                <p class="hero-bio">
-                    Strategic Management at the <b>BYU Marriott School of Business (3.87 GPA)</b>. I bridge enterprise product strategy, user discovery, and quantitative engineering—from optimizing conversion on a <b>22B-record platform</b> and orchestrating <b>multi-agent AI systems</b> to modeling <b>DOJ antitrust merger concentration</b> across 10,000+ flight routes.
-                </p>
+                <div class="guided-tracks-grid">
+                    <!-- Track 1: System Blueprints -->
+                    <div class="track-card" data-navigate="systems">
+                        <div>
+                            <div class="track-icon-box">⚡</div>
+                            <h4>System Blueprints &amp; Data Engines</h4>
+                            <p>Interactive architectures for DOJ antitrust route modeling, multi-agent AI swarms, econometric elasticity, and Census GIS pipelines.</p>
+                        </div>
+                        <span class="track-link-cta">
+                            Explore Systems <span>→</span>
+                        </span>
+                    </div>
 
-                <!-- Executive Telemetry Strip -->
-                <div class="hero-stat-strip">
-                    <div class="stat-item">
-                        <span class="stat-value">3.87</span>
-                        <span class="stat-label">BYU Marriott GPA</span>
+                    <!-- Track 2: Experience & Track Record -->
+                    <div class="track-card" data-navigate="experience">
+                        <div>
+                            <div class="track-icon-box">💼</div>
+                            <h4>Track Record &amp; Experience</h4>
+                            <p>Proven results across FamilySearch (22B+ records), TrailRunner International, BYU Music Group, Zark SaaS, MOTYV8, and Councyl Capital.</p>
+                        </div>
+                        <span class="track-link-cta">
+                            View Track Record <span>→</span>
+                        </span>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-value">22B+</span>
-                        <span class="stat-label">Records / 820k Users</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-value">10,000+</span>
-                        <span class="stat-label">Routes Modeled (SQL)</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-value">Certified</span>
-                        <span class="stat-label">Mendix Rapid / Leland PM</span>
+
+                    <!-- Track 3: Featured Work -->
+                    <div class="track-card" data-navigate="work">
+                        <div>
+                            <div class="track-icon-box">🚀</div>
+                            <h4>Featured Work &amp; Products</h4>
+                            <p>Bento gallery of product strategies, UX prototypes in Figma, market entry models, and mobile apps.</p>
+                        </div>
+                        <span class="track-link-cta">
+                            Browse Projects <span>→</span>
+                        </span>
                     </div>
                 </div>
+            </div>
 
-                <!-- Tech Stack Micro-Pills -->
-                <div class="hero-tech-stack">
-                    <span class="tech-pill"><span class="dot-indicator"></span>SQL (Window Partitioning)</span>
-                    <span class="tech-pill"><span class="dot-indicator"></span>Python / Pandas Data Pipelines</span>
-                    <span class="tech-pill"><span class="dot-indicator"></span>Econometric Demand Modeling in R</span>
-                    <span class="tech-pill"><span class="dot-indicator"></span>US Census Bureau API</span>
-                    <span class="tech-pill"><span class="dot-indicator"></span>Tableau Business Intelligence</span>
-                    <span class="tech-pill"><span class="dot-indicator"></span>Siemens Mendix Certified</span>
-                    <span class="tech-pill"><span class="dot-indicator"></span>Adobe Analytics Telemetry</span>
-                    <span class="tech-pill"><span class="dot-indicator"></span>Figma Product Prototyping</span>
-                    <span class="tech-pill"><span class="dot-indicator"></span>Autonomous Multi-Agent AI</span>
+            <!-- Curated Flagship Teasers (Generate High Curiosity) -->
+            <div class="flagship-teaser-section fade-in">
+                <div class="guided-tracks-header">
+                    <span class="section-tag-badge">Selected Highlights</span>
+                    <h3>Impact at a Glance</h3>
+                    <p>Three quick glimpses into real problems solved and quantified outcomes.</p>
                 </div>
 
-                <!-- Action CTAs -->
-                <div class="hero-actions">
-                    <a href="#systems" class="btn-hero-primary">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                        Explore System Blueprints
-                    </a>
-                    <a href="#experience" class="btn-hero-secondary">
-                        View Track Record
-                    </a>
-                    <a href="./Resume/Luke_Christensen_Resume.pdf" target="_blank" class="btn-hero-secondary">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-                        Resume PDF
-                    </a>
-                    <a href="https://www.linkedin.com/in/christensen-luke-r" target="_blank" class="btn-hero-icon" aria-label="LinkedIn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-                    </a>
-                    <a href="https://github.com/Luke-Christensen1" target="_blank" class="btn-hero-icon" aria-label="GitHub">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                    </a>
+                <div class="flagship-teaser-grid">
+                    <!-- Teaser 1 -->
+                    <div class="flagship-card">
+                        <div>
+                            <span class="flagship-tag">Scale Platform // +67% Conversion Lift</span>
+                            <h4>FamilySearch Tree Setup Optimization</h4>
+                            <p>Discovered that 59% of 820K monthly visitors added zero ancestors. Re-routed email confirmation traffic straight into the guided tree builder, lifting tree completion from 21% to 35%.</p>
+                        </div>
+                        <a href="#view-experience" class="track-link-cta" data-navigate="experience">
+                            View in Track Record <span>→</span>
+                        </a>
+                    </div>
+
+                    <!-- Teaser 2 -->
+                    <div class="flagship-card">
+                        <div>
+                            <span class="flagship-tag">Data Engineering // 10,000+ Flight Routes</span>
+                            <h4>DOJ Antitrust &amp; Route Concentration</h4>
+                            <p>Modeled route-level city-pair market power for the JetBlue/Spirit merger using SQL partition window functions, isolating anticompetitive routes breaching DOJ HHI thresholds.</p>
+                        </div>
+                        <a href="#view-systems" class="track-link-cta" data-navigate="systems">
+                            Explore System Blueprint <span>→</span>
+                        </a>
+                    </div>
+
+                    <!-- Teaser 3 -->
+                    <div class="flagship-card">
+                        <div>
+                            <span class="flagship-tag">Autonomous Systems // ~30k Monthly Reach</span>
+                            <h4>7-Agent Commerce &amp; Distribution Swarm</h4>
+                            <p>Architected an automated multi-agent pipeline spanning keyword discovery, Printify catalog synthesis, and algorithmic pin scheduling—generating day-one sales with zero manual overhead.</p>
+                        </div>
+                        <a href="#view-systems" class="track-link-cta" data-navigate="systems">
+                            View Architecture Flow <span>→</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- INTERACTIVE SYSTEM ARCHITECTURE & PIPELINE WORKBENCH -->
-        <section id="systems" class="workbench-section fade-in">
-            <div class="workbench-container">
-                <div class="section-header-dark">
-                    <span class="section-tag-badge">System Blueprints</span>
-                    <h2>Technical Architecture &amp; Data Engines</h2>
-                    <p>Instead of superficial scripts, explore the real system blueprints, mathematical modeling, and engineering trade-offs behind my technical work.</p>
-                </div>
+        <!-- ===================================================================
+             VIEW 2: SYSTEMS & ARCHITECTURE (Dedicated, Distraction-Free Deep Dive)
+             =================================================================== -->
+        <section id="view-systems" class="view-pane">
+            <div class="view-breadcrumb-bar">
+                <button class="btn-breadcrumb" data-navigate="overview">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+                    Back to Overview
+                </button>
+                <span class="breadcrumb-tag">Technical Architecture &amp; Data Engines</span>
+            </div>
 
-                <!-- Navigation Tabs -->
-                <div class="workbench-tabs">
-                    <button class="workbench-tab-btn active" data-tab="sys-antitrust">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg>
-                        DOJ Antitrust &amp; Route Concentration
-                    </button>
-                    <button class="workbench-tab-btn" data-tab="sys-agents">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                        Autonomous Multi-Agent Swarm
-                    </button>
-                    <button class="workbench-tab-btn" data-tab="sys-econometrics">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-                        Econometric Demand &amp; Dynamic Pricing
-                    </button>
-                    <button class="workbench-tab-btn" data-tab="sys-census">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
-                        Retail Geospatial &amp; Census Pipeline
-                    </button>
-                </div>
+            <div class="workbench-section" style="border: none; padding-top: 2rem;">
+                <div class="workbench-container">
+                    <div class="section-header-dark">
+                        <span class="section-tag-badge">System Blueprints</span>
+                        <h2>Technical Architecture &amp; Data Engines</h2>
+                        <p>Detailed system blueprints, mathematical modeling, and engineering trade-offs behind my quantitative and automated work.</p>
+                    </div>
 
-                <!-- System Canvas Window -->
-                <div class="system-canvas">
-                    
-                    <!-- TAB 1: DOJ ANTITRUST & ROUTE CONCENTRATION -->
-                    <div class="system-pane active" id="sys-antitrust">
-                        <div class="canvas-header">
-                            <div class="canvas-title-group">
-                                <h3>DOJ Antitrust Route Concentration Engine</h3>
-                                <div style="font-size: 0.85rem; color: #94a3b8;">Antitrust Evaluation of JetBlue / Spirit Merger &bull; STRATEGY 412</div>
-                            </div>
-                            <div class="canvas-tech-badge-row">
-                                <span class="tech-tag-chip">PostgreSQL</span>
-                                <span class="tech-tag-chip">Window Functions</span>
-                                <span class="tech-tag-chip">DOJ 2023 Guidelines</span>
-                                <span class="tech-tag-chip">10,000+ Flight Routes</span>
-                            </div>
-                        </div>
+                    <!-- Navigation Tabs -->
+                    <div class="workbench-tabs">
+                        <button class="workbench-tab-btn active" data-tab="sys-antitrust">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg>
+                            DOJ Antitrust &amp; Route Concentration
+                        </button>
+                        <button class="workbench-tab-btn" data-tab="sys-agents">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                            Autonomous Multi-Agent Swarm
+                        </button>
+                        <button class="workbench-tab-btn" data-tab="sys-econometrics">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                            Econometric Demand &amp; Dynamic Pricing
+                        </button>
+                        <button class="workbench-tab-btn" data-tab="sys-census">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+                            Retail Geospatial &amp; Census Pipeline
+                        </button>
+                    </div>
 
-                        <!-- Visual 3-Node Architecture Flow -->
-                        <div class="architecture-flow" style="margin-top: 1.8rem;">
-                            <div class="flow-node">
-                                <div class="flow-node-header">
-                                    <span class="node-step-badge blue">Node 01 // Ingestion</span>
+                    <!-- System Canvas Window -->
+                    <div class="system-canvas">
+                        
+                        <!-- TAB 1: DOJ ANTITRUST & ROUTE CONCENTRATION -->
+                        <div class="system-pane active" id="sys-antitrust">
+                            <div class="canvas-header">
+                                <div class="canvas-title-group">
+                                    <h3>DOJ Antitrust Route Concentration Engine</h3>
+                                    <div style="font-size: 0.85rem; color: #94a3b8;">Antitrust Evaluation of JetBlue / Spirit Merger &bull; STRATEGY 412</div>
                                 </div>
-                                <h4>US DOT DB1B Flight Data</h4>
-                                <p>Ingested 10,000+ Origin-Destination (O&amp;D) route pairs from Bureau of Transportation Statistics, normalizing ticketing volumes and airline carriers.</p>
-                            </div>
-                            <div class="flow-node">
-                                <div class="flow-node-header">
-                                    <span class="node-step-badge purple">Node 02 // Analytical Engine</span>
+                                <div class="canvas-tech-badge-row">
+                                    <span class="tech-tag-chip">PostgreSQL</span>
+                                    <span class="tech-tag-chip">Window Functions</span>
+                                    <span class="tech-tag-chip">DOJ 2023 Guidelines</span>
+                                    <span class="tech-tag-chip">10,000+ Flight Routes</span>
                                 </div>
-                                <h4>SQL Window Partitioning</h4>
-                                <p>Computed carrier route market shares dynamically via <code>OVER (PARTITION BY origin, dest)</code> to evaluate Route Herfindahl-Hirschman Indices ($HHI$).</p>
                             </div>
-                            <div class="flow-node">
-                                <div class="flow-node-header">
-                                    <span class="node-step-badge green">Node 03 // Decision Engine</span>
+
+                            <!-- Visual 3-Node Architecture Flow -->
+                            <div class="architecture-flow" style="margin-top: 1.8rem;">
+                                <div class="flow-node">
+                                    <div class="flow-node-header">
+                                        <span class="node-step-badge blue">Node 01 // Ingestion</span>
+                                    </div>
+                                    <h4>US DOT DB1B Flight Data</h4>
+                                    <p>Ingested 10,000+ Origin-Destination (O&amp;D) route pairs from Bureau of Transportation Statistics, normalizing ticketing volumes and airline carriers.</p>
                                 </div>
-                                <h4>Litigation Risk Flags</h4>
-                                <p>Identified high-concentration routes where Post-Merger $HHI &gt; 2500$ and $\Delta HHI \ge 200$, matching the exact DOJ antitrust presumption threshold for route monopoly scrutiny.</p>
+                                <div class="flow-node">
+                                    <div class="flow-node-header">
+                                        <span class="node-step-badge purple">Node 02 // Analytical Engine</span>
+                                    </div>
+                                    <h4>SQL Window Partitioning</h4>
+                                    <p>Computed carrier route market shares dynamically via <code>OVER (PARTITION BY origin, dest)</code> to evaluate Route Herfindahl-Hirschman Indices ($HHI$).</p>
+                                </div>
+                                <div class="flow-node">
+                                    <div class="flow-node-header">
+                                        <span class="node-step-badge green">Node 03 // Decision Engine</span>
+                                    </div>
+                                    <h4>Litigation Risk Flags</h4>
+                                    <p>Identified high-concentration routes where Post-Merger $HHI &gt; 2500$ and $\Delta HHI \ge 200$, matching the exact DOJ antitrust presumption threshold for route monopoly scrutiny.</p>
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- System Details Grid -->
-                        <div class="system-details-grid">
-                            <div class="detail-card">
-                                <h5>📐 Quantitative Economic Model</h5>
-                                <ul>
-                                    <li><b>Herfindahl-Hirschman Index:</b> $HHI = \sum_{i=1}^N s_i^2$, where $s_i$ is carrier market share percentage on route $(origin, dest)$.</li>
-                                    <li><b>Antitrust Presumption:</b> Post-merger market concentration change: $\Delta HHI = 2 s_{JetBlue} s_{Spirit}$.</li>
-                                    <li><b>Regulatory Scrutiny Threshold:</b> Flagged routes with Post-HHI &gt; 2,500 and $\Delta HHI \ge 200$ as highly anticompetitive.</li>
-                                </ul>
+                            <!-- System Details Grid -->
+                            <div class="system-details-grid">
+                                <div class="detail-card">
+                                    <h5>📐 Quantitative Economic Model</h5>
+                                    <ul>
+                                        <li><b>Herfindahl-Hirschman Index:</b> $HHI = \sum_{i=1}^N s_i^2$, where $s_i$ is carrier market share percentage on route $(origin, dest)$.</li>
+                                        <li><b>Antitrust Presumption:</b> Post-merger market concentration change: $\Delta HHI = 2 s_{JetBlue} s_{Spirit}$.</li>
+                                        <li><b>Regulatory Scrutiny Threshold:</b> Flagged routes with Post-HHI &gt; 2,500 and $\Delta HHI \ge 200$ as highly anticompetitive.</li>
+                                    </ul>
+                                </div>
+                                <div class="detail-card">
+                                    <h5>🎯 Strategic PM &amp; Executive Takeaway</h5>
+                                    <ul>
+                                        <li>Demonstrated why nationwide airline market share figures are deceptive; antitrust scrutiny lives and dies on route-level city-pair market power.</li>
+                                        <li>Provided senior leadership with exact divestiture recommendations (slot remedy airports) required to overcome DOJ regulatory challenges.</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="detail-card">
-                                <h5>🎯 Strategic PM &amp; Executive Takeaway</h5>
-                                <ul>
-                                    <li>Demonstrated why nationwide airline market share figures are deceptive; antitrust scrutiny lives and dies on route-level city-pair market power.</li>
-                                    <li>Provided senior leadership with exact divestiture recommendations (slot remedy airports) required to overcome DOJ regulatory challenges.</li>
-                                </ul>
-                            </div>
-                        </div>
 
-                        <!-- Collapsible Code Drawer -->
-                        <details class="code-drawer">
-                            <summary>
-                                <span>▶ Inspect Underlying SQL Query Pipeline (PostgreSQL)</span>
-                                <span style="font-size:0.75rem; color:#6366f1;">Click to expand</span>
-                            </summary>
-                            <div class="code-drawer-content">
-                                <pre class="code-block-dark"><code><span class="code-comment">-- JetBlue / Spirit Merger Antitrust Model: DOJ HHI Concentration</span>
+                            <!-- Collapsible Code Drawer -->
+                            <details class="code-drawer">
+                                <summary>
+                                    <span>▶ Inspect Underlying SQL Query Pipeline (PostgreSQL)</span>
+                                    <span style="font-size:0.75rem; color:#6366f1;">Click to expand</span>
+                                </summary>
+                                <div class="code-drawer-content">
+                                    <pre class="code-block-dark"><code><span class="code-comment">-- JetBlue / Spirit Merger Antitrust Model: DOJ HHI Concentration</span>
 <span class="code-kw">WITH</span> RoutePassengers <span class="code-kw">AS</span> (
     <span class="code-kw">SELECT</span> 
         origin, dest, carrier,
@@ -251,78 +335,78 @@ PrePostMergerHHI <span class="code-kw">AS</span> (
          <span class="code-kw">ELSE</span> <span class="code-str">'UNLIKELY ADVERSE IMPACT'</span> <span class="code-kw">END AS</span> regulatory_assessment
 <span class="code-kw">FROM</span> PrePostMergerHHI
 <span class="code-kw">ORDER BY</span> delta_hhi <span class="code-kw">DESC</span>;</code></pre>
-                            </div>
-                        </details>
-                    </div>
-
-                    <!-- TAB 2: AUTONOMOUS MULTI-AGENT SWARM -->
-                    <div class="system-pane" id="sys-agents">
-                        <div class="canvas-header">
-                            <div class="canvas-title-group">
-                                <h3>7-Agent Autonomous E-Commerce Swarm</h3>
-                                <div style="font-size: 0.85rem; color: #94a3b8;">End-to-End Autonomous Commerce &amp; Distribution Architecture</div>
-                            </div>
-                            <div class="canvas-tech-badge-row">
-                                <span class="tech-tag-chip">AsyncIO Architecture</span>
-                                <span class="tech-tag-chip">Printify API</span>
-                                <span class="tech-tag-chip">Pinterest Graph</span>
-                                <span class="tech-tag-chip">Claude Structured Output</span>
-                            </div>
+                                </div>
+                            </details>
                         </div>
 
-                        <!-- Visual 3-Node Architecture Flow -->
-                        <div class="architecture-flow" style="margin-top: 1.8rem;">
-                            <div class="flow-node">
-                                <div class="flow-node-header">
-                                    <span class="node-step-badge blue">Node 01 // Trend Discovery</span>
+                        <!-- TAB 2: AUTONOMOUS MULTI-AGENT SWARM -->
+                        <div class="system-pane" id="sys-agents">
+                            <div class="canvas-header">
+                                <div class="canvas-title-group">
+                                    <h3>7-Agent Autonomous E-Commerce Swarm</h3>
+                                    <div style="font-size: 0.85rem; color: #94a3b8;">End-to-End Autonomous Commerce &amp; Distribution Architecture</div>
                                 </div>
-                                <h4>Market Research Agent</h4>
-                                <p>Ingests trending search velocity across Pinterest and Google Trends APIs, ranking unserved product niches by search-volume-to-competition ratio.</p>
-                            </div>
-                            <div class="flow-node">
-                                <div class="flow-node-header">
-                                    <span class="node-step-badge purple">Node 02 // Asset &amp; SKU Synthesis</span>
+                                <div class="canvas-tech-badge-row">
+                                    <span class="tech-tag-chip">AsyncIO Architecture</span>
+                                    <span class="tech-tag-chip">Printify API</span>
+                                    <span class="tech-tag-chip">Pinterest Graph</span>
+                                    <span class="tech-tag-chip">Claude Structured Output</span>
                                 </div>
-                                <h4>Catalog &amp; Copy Agents</h4>
-                                <p>Generates high-converting SEO copy and creates live production variants across print providers via asynchronous Printify REST APIs.</p>
                             </div>
-                            <div class="flow-node">
-                                <div class="flow-node-header">
-                                    <span class="node-step-badge green">Node 03 // Growth Engine</span>
-                                </div>
-                                <h4>Distribution Agent</h4>
-                                <p>Schedules algorithmic pin deployment across buyer boards. Scaled the storefront from 0 to ~30,000 monthly impressions in 10 weeks with day-one profitability.</p>
-                            </div>
-                        </div>
 
-                        <!-- System Details Grid -->
-                        <div class="system-details-grid">
-                            <div class="detail-card">
-                                <h5>⚙️ Multi-Agent Orchestration Logic</h5>
-                                <ul>
-                                    <li><b>Role Specialization:</b> Decomposed operations into 7 micro-agents (Trend Hunter, SEO Copywriter, Mockup Generator, Catalog Creator, Pricing Optimizer, Pin Scheduler, and Telemetry Auditor).</li>
-                                    <li><b>Async Pipeline:</b> Parallelized catalog deployment using Python <code>asyncio.gather</code>, cutting SKU launch cycle from 45 minutes to under 30 seconds.</li>
-                                    <li><b>Zero Human Overhead:</b> Validated strict JSON schemas to eliminate AI hallucination before publishing live storefront listings.</li>
-                                </ul>
+                            <!-- Visual 3-Node Architecture Flow -->
+                            <div class="architecture-flow" style="margin-top: 1.8rem;">
+                                <div class="flow-node">
+                                    <div class="flow-node-header">
+                                        <span class="node-step-badge blue">Node 01 // Trend Discovery</span>
+                                    </div>
+                                    <h4>Market Research Agent</h4>
+                                    <p>Ingests trending search velocity across Pinterest and Google Trends APIs, ranking unserved product niches by search-volume-to-competition ratio.</p>
+                                </div>
+                                <div class="flow-node">
+                                    <div class="flow-node-header">
+                                        <span class="node-step-badge purple">Node 02 // Asset &amp; SKU Synthesis</span>
+                                    </div>
+                                    <h4>Catalog &amp; Copy Agents</h4>
+                                    <p>Generates high-converting SEO copy and creates live production variants across print providers via asynchronous Printify REST APIs.</p>
+                                </div>
+                                <div class="flow-node">
+                                    <div class="flow-node-header">
+                                        <span class="node-step-badge green">Node 03 // Growth Engine</span>
+                                    </div>
+                                    <h4>Distribution Agent</h4>
+                                    <p>Schedules algorithmic pin deployment across buyer boards. Scaled the storefront from 0 to ~30,000 monthly impressions in 10 weeks with day-one profitability.</p>
+                                </div>
                             </div>
-                            <div class="detail-card">
-                                <h5>📈 Quantified Business Lift</h5>
-                                <ul>
-                                    <li>Grew organic impressions from <b>0 to ~30,000 monthly views</b> within 2.5 months.</li>
-                                    <li>Achieved profitable first sales on day of launch with zero paid advertising spend.</li>
-                                    <li>Demonstrated how agentic workflows transform solo operators into high-volume product companies.</li>
-                                </ul>
-                            </div>
-                        </div>
 
-                        <!-- Collapsible Code Drawer -->
-                        <details class="code-drawer">
-                            <summary>
-                                <span>▶ Inspect Agent Swarm Orchestrator Implementation</span>
-                                <span style="font-size:0.75rem; color:#6366f1;">Click to expand</span>
-                            </summary>
-                            <div class="code-drawer-content">
-                                <pre class="code-block-dark"><code><span class="code-kw">import</span> asyncio
+                            <!-- System Details Grid -->
+                            <div class="system-details-grid">
+                                <div class="detail-card">
+                                    <h5>⚙️ Multi-Agent Orchestration Logic</h5>
+                                    <ul>
+                                        <li><b>Role Specialization:</b> Decomposed operations into 7 micro-agents (Trend Hunter, SEO Copywriter, Mockup Generator, Catalog Creator, Pricing Optimizer, Pin Scheduler, and Telemetry Auditor).</li>
+                                        <li><b>Async Pipeline:</b> Parallelized catalog deployment using Python <code>asyncio.gather</code>, cutting SKU launch cycle from 45 minutes to under 30 seconds.</li>
+                                        <li><b>Zero Human Overhead:</b> Validated strict JSON schemas to eliminate AI hallucination before publishing live storefront listings.</li>
+                                    </ul>
+                                </div>
+                                <div class="detail-card">
+                                    <h5>📈 Quantified Business Lift</h5>
+                                    <ul>
+                                        <li>Grew organic impressions from <b>0 to ~30,000 monthly views</b> within 2.5 months.</li>
+                                        <li>Achieved profitable first sales on day of launch with zero paid advertising spend.</li>
+                                        <li>Demonstrated how agentic workflows transform solo operators into high-volume product companies.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Collapsible Code Drawer -->
+                            <details class="code-drawer">
+                                <summary>
+                                    <span>▶ Inspect Agent Swarm Orchestrator Implementation</span>
+                                    <span style="font-size:0.75rem; color:#6366f1;">Click to expand</span>
+                                </summary>
+                                <div class="code-drawer-content">
+                                    <pre class="code-block-dark"><code><span class="code-kw">import</span> asyncio
 <span class="code-kw">from</span> dataclasses <span class="code-kw">import</span> dataclass
 
 <span class="code-kw">class</span> <span class="code-var">AutonomousCommerceOrchestrator</span>:
@@ -352,77 +436,77 @@ PrePostMergerHHI <span class="code-kw">AS</span> (
         <span class="code-comment"># Metric Outcome: 0 to ~30k monthly Pinterest impressions in 2.5 months</span>
         <span class="code-kw">await</span> self.agent_pinterest_distributor.schedule_pins(active_products)
         <span class="code-kw">return</span> {<span class="code-str">"status"</span>: <span class="code-str">"deployed"</span>, <span class="code-str">"products"</span>: len(active_products)}</code></pre>
-                            </div>
-                        </details>
-                    </div>
-
-                    <!-- TAB 3: ECONOMETRIC DEMAND & PRICING -->
-                    <div class="system-pane" id="sys-econometrics">
-                        <div class="canvas-header">
-                            <div class="canvas-title-group">
-                                <h3>Airbnb Econometric Demand &amp; Elasticity Engine</h3>
-                                <div style="font-size: 0.85rem; color: #94a3b8;">Multivariate Fixed Effects Regressions &bull; STRATEGY 402</div>
-                            </div>
-                            <div class="canvas-tech-badge-row">
-                                <span class="tech-tag-chip">R / fixest</span>
-                                <span class="tech-tag-chip">Log-Log Model</span>
-                                <span class="tech-tag-chip">133MB Multi-City Data</span>
-                                <span class="tech-tag-chip">OPE = -1.05</span>
-                            </div>
+                                </div>
+                            </details>
                         </div>
 
-                        <!-- Visual 3-Node Architecture Flow -->
-                        <div class="architecture-flow" style="margin-top: 1.8rem;">
-                            <div class="flow-node">
-                                <div class="flow-node-header">
-                                    <span class="node-step-badge blue">Node 01 // Data Engineering</span>
+                        <!-- TAB 3: ECONOMETRIC DEMAND & PRICING -->
+                        <div class="system-pane" id="sys-econometrics">
+                            <div class="canvas-header">
+                                <div class="canvas-title-group">
+                                    <h3>Airbnb Econometric Demand &amp; Elasticity Engine</h3>
+                                    <div style="font-size: 0.85rem; color: #94a3b8;">Multivariate Fixed Effects Regressions &bull; STRATEGY 402</div>
                                 </div>
-                                <h4>133MB Cleaned Listings</h4>
-                                <p>Processed multi-city listing datasets, filtering extreme outliers, normalizing cleaning fees, and imputing 30-day booking demand velocity.</p>
-                            </div>
-                            <div class="flow-node">
-                                <div class="flow-node-header">
-                                    <span class="node-step-badge purple">Node 02 // Econometric Spec</span>
+                                <div class="canvas-tech-badge-row">
+                                    <span class="tech-tag-chip">R / fixest</span>
+                                    <span class="tech-tag-chip">Log-Log Model</span>
+                                    <span class="tech-tag-chip">133MB Multi-City Data</span>
+                                    <span class="tech-tag-chip">OPE = -1.05</span>
                                 </div>
-                                <h4>Fixed Effects Regression</h4>
-                                <p>Specified log-log multivariate model with neighborhood clustered standard errors to isolate pure price elasticity from location confounders.</p>
                             </div>
-                            <div class="flow-node">
-                                <div class="flow-node-header">
-                                    <span class="node-step-badge green">Node 03 // Revenue Yield</span>
-                                </div>
-                                <h4>Dynamic Pricing Curves</h4>
-                                <p>Quantified Own-Price Elasticity ($OPE = -1.05$ in Los Angeles), establishing revenue-maximizing price floors and seasonal ceiling limits.</p>
-                            </div>
-                        </div>
 
-                        <!-- System Details Grid -->
-                        <div class="system-details-grid">
-                            <div class="detail-card">
-                                <h5>📊 Econometric Model Specification</h5>
-                                <ul>
-                                    <li><b>Log-Log Equation:</b> $\ln(Bookings) = \beta_0 + \beta_1 \ln(Price) + \sum \gamma_k X_k + \alpha_{neighborhood} + \epsilon$.</li>
-                                    <li><b>Elasticity Coefficient:</b> $\beta_1 = -1.048$ ($p &lt; 0.001$), indicating slightly price-elastic consumer demand in primary metro markets.</li>
-                                    <li><b>Control Covariates:</b> Accommodates, bedrooms, review scores rating, instant bookable, and superhost status.</li>
-                                </ul>
+                            <!-- Visual 3-Node Architecture Flow -->
+                            <div class="architecture-flow" style="margin-top: 1.8rem;">
+                                <div class="flow-node">
+                                    <div class="flow-node-header">
+                                        <span class="node-step-badge blue">Node 01 // Data Engineering</span>
+                                    </div>
+                                    <h4>133MB Cleaned Listings</h4>
+                                    <p>Processed multi-city listing datasets, filtering extreme outliers, normalizing cleaning fees, and imputing 30-day booking demand velocity.</p>
+                                </div>
+                                <div class="flow-node">
+                                    <div class="flow-node-header">
+                                        <span class="node-step-badge purple">Node 02 // Econometric Spec</span>
+                                    </div>
+                                    <h4>Fixed Effects Regression</h4>
+                                    <p>Specified log-log multivariate model with neighborhood clustered standard errors to isolate pure price elasticity from location confounders.</p>
+                                </div>
+                                <div class="flow-node">
+                                    <div class="flow-node-header">
+                                        <span class="node-step-badge green">Node 03 // Revenue Yield</span>
+                                    </div>
+                                    <h4>Dynamic Pricing Curves</h4>
+                                    <p>Quantified Own-Price Elasticity ($OPE = -1.05$ in Los Angeles), establishing revenue-maximizing price floors and seasonal ceiling limits.</p>
+                                </div>
                             </div>
-                            <div class="detail-card">
-                                <h5>💡 Platform Strategy Implications</h5>
-                                <ul>
-                                    <li>Identified that hosts uniformly underprice listings during low-season and overprice during high-season, missing optimal platform booking fees.</li>
-                                    <li>Designed host dynamic pricing recommendation algorithm that maximizes Gross Booking Value (GBV) without sacrificing occupancy.</li>
-                                </ul>
-                            </div>
-                        </div>
 
-                        <!-- Collapsible Code Drawer -->
-                        <details class="code-drawer">
-                            <summary>
-                                <span>▶ Inspect Econometric R Modeling Code</span>
-                                <span style="font-size:0.75rem; color:#6366f1;">Click to expand</span>
-                            </summary>
-                            <div class="code-drawer-content">
-                                <pre class="code-block-dark"><code><span class="code-comment"># Airbnb Demand & Price Elasticity Econometric Model</span>
+                            <!-- System Details Grid -->
+                            <div class="system-details-grid">
+                                <div class="detail-card">
+                                    <h5>📊 Econometric Model Specification</h5>
+                                    <ul>
+                                        <li><b>Log-Log Equation:</b> $\ln(Bookings) = \beta_0 + \beta_1 \ln(Price) + \sum \gamma_k X_k + \alpha_{neighborhood} + \epsilon$.</li>
+                                        <li><b>Elasticity Coefficient:</b> $\beta_1 = -1.048$ ($p &lt; 0.001$), indicating slightly price-elastic consumer demand in primary metro markets.</li>
+                                        <li><b>Control Covariates:</b> Accommodates, bedrooms, review scores rating, instant bookable, and superhost status.</li>
+                                    </ul>
+                                </div>
+                                <div class="detail-card">
+                                    <h5>💡 Platform Strategy Implications</h5>
+                                    <ul>
+                                        <li>Identified that hosts uniformly underprice listings during low-season and overprice during high-season, missing optimal platform booking fees.</li>
+                                        <li>Designed host dynamic pricing recommendation algorithm that maximizes Gross Booking Value (GBV) without sacrificing occupancy.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Collapsible Code Drawer -->
+                            <details class="code-drawer">
+                                <summary>
+                                    <span>▶ Inspect Econometric R Modeling Code</span>
+                                    <span style="font-size:0.75rem; color:#6366f1;">Click to expand</span>
+                                </summary>
+                                <div class="code-drawer-content">
+                                    <pre class="code-block-dark"><code><span class="code-comment"># Airbnb Demand & Price Elasticity Econometric Model</span>
 <span class="code-kw">library</span>(tidyverse)
 <span class="code-kw">library</span>(fixest)       <span class="code-comment"># Fast clustered standard errors & fixed effects</span>
 
@@ -440,77 +524,77 @@ elasticity_model &lt;- feols(
 
 summary(elasticity_model)
 <span class="code-comment"># Estimated beta_1 (OPE) = -1.048 (SE: 0.031, p &lt; 0.001)</span></code></pre>
-                            </div>
-                        </details>
-                    </div>
-
-                    <!-- TAB 4: RETAIL GEOSPATIAL & CENSUS -->
-                    <div class="system-pane" id="sys-census">
-                        <div class="canvas-header">
-                            <div class="canvas-title-group">
-                                <h3>Sprouts Geospatial &amp; Census TAM Pipeline</h3>
-                                <div style="font-size: 0.85rem; color: #94a3b8;">Automated Store Scrapers &bull; US Census ACS 5-Year API &bull; Tableau BI</div>
-                            </div>
-                            <div class="canvas-tech-badge-row">
-                                <span class="tech-tag-chip">Python Web Scraper</span>
-                                <span class="tech-tag-chip">US Census API</span>
-                                <span class="tech-tag-chip">Geodesic Radius</span>
-                                <span class="tech-tag-chip">Tableau Dashboards</span>
-                            </div>
+                                </div>
+                            </details>
                         </div>
 
-                        <!-- Visual 3-Node Architecture Flow -->
-                        <div class="architecture-flow" style="margin-top: 1.8rem;">
-                            <div class="flow-node">
-                                <div class="flow-node-header">
-                                    <span class="node-step-badge blue">Node 01 // Location Scraping</span>
+                        <!-- TAB 4: RETAIL GEOSPATIAL & CENSUS -->
+                        <div class="system-pane" id="sys-census">
+                            <div class="canvas-header">
+                                <div class="canvas-title-group">
+                                    <h3>Sprouts Geospatial &amp; Census TAM Pipeline</h3>
+                                    <div style="font-size: 0.85rem; color: #94a3b8;">Automated Store Scrapers &bull; US Census ACS 5-Year API &bull; Tableau BI</div>
                                 </div>
-                                <h4>Competitor Location Harvesting</h4>
-                                <p>Automated scrapers for Whole Foods, Trader Joe's, and Sprouts locations, extracting precise latitude/longitude coordinates across target metro zones.</p>
-                            </div>
-                            <div class="flow-node">
-                                <div class="flow-node-header">
-                                    <span class="node-step-badge purple">Node 02 // Census Ingestion</span>
+                                <div class="canvas-tech-badge-row">
+                                    <span class="tech-tag-chip">Python Web Scraper</span>
+                                    <span class="tech-tag-chip">US Census API</span>
+                                    <span class="tech-tag-chip">Geodesic Radius</span>
+                                    <span class="tech-tag-chip">Tableau Dashboards</span>
                                 </div>
-                                <h4>Demographic Join Engine</h4>
-                                <p>Queried US Census Bureau 5-Year ACS API for median household income, bachelor's degree attainment, and population density at the Zip Code Tabulation level.</p>
                             </div>
-                            <div class="flow-node">
-                                <div class="flow-node-header">
-                                    <span class="node-step-badge green">Node 03 // Spatial Scoring</span>
-                                </div>
-                                <h4>3-Mile Radius Scoring</h4>
-                                <p>Executed geodesic buffer spatial joins to score unserved expansion zip codes, exporting clean analytical tables to executive Tableau workbooks.</p>
-                            </div>
-                        </div>
 
-                        <!-- System Details Grid -->
-                        <div class="system-details-grid">
-                            <div class="detail-card">
-                                <h5>🗺️ Spatial Scoring Algorithm</h5>
-                                <ul>
-                                    <li><b>Trade Area Buffer:</b> 3.0-mile geodesic radius calculated around each prospective zip centroid.</li>
-                                    <li><b>Cannibalization Penalty:</b> Counted direct organic retail competitor density within the primary trade area.</li>
-                                    <li><b>TAM Opportunity Index:</b> $\text{Score} = \left(\frac{\text{Median Income}}{10,000}\right) \times \left(\frac{1}{\text{Competitors} + 1}\right)$.</li>
-                                </ul>
+                            <!-- Visual 3-Node Architecture Flow -->
+                            <div class="architecture-flow" style="margin-top: 1.8rem;">
+                                <div class="flow-node">
+                                    <div class="flow-node-header">
+                                        <span class="node-step-badge blue">Node 01 // Location Scraping</span>
+                                    </div>
+                                    <h4>Competitor Location Harvesting</h4>
+                                    <p>Automated scrapers for Whole Foods, Trader Joe's, and Sprouts locations, extracting precise latitude/longitude coordinates across target metro zones.</p>
+                                </div>
+                                <div class="flow-node">
+                                    <div class="flow-node-header">
+                                        <span class="node-step-badge purple">Node 02 // Census Ingestion</span>
+                                    </div>
+                                    <h4>Demographic Join Engine</h4>
+                                    <p>Queried US Census Bureau 5-Year ACS API for median household income, bachelor's degree attainment, and population density at the Zip Code Tabulation level.</p>
+                                </div>
+                                <div class="flow-node">
+                                    <div class="flow-node-header">
+                                        <span class="node-step-badge green">Node 03 // Spatial Scoring</span>
+                                    </div>
+                                    <h4>3-Mile Radius Scoring</h4>
+                                    <p>Executed geodesic buffer spatial joins to score unserved expansion zip codes, exporting clean analytical tables to executive Tableau workbooks.</p>
+                                </div>
                             </div>
-                            <div class="detail-card">
-                                <h5>🏢 Executive Real Estate Value</h5>
-                                <ul>
-                                    <li>Enabled real estate site selection committees to objectively rank top-tier expansion locations based on demographic spend capability.</li>
-                                    <li>Eliminated gut-feel store openings with reproducible spatial data pipelines.</li>
-                                </ul>
-                            </div>
-                        </div>
 
-                        <!-- Collapsible Code Drawer -->
-                        <details class="code-drawer">
-                            <summary>
-                                <span>▶ Inspect Census &amp; Spatial Pipeline Script</span>
-                                <span style="font-size:0.75rem; color:#6366f1;">Click to expand</span>
-                            </summary>
-                            <div class="code-drawer-content">
-                                <pre class="code-block-dark"><code><span class="code-kw">import</span> requests, pandas <span class="code-kw">as</span> pd
+                            <!-- System Details Grid -->
+                            <div class="system-details-grid">
+                                <div class="detail-card">
+                                    <h5>🗺️ Spatial Scoring Algorithm</h5>
+                                    <ul>
+                                        <li><b>Trade Area Buffer:</b> 3.0-mile geodesic radius calculated around each prospective zip centroid.</li>
+                                        <li><b>Cannibalization Penalty:</b> Counted direct organic retail competitor density within the primary trade area.</li>
+                                        <li><b>TAM Opportunity Index:</b> $\text{Score} = \left(\frac{\text{Median Income}}{10,000}\right) \times \left(\frac{1}{\text{Competitors} + 1}\right)$.</li>
+                                    </ul>
+                                </div>
+                                <div class="detail-card">
+                                    <h5>🏢 Executive Real Estate Value</h5>
+                                    <ul>
+                                        <li>Enabled real estate site selection committees to objectively rank top-tier expansion locations based on demographic spend capability.</li>
+                                        <li>Eliminated gut-feel store openings with reproducible spatial data pipelines.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Collapsible Code Drawer -->
+                            <details class="code-drawer">
+                                <summary>
+                                    <span>▶ Inspect Census &amp; Spatial Pipeline Script</span>
+                                    <span style="font-size:0.75rem; color:#6366f1;">Click to expand</span>
+                                </summary>
+                                <div class="code-drawer-content">
+                                    <pre class="code-block-dark"><code><span class="code-kw">import</span> requests, pandas <span class="code-kw">as</span> pd
 <span class="code-kw">from</span> geopy.distance <span class="code-kw">import</span> geodesic
 
 <span class="code-comment"># Ingest US Census Bureau 5-Year ACS Profiles</span>
@@ -527,515 +611,545 @@ ACS_VARIABLES = {<span class="code-str">"B19013_001E"</span>: <span class="code-
         score = (income / <span class="code-num">10000</span>) * (<span class="code-num">1.0</span> / (comp_count + <span class="code-num">1</span>))
         scored.append({**cand, <span class="code-str">"comp_3mi"</span>: comp_count, <span class="code-str">"opportunity_score"</span>: round(score, <span class="code-num">2</span>)})
     <span class="code-kw">return</span> pd.DataFrame(scored).sort_values(by=<span class="code-str">"opportunity_score"</span>, ascending=<span class="code-kw">False</span>)</code></pre>
-                            </div>
-                        </details>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- TRACK RECORD & PROFESSIONAL EXPERIENCE -->
-        <section id="experience" class="section fade-in">
-            <div class="section-header">
-                <h2>Track Record &amp; Experience</h2>
-                <p>Quantified product impact across scale platforms, corporate strategy firms, SaaS startups, and private equity.</p>
-            </div>
-            
-            <div class="timeline">
-                <!-- TrailRunner International -->
-                <div class="timeline-item">
-                    <div class="timeline-date">Sep 2026 - Dec 2026</div>
-                    <div class="timeline-content">
-                        <h3>Analyst Intern</h3>
-                        <h4>TrailRunner International (New York, NY)</h4>
-                        <p class="company-desc">Global strategy and communications firm serving leading corporate, financial, entertainment, and sports organizations</p>
-                        <div class="timeline-metrics">
-                            <span class="metric-pill blue">50+ Executive Briefs</span>
-                            <span class="metric-pill">Fortune 500 Financial Client</span>
-                            <span class="metric-pill purple">NFL &amp; Entertainment Intel</span>
+                                </div>
+                            </details>
                         </div>
-                        <ul>
-                            <li>Delivered 50+ briefs, media lists, and results reports since Sep, including daily briefs for a Fortune 500 financial client; synthesized market research for finance, music, entertainment, and NFL clients</li>
-                        </ul>
-                    </div>
-                </div>
 
-                <!-- FamilySearch -->
-                <div class="timeline-item">
-                    <div class="timeline-date">Jun 2026 - Sep 2026</div>
-                    <div class="timeline-content">
-                        <h3>Product Manager Intern</h3>
-                        <h4>FamilySearch (Lehi, UT)</h4>
-                        <p class="company-desc">The world's largest genealogy organization, with 22B+ historical records and 297M annual site visits across 100+ countries</p>
-                        <div class="timeline-metrics">
-                            <span class="metric-pill">+67% Name-Add Lift</span>
-                            <span class="metric-pill blue">Adobe Analytics</span>
-                            <span class="metric-pill">820K Monthly Visitors</span>
-                            <span class="metric-pill purple">+7% A/B Test Lift</span>
-                        </div>
-                        <ul>
-                            <li>Increased family name-adds among confirmation-email clickers from 21% to 35% (67% increase) by routing new-user emails straight into the guided tree builder instead of the main site page</li>
-                            <li>Discovered via Adobe Analytics that 59% of 820K monthly visitors added zero ancestors; authored PRDs to eliminate drop-off and incentivize tree setup</li>
-                            <li>Ran an A/B test on the guided tree builder experience, simplifying the interface to increase names added by 7%</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- BYU Music Group -->
-                <div class="timeline-item">
-                    <div class="timeline-date">Feb 2024 - Jun 2026</div>
-                    <div class="timeline-content">
-                        <h3>Product and Strategy Manager</h3>
-                        <h4>BYU Music Group (Provo, UT)</h4>
-                        <p class="company-desc">BYU's record label and media studio for internationally recognized globally touring artists</p>
-                        <div class="timeline-metrics">
-                            <span class="metric-pill">+25% Song Streams</span>
-                            <span class="metric-pill blue">+70% Playlist Submissions</span>
-                            <span class="metric-pill">80+ Releases Tracked</span>
-                            <span class="metric-pill purple">Executive AI Strategy</span>
-                        </div>
-                        <ul>
-                            <li>Grew total song streams 25% using Spotify for Artists data and pitching strategies, increasing playlist submissions 70%</li>
-                            <li>Built a centralized asset database and project tracker, cutting search time by 50% and boosting release throughput by 20% across 80+ launches</li>
-                            <li>Led BYUMG's AI strategy by analyzing AI-generated music's risk to royalty revenue and presenting recommendations to the executive director, which were used in discussions with label partners</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Zark Parking Solutions -->
-                <div class="timeline-item">
-                    <div class="timeline-date">Jan 2026 - Apr 2026</div>
-                    <div class="timeline-content">
-                        <h3>Product Manager Intern</h3>
-                        <h4>Zark Parking Solutions (Provo, UT)</h4>
-                        <p class="company-desc">SaaS platform for multifamily parking management</p>
-                        <div class="timeline-metrics">
-                            <span class="metric-pill">-40% PRD Draft Time</span>
-                            <span class="metric-pill purple">Claude AI Workflows</span>
-                            <span class="metric-pill blue">15+ Feature UX Roadmap</span>
-                            <span class="metric-pill">Competitive Benchmarking</span>
-                        </div>
-                        <ul>
-                            <li>Built an AI-assisted PRD and user-story template in Claude, cutting draft time by 40%</li>
-                            <li>Built a 15+ item UX roadmap for the CPO by synthesizing 150+ customer reviews and 4 SaaS competitors</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- MOTYV8 -->
-                <div class="timeline-item">
-                    <div class="timeline-date">Apr 2025 - Aug 2025</div>
-                    <div class="timeline-content">
-                        <h3>Product Manager Intern</h3>
-                        <h4>MOTYV8 (Provo, UT)</h4>
-                        <p class="company-desc">Habit-building app for student athletes</p>
-                        <div class="timeline-metrics">
-                            <span class="metric-pill">160+ Student Athletes</span>
-                            <span class="metric-pill">-60% Clicks to Core</span>
-                            <span class="metric-pill blue">+10% Task Completion</span>
-                            <span class="metric-pill purple">Figma UX Redesign</span>
-                        </div>
-                        <ul>
-                            <li>Launched a journal feature adopted across 6 programs (160+ athletes) by running discovery with coaches and athletes, where simplicity and accountability came up as top themes</li>
-                            <li>Cut clicks to core content 60% and lifted task completion 10% by redesigning user flows in Figma</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Councyl Capital -->
-                <div class="timeline-item">
-                    <div class="timeline-date">Jan 2025 - Apr 2025</div>
-                    <div class="timeline-content">
-                        <h3>Business Analyst Intern</h3>
-                        <h4>Councyl Capital (Provo, UT)</h4>
-                        <p class="company-desc">Private equity firm investing across stages and asset classes, providing differentiated deal flow and active strategic support</p>
-                        <div class="timeline-metrics">
-                            <span class="metric-pill blue">Wells Fargo Client</span>
-                            <span class="metric-pill">Private Equity (PE)</span>
-                            <span class="metric-pill purple">Real-Time Fleet Dashboards</span>
-                        </div>
-                        <ul>
-                            <li>Built real-time performance dashboards for a Wells Fargo client by designing a new KPI framework for a trucking investment, co-presented with a cross-functional team to senior executives</li>
-                        </ul>
-                        <a href="assets/work/Councyl_Capital_Report.pdf" class="btn-card-action view-doc-link" style="margin-top:1rem;">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                            View Final Report PDF
-                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- FEATURED WORK: ASYMMETRICAL BENTO GRID -->
-        <section id="work" class="bento-section fade-in">
-            <div class="section-header">
-                <h2>Featured Work</h2>
-                <p>Selected strategy blueprints, quantitative modeling, and digital software products.</p>
+        <!-- ===================================================================
+             VIEW 3: TRACK RECORD (Experience, Roles, Metrics & Certifications)
+             =================================================================== -->
+        <section id="view-experience" class="view-pane">
+            <div class="view-breadcrumb-bar">
+                <button class="btn-breadcrumb" data-navigate="overview">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+                    Back to Overview
+                </button>
+                <span class="breadcrumb-tag">Track Record &amp; Roles</span>
             </div>
 
-            <!-- Category Filter Bar -->
-            <div class="projects-filter-bar">
-                <button class="filter-btn active" data-filter="all">All Work (10)</button>
-                <button class="filter-btn" data-filter="technical">Data &amp; Systems</button>
-                <button class="filter-btn" data-filter="strategy">Product Strategy &amp; AI</button>
-                <button class="filter-btn" data-filter="apps">Apps &amp; Design</button>
-            </div>
-
-            <div class="bento-grid">
-                <!-- 1. Flagship Bento Hero Card: Antitrust SQL Model (Span 8) -->
-                <div class="project-card bento-span-8" data-category="technical">
-                    <div class="project-image">
-                        <img src="assets/work/nba_scatter_plot.png" alt="Antitrust Route Market Concentration SQL">
-                    </div>
-                    <div class="project-info">
-                        <span class="project-tag">Flagship Quantitative Model // STRATEGY 412</span>
-                        <h3>DOJ Antitrust &amp; Route Concentration Engine</h3>
-                        <div class="project-tech-tags">
-                            <span class="tech-tag-chip">PostgreSQL</span>
-                            <span class="tech-tag-chip">Window Functions</span>
-                            <span class="tech-tag-chip">Delta HHI Index</span>
-                            <span class="tech-tag-chip">10,000+ Flight Routes</span>
-                        </div>
-                        <p>Evaluated DOJ antitrust merger scrutiny across 10,000+ domestic flight routes for the proposed JetBlue/Spirit merger. Computed carrier market shares and Delta HHI index changes using SQL partition window functions to isolate monopoly pricing risks.</p>
-                        <div class="project-actions-row">
-                            <a href="#systems" class="btn-card-action" onclick="switchSystemTab('sys-antitrust')">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                                Explore System Blueprint
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2. Councyl Capital Fleet Logistics KPI Model (Span 4) -->
-                <div class="project-card bento-span-4" data-category="strategy">
-                    <div class="project-image">
-                        <img src="assets/work/european_expansion_map.png" alt="Councyl Capital Logistics KPI Model">
-                    </div>
-                    <div class="project-info">
-                        <span class="project-tag">Private Equity &amp; Operations</span>
-                        <h3>Fleet Logistics KPI Framework</h3>
-                        <div class="project-tech-tags">
-                            <span class="tech-tag-chip">Wells Fargo Client</span>
-                            <span class="tech-tag-chip">KPI Framework</span>
-                            <span class="tech-tag-chip">Fleet Telematics</span>
-                        </div>
-                        <p>Engineered real-time operating dashboards and an actionable KPI performance framework for a Wells Fargo client investing in commercial trucking.</p>
-                        <div class="project-actions-row">
-                            <a href="assets/work/Councyl_Capital_Report.pdf" class="btn-card-action view-doc-link">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                                View Report PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 3. Autonomous E-Commerce Swarm (Span 6) -->
-                <div class="project-card bento-span-6" data-category="strategy">
-                    <div class="project-image">
-                        <img src="assets/work/ecom_agents_thumb.png" alt="AI E-Commerce Automation">
-                    </div>
-                    <div class="project-info">
-                        <span class="project-tag">Autonomous Systems</span>
-                        <h3>7-Agent Autonomous Commerce Swarm</h3>
-                        <div class="project-tech-tags">
-                            <span class="tech-tag-chip">7 Distributed Agents</span>
-                            <span class="tech-tag-chip">Printify API</span>
-                            <span class="tech-tag-chip">~30k Monthly Views</span>
-                            <span class="tech-tag-chip">AsyncIO</span>
-                        </div>
-                        <p>Architected and deployed an autonomous micro-agent pipeline combining keyword discovery, copy generation, on-demand catalog creation (Printify API), and automated social distribution. Grew Pinterest account from 0 to ~30K monthly impressions in 2.5 months.</p>
-                        <div class="project-actions-row">
-                            <a href="#systems" class="btn-card-action" onclick="switchSystemTab('sys-agents')">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                                View Architecture
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 4. Sprouts Census & Geospatial Pipeline (Span 6) -->
-                <div class="project-card bento-span-6" data-category="technical">
-                    <div class="project-image">
-                        <img src="assets/work/sprouts_logo_v3.png" alt="Sprouts Competitive Intel & Census Pipeline">
-                    </div>
-                    <div class="project-info">
-                        <span class="project-tag">Geospatial Analytics</span>
-                        <h3>Sprouts Census &amp; Location Pipeline</h3>
-                        <div class="project-tech-tags">
-                            <span class="tech-tag-chip">Python Scraper</span>
-                            <span class="tech-tag-chip">US Census API</span>
-                            <span class="tech-tag-chip">Geodesic Radius</span>
-                            <span class="tech-tag-chip">Tableau BI</span>
-                        </div>
-                        <p>Web scraping pipeline integrated with US Census Bureau demographic data (ACS 5-Year) and spatial radius analysis to pinpoint high-yield expansion zip codes for organic retail.</p>
-                        <div class="project-actions-row">
-                            <a href="assets/work/Sprouts_Analysis.pdf" target="_blank" class="project-link btn-card-action">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                                View Report PDF
-                            </a>
-                            <a href="#systems" class="btn-card-action" onclick="switchSystemTab('sys-census')">
-                                Blueprint
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 5. Airbnb Demand & Price Elasticity (Span 4) -->
-                <div class="project-card bento-span-4" data-category="technical">
-                    <div class="project-image">
-                        <img src="assets/work/airbnb_logo_v3.png" alt="Airbnb Operational Strategy & Econometrics">
-                    </div>
-                    <div class="project-info">
-                        <span class="project-tag">Econometrics in R</span>
-                        <h3>Airbnb Demand &amp; Elasticity</h3>
-                        <div class="project-tech-tags">
-                            <span class="tech-tag-chip">R Econometrics</span>
-                            <span class="tech-tag-chip">Log-Log Model</span>
-                            <span class="tech-tag-chip">OPE = -1.05</span>
-                        </div>
-                        <p>Multivariate econometric regressions across 133MB of Airbnb market data. Quantified Own-Price Elasticity of Demand and modeled revenue-maximizing pricing curves.</p>
-                        <div class="project-actions-row">
-                            <a href="assets/work/Airbnb_Case_Presentation.pdf" target="_blank" class="project-link btn-card-action">
-                                View PDF
-                            </a>
-                            <a href="#systems" class="btn-card-action" onclick="switchSystemTab('sys-econometrics')">
-                                Model
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 6. AI Implementation Strategy (Span 4) -->
-                <div class="project-card bento-span-4" data-category="strategy">
-                    <div class="project-image">
-                        <img src="assets/work/ai_strategy_v3.png" alt="AI Implementation Strategy">
-                    </div>
-                    <div class="project-info">
-                        <span class="project-tag">AI Workflows</span>
-                        <h3>AI Implementation Strategy</h3>
-                        <div class="project-tech-tags">
-                            <span class="tech-tag-chip">Prompt Engineering</span>
-                            <span class="tech-tag-chip">SaaS Workflows</span>
-                            <span class="tech-tag-chip">PRD Automation</span>
-                        </div>
-                        <p>Company-wide framework for integrating generative AI into product workflows at Zark Parking Solutions, cutting PRD writing time by 40%.</p>
-                        <div class="project-actions-row">
-                            <a href="assets/work/AI_Training_Guide.pdf" target="_blank" class="project-link btn-card-action">
-                                View Guide PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 7. NBA European Expansion (Span 4) -->
-                <div class="project-card bento-span-4" data-category="strategy">
-                    <div class="project-image">
-                        <img src="assets/work/nba_logo_v3.png" alt="NBA International Expansion">
-                    </div>
-                    <div class="project-info">
-                        <span class="project-tag">Market Strategy &amp; Tableau</span>
-                        <h3>NBA International Expansion</h3>
-                        <div class="project-tech-tags">
-                            <span class="tech-tag-chip">Tableau BI</span>
-                            <span class="tech-tag-chip">European Entry</span>
-                            <span class="tech-tag-chip">TAM Modeling</span>
-                        </div>
-                        <p>Data-grounded strategy evaluating European metropolitan market entry, flight readiness, arena economics, and localized fan engagement tiers.</p>
-                        <div class="project-actions-row">
-                            <a href="assets/work/NBA_Presentation.pdf" target="_blank" class="project-link btn-card-action">
-                                View Strategy PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 8. Samsung Product Strategy (Span 4) -->
-                <div class="project-card bento-span-4" data-category="strategy">
-                    <div class="project-image">
-                        <img src="assets/work/samsung_logo_v3.png" alt="Samsung Product Strategy">
-                    </div>
-                    <div class="project-info">
-                        <span class="project-tag">Product Management</span>
-                        <h3>Samsung Product Strategy</h3>
-                        <div class="project-tech-tags">
-                            <span class="tech-tag-chip">Product Lifecycle</span>
-                            <span class="tech-tag-chip">Competitive Moats</span>
-                            <span class="tech-tag-chip">Hardware Strategy</span>
-                        </div>
-                        <p>Strategic analysis of product life cycles, hardware margins, and competitive positioning against ecosystem competitors.</p>
-                        <div class="project-actions-row">
-                            <a href="assets/work/Samsung_Case.pdf" target="_blank" class="project-link btn-card-action">
-                                View Case PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 9. The Cougar Planner (Span 4) -->
-                <div class="project-card bento-span-4" data-category="apps">
-                    <div class="project-image">
-                        <img src="assets/work/cougar_planner_mockup.png" alt="The Cougar Planner">
-                    </div>
-                    <div class="project-info">
-                        <span class="project-tag">Product Discovery &amp; Figma</span>
-                        <h3>The Cougar Planner</h3>
-                        <div class="project-tech-tags">
-                            <span class="tech-tag-chip">Figma Prototype</span>
-                            <span class="tech-tag-chip">Mendix Architecture</span>
-                            <span class="tech-tag-chip">User Interviews</span>
-                        </div>
-                        <p>End-to-end product design from user discovery interviews to interactive high-fidelity Figma prototypes and Mendix domain data model specifications.</p>
-                        <div class="project-actions-row">
-                            <a href="assets/work/The_Cougar_Planner.pdf" class="project-link btn-card-action">
-                                View Spec PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 10. DayLoom (Span 4) -->
-                <div class="project-card bento-span-4" data-category="apps">
-                    <div class="project-image">
-                        <img src="assets/work/dayloom_thumb.png" alt="DayLoom Journal App">
-                    </div>
-                    <div class="project-info">
-                        <span class="project-tag">Mobile Application</span>
-                        <h3>DayLoom</h3>
-                        <div class="project-tech-tags">
-                            <span class="tech-tag-chip">React Native</span>
-                            <span class="tech-tag-chip">Mobile UX</span>
-                            <span class="tech-tag-chip">Open Source</span>
-                        </div>
-                        <p>A curated daily journaling mobile app built with React Native, designed around mindful reflection, smooth haptic micro-interactions, and local-first data storage.</p>
-                        <div class="project-actions-row">
-                            <a href="https://github.com/Luke-Christensen1/DailyJournal" target="_blank" class="btn-card-action">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                GitHub Repo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CERTIFICATIONS & QUANTITATIVE HONORS -->
-        <section id="certifications" class="cert-section fade-in">
-            <div class="section-header">
-                <h2>Certifications &amp; Quantitative Honors</h2>
-                <p>Verified technical credentials, professional PM cohort certifications, and academic excellence.</p>
-            </div>
-
-            <div class="cert-grid">
-                <!-- Siemens Mendix Rapid Developer -->
-                <div class="cert-card">
-                    <div>
-                        <div class="cert-top">
-                            <div class="cert-icon-box">⚡</div>
-                            <div>
-                                <span class="cert-issuer">Siemens / Mendix</span>
-                                <div style="font-size: 0.78rem; color: #64748b;">Certified Rapid Developer &bull; ID #86694</div>
-                            </div>
-                        </div>
-                        <h3>Rapid Developer Certified</h3>
-                        <p>Enterprise low-code software architecture, domain entity modeling, XPath query constraints, microflows, and agile sprint delivery for scalable business applications.</p>
-                    </div>
-                    <div class="project-actions-row">
-                        <a href="assets/rapid_developer_certified.pdf" class="btn-card-action view-doc-link">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                            View Certificate PDF
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Leland PM Bootcamp -->
-                <div class="cert-card">
-                    <div>
-                        <div class="cert-top">
-                            <div class="cert-icon-box">🎯</div>
-                            <div>
-                                <span class="cert-issuer">Leland PM Bootcamp</span>
-                                <div style="font-size: 0.78rem; color: #64748b;">Issued 2025 &bull; Cohort Certified</div>
-                            </div>
-                        </div>
-                        <h3>Product Management Certified</h3>
-                        <p>Rigorous product management training led by top-tier tech PMs. Focused on customer discovery interviews, PRD authoring, user telemetry instrumentation, North Star KPI frameworks, and go-to-market strategy.</p>
-                    </div>
-                    <div class="project-actions-row">
-                        <a href="assets/leland_pm_certificate.pdf" class="btn-card-action view-doc-link">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                            View Certificate PDF
-                        </a>
-                    </div>
-                </div>
-
-                <!-- BYU Marriott Honors -->
-                <div class="cert-card">
-                    <div>
-                        <div class="cert-top">
-                            <div class="cert-icon-box">🎓</div>
-                            <div>
-                                <span class="cert-issuer">BYU Marriott School of Business</span>
-                                <div style="font-size: 0.78rem; color: #64748b;">Class of 2026 &bull; GPA 3.87</div>
-                            </div>
-                        </div>
-                        <h3>Strategic Management &amp; Dean's List</h3>
-                        <p>Selective admission into BYU Marriott's Strategic Management program. Advanced honors coursework in Competitive Strategy (STRAT 411/412), Econometrics (STRAT 402), and Business Information Systems (IS 201).</p>
-                    </div>
-                    <div class="project-actions-row">
-                        <a href="#systems" class="btn-card-action">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                            Explore System Blueprints
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PERSONAL LIFE & SKILLS SLIDESHOW -->
-        <section id="life" class="slideshow-section fade-in">
-            <div class="section-header">
-                <h2>Life, Performing Arts &amp; Exploration</h2>
-                <p>Building a high-impact life through performing arts, mountaineering, global exploration, and genuine connection.</p>
-            </div>
-            
-            <div class="slideshow-container">
-                <!-- Tetons Kiss -->
-                <div class="slide fade-animation active">
-                    <img src="./assets/P/IMG_1195.jpeg" style="object-fit: contain; background-color: #0b0f17;" alt="Tetons with wife">
-                </div>
-                <!-- Mountains Group -->
-                <div class="slide fade-animation">
-                    <img src="./assets/P/IMG_1343.JPG" alt="Family and friends in the mountains">
-                </div>
-                <!-- Performers Group -->
-                <div class="slide fade-animation">
-                    <img src="./assets/P/IMG_2092.JPG" alt="Performance group">
-                </div>
-                <!-- Dancing -->
-                <div class="slide fade-animation">
-                    <img src="./assets/P/IMG_2630.JPG" alt="Dancing on stage">
-                </div>
-                <!-- Performing Jumping -->
-                <div class="slide fade-animation">
-                    <img src="./assets/P/IMG_2634.JPG" style="object-fit: contain; background-color: #0b0f17;" alt="Performing jumping">
-                </div>
-                <!-- Iguazu Boat -->
-                <div class="slide fade-animation">
-                    <img src="./assets/P/Iguazu Day 1-071.jpeg" style="object-fit: contain; background-color: #0b0f17;" alt="Iguazu Falls boat trip">
+            <div class="section fade-in" style="padding-top: 2rem;">
+                <div class="section-header">
+                    <h2>Track Record &amp; Experience</h2>
+                    <p>Quantified product impact across scale platforms, corporate communications, SaaS startups, and private equity.</p>
                 </div>
                 
-                <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-                <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                <div class="timeline">
+                    <!-- TrailRunner International -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">Sep 2026 - Dec 2026</div>
+                        <div class="timeline-content">
+                            <h3>Analyst Intern</h3>
+                            <h4>TrailRunner International (New York, NY)</h4>
+                            <p class="company-desc">Global strategy and communications firm serving leading corporate, financial, entertainment, and sports organizations</p>
+                            <div class="timeline-metrics">
+                                <span class="metric-pill blue">50+ Executive Briefs</span>
+                                <span class="metric-pill">Fortune 500 Financial Client</span>
+                                <span class="metric-pill purple">NFL &amp; Entertainment Intel</span>
+                            </div>
+                            <ul>
+                                <li>Delivered 50+ briefs, media lists, and results reports since Sep, including daily briefs for a Fortune 500 financial client; synthesized market research for finance, music, entertainment, and NFL clients</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- FamilySearch -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">Jun 2026 - Sep 2026</div>
+                        <div class="timeline-content">
+                            <h3>Product Manager Intern</h3>
+                            <h4>FamilySearch (Lehi, UT)</h4>
+                            <p class="company-desc">The world's largest genealogy organization, with 22B+ historical records and 297M annual site visits across 100+ countries</p>
+                            <div class="timeline-metrics">
+                                <span class="metric-pill">+67% Name-Add Lift</span>
+                                <span class="metric-pill blue">Adobe Analytics</span>
+                                <span class="metric-pill">820K Monthly Visitors</span>
+                                <span class="metric-pill purple">+7% A/B Test Lift</span>
+                            </div>
+                            <ul>
+                                <li>Increased family name-adds among confirmation-email clickers from 21% to 35% (67% increase) by routing new-user emails straight into the guided tree builder instead of the main site page</li>
+                                <li>Discovered via Adobe Analytics that 59% of 820K monthly visitors added zero ancestors; authored PRDs to eliminate drop-off and incentivize tree setup</li>
+                                <li>Ran an A/B test on the guided tree builder experience, simplifying the interface to increase names added by 7%</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- BYU Music Group -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">Feb 2024 - Jun 2026</div>
+                        <div class="timeline-content">
+                            <h3>Product and Strategy Manager</h3>
+                            <h4>BYU Music Group (Provo, UT)</h4>
+                            <p class="company-desc">BYU's record label and media studio for internationally recognized globally touring artists</p>
+                            <div class="timeline-metrics">
+                                <span class="metric-pill">+25% Song Streams</span>
+                                <span class="metric-pill blue">+70% Playlist Submissions</span>
+                                <span class="metric-pill">80+ Releases Tracked</span>
+                                <span class="metric-pill purple">Executive AI Strategy</span>
+                            </div>
+                            <ul>
+                                <li>Grew total song streams 25% using Spotify for Artists data and pitching strategies, increasing playlist submissions 70%</li>
+                                <li>Built a centralized asset database and project tracker, cutting search time by 50% and boosting release throughput by 20% across 80+ launches</li>
+                                <li>Led BYUMG's AI strategy by analyzing AI-generated music's risk to royalty revenue and presenting recommendations to the executive director, which were used in discussions with label partners</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Zark Parking Solutions -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">Jan 2026 - Apr 2026</div>
+                        <div class="timeline-content">
+                            <h3>Product Manager Intern</h3>
+                            <h4>Zark Parking Solutions (Provo, UT)</h4>
+                            <p class="company-desc">SaaS platform for multifamily parking management</p>
+                            <div class="timeline-metrics">
+                                <span class="metric-pill">-40% PRD Draft Time</span>
+                                <span class="metric-pill purple">Claude AI Workflows</span>
+                                <span class="metric-pill blue">15+ Feature UX Roadmap</span>
+                                <span class="metric-pill">Competitive Benchmarking</span>
+                            </div>
+                            <ul>
+                                <li>Built an AI-assisted PRD and user-story template in Claude, cutting draft time by 40%</li>
+                                <li>Built a 15+ item UX roadmap for the CPO by synthesizing 150+ customer reviews and 4 SaaS competitors</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- MOTYV8 -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">Apr 2025 - Aug 2025</div>
+                        <div class="timeline-content">
+                            <h3>Product Manager Intern</h3>
+                            <h4>MOTYV8 (Provo, UT)</h4>
+                            <p class="company-desc">Habit-building app for student athletes</p>
+                            <div class="timeline-metrics">
+                                <span class="metric-pill">160+ Student Athletes</span>
+                                <span class="metric-pill">-60% Clicks to Core</span>
+                                <span class="metric-pill blue">+10% Task Completion</span>
+                                <span class="metric-pill purple">Figma UX Redesign</span>
+                            </div>
+                            <ul>
+                                <li>Launched a journal feature adopted across 6 programs (160+ athletes) by running discovery with coaches and athletes, where simplicity and accountability came up as top themes</li>
+                                <li>Cut clicks to core content 60% and lifted task completion 10% by redesigning user flows in Figma</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Councyl Capital -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">Jan 2025 - Apr 2025</div>
+                        <div class="timeline-content">
+                            <h3>Business Analyst Intern</h3>
+                            <h4>Councyl Capital (Provo, UT)</h4>
+                            <p class="company-desc">Private equity firm investing across stages and asset classes, providing differentiated deal flow and active strategic support</p>
+                            <div class="timeline-metrics">
+                                <span class="metric-pill blue">Wells Fargo Client</span>
+                                <span class="metric-pill">Private Equity (PE)</span>
+                                <span class="metric-pill purple">Real-Time Fleet Dashboards</span>
+                            </div>
+                            <ul>
+                                <li>Built real-time performance dashboards for a Wells Fargo client by designing a new KPI framework for a trucking investment, co-presented with a cross-functional team to senior executives</li>
+                            </ul>
+                            <a href="assets/work/Councyl_Capital_Report.pdf" class="btn-card-action view-doc-link" style="margin-top:1rem;">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                View Final Report PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications Ribbon -->
+                <div class="cert-grid" style="margin-top: 4rem;">
+                    <!-- Siemens Mendix Rapid Developer -->
+                    <div class="cert-card">
+                        <div>
+                            <div class="cert-top">
+                                <div class="cert-icon-box">⚡</div>
+                                <div>
+                                    <span class="cert-issuer">Siemens / Mendix</span>
+                                    <div style="font-size: 0.78rem; color: #64748b;">Certified Rapid Developer &bull; ID #86694</div>
+                                </div>
+                            </div>
+                            <h3>Rapid Developer Certified</h3>
+                            <p>Enterprise low-code software architecture, domain entity modeling, XPath query constraints, microflows, and agile sprint delivery for scalable business applications.</p>
+                        </div>
+                        <div class="project-actions-row">
+                            <a href="assets/rapid_developer_certified.pdf" class="btn-card-action view-doc-link">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                View Certificate PDF
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Leland PM Bootcamp -->
+                    <div class="cert-card">
+                        <div>
+                            <div class="cert-top">
+                                <div class="cert-icon-box">🎯</div>
+                                <div>
+                                    <span class="cert-issuer">Leland PM Bootcamp</span>
+                                    <div style="font-size: 0.78rem; color: #64748b;">Cohort Certified</div>
+                                </div>
+                            </div>
+                            <h3>Product Management Certified</h3>
+                            <p>Rigorous product management training led by top-tier tech PMs. Focused on customer discovery interviews, PRD authoring, user telemetry instrumentation, North Star KPI frameworks, and go-to-market strategy.</p>
+                        </div>
+                        <div class="project-actions-row">
+                            <a href="assets/leland_pm_certificate.pdf" class="btn-card-action view-doc-link">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                View Certificate PDF
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- BYU Marriott -->
+                    <div class="cert-card">
+                        <div>
+                            <div class="cert-top">
+                                <div class="cert-icon-box">🎓</div>
+                                <div>
+                                    <span class="cert-issuer">BYU Marriott School of Business</span>
+                                    <div style="font-size: 0.78rem; color: #64748b;">Class of 2026</div>
+                                </div>
+                            </div>
+                            <h3>Strategic Management Honors</h3>
+                            <p>Selective admission into BYU Marriott's Strategic Management program. Advanced honors coursework in Competitive Strategy (STRAT 411/412), Econometrics (STRAT 402), and Business Information Systems (IS 201).</p>
+                        </div>
+                        <div class="project-actions-row">
+                            <button class="btn-card-action" data-navigate="systems">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                                Explore System Blueprints
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <div class="slide-dots">
-                <span class="dot active" onclick="currentSlide(1)"></span> 
-                <span class="dot" onclick="currentSlide(2)"></span> 
-                <span class="dot" onclick="currentSlide(3)"></span> 
-                <span class="dot" onclick="currentSlide(4)"></span> 
-                <span class="dot" onclick="currentSlide(5)"></span> 
-                <span class="dot" onclick="currentSlide(6)"></span>  
+        </section>
+
+        <!-- ===================================================================
+             VIEW 4: FEATURED WORK (Curated Bento Grid of Case Studies & Apps)
+             =================================================================== -->
+        <section id="view-work" class="view-pane">
+            <div class="view-breadcrumb-bar">
+                <button class="btn-breadcrumb" data-navigate="overview">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+                    Back to Overview
+                </button>
+                <span class="breadcrumb-tag">Featured Work &amp; Products</span>
+            </div>
+
+            <div class="bento-section fade-in" style="border: none; padding-top: 2rem;">
+                <div class="section-header">
+                    <h2>Featured Work</h2>
+                    <p>Selected product strategies, data modeling, and software products.</p>
+                </div>
+
+                <!-- Category Filter Bar -->
+                <div class="projects-filter-bar">
+                    <button class="filter-btn active" data-filter="all">All Work (10)</button>
+                    <button class="filter-btn" data-filter="technical">Data &amp; Systems</button>
+                    <button class="filter-btn" data-filter="strategy">Product Strategy &amp; AI</button>
+                    <button class="filter-btn" data-filter="apps">Apps &amp; Design</button>
+                </div>
+
+                <div class="bento-grid">
+                    <!-- 1. Flagship Bento Hero Card: Antitrust SQL Model (Span 8) -->
+                    <div class="project-card bento-span-8" data-category="technical">
+                        <div class="project-image">
+                            <img src="assets/work/nba_scatter_plot.png" alt="Antitrust Route Market Concentration SQL">
+                        </div>
+                        <div class="project-info">
+                            <span class="project-tag">Flagship Quantitative Model // STRATEGY 412</span>
+                            <h3>DOJ Antitrust &amp; Route Concentration Engine</h3>
+                            <div class="project-tech-tags">
+                                <span class="tech-tag-chip">PostgreSQL</span>
+                                <span class="tech-tag-chip">Window Functions</span>
+                                <span class="tech-tag-chip">Delta HHI Index</span>
+                                <span class="tech-tag-chip">10,000+ Flight Routes</span>
+                            </div>
+                            <p>Evaluated DOJ antitrust merger scrutiny across 10,000+ domestic flight routes for the proposed JetBlue/Spirit merger. Computed carrier market shares and Delta HHI index changes using SQL partition window functions to isolate monopoly pricing risks.</p>
+                            <div class="project-actions-row">
+                                <button class="btn-card-action" data-navigate="systems" onclick="setTimeout(()=>switchSystemTab('sys-antitrust'), 100)">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                                    Explore System Blueprint
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Councyl Capital Fleet Logistics KPI Model (Span 4) -->
+                    <div class="project-card bento-span-4" data-category="strategy">
+                        <div class="project-image">
+                            <img src="assets/work/european_expansion_map.png" alt="Councyl Capital Logistics KPI Model">
+                        </div>
+                        <div class="project-info">
+                            <span class="project-tag">Private Equity &amp; Operations</span>
+                            <h3>Fleet Logistics KPI Framework</h3>
+                            <div class="project-tech-tags">
+                                <span class="tech-tag-chip">Wells Fargo Client</span>
+                                <span class="tech-tag-chip">KPI Framework</span>
+                                <span class="tech-tag-chip">Fleet Telematics</span>
+                            </div>
+                            <p>Engineered real-time operating dashboards and an actionable KPI performance framework for a Wells Fargo client investing in commercial trucking.</p>
+                            <div class="project-actions-row">
+                                <a href="assets/work/Councyl_Capital_Report.pdf" class="btn-card-action view-doc-link">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                    View Report PDF
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Autonomous E-Commerce Swarm (Span 6) -->
+                    <div class="project-card bento-span-6" data-category="strategy">
+                        <div class="project-image">
+                            <img src="assets/work/ecom_agents_thumb.png" alt="AI E-Commerce Automation">
+                        </div>
+                        <div class="project-info">
+                            <span class="project-tag">Autonomous Systems</span>
+                            <h3>7-Agent Autonomous Commerce Swarm</h3>
+                            <div class="project-tech-tags">
+                                <span class="tech-tag-chip">7 Distributed Agents</span>
+                                <span class="tech-tag-chip">Printify API</span>
+                                <span class="tech-tag-chip">~30k Monthly Views</span>
+                                <span class="tech-tag-chip">AsyncIO</span>
+                            </div>
+                            <p>Architected and deployed an autonomous micro-agent pipeline combining keyword discovery, copy generation, on-demand catalog creation (Printify API), and automated social distribution. Grew Pinterest account from 0 to ~30K monthly impressions in 2.5 months.</p>
+                            <div class="project-actions-row">
+                                <button class="btn-card-action" data-navigate="systems" onclick="setTimeout(()=>switchSystemTab('sys-agents'), 100)">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                                    View Architecture
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Sprouts Census & Geospatial Pipeline (Span 6) -->
+                    <div class="project-card bento-span-6" data-category="technical">
+                        <div class="project-image">
+                            <img src="assets/work/sprouts_logo_v3.png" alt="Sprouts Competitive Intel & Census Pipeline">
+                        </div>
+                        <div class="project-info">
+                            <span class="project-tag">Geospatial Analytics</span>
+                            <h3>Sprouts Census &amp; Location Pipeline</h3>
+                            <div class="project-tech-tags">
+                                <span class="tech-tag-chip">Python Scraper</span>
+                                <span class="tech-tag-chip">US Census API</span>
+                                <span class="tech-tag-chip">Geodesic Radius</span>
+                                <span class="tech-tag-chip">Tableau BI</span>
+                            </div>
+                            <p>Web scraping pipeline integrated with US Census Bureau demographic data (ACS 5-Year) and spatial radius analysis to pinpoint high-yield expansion zip codes for organic retail.</p>
+                            <div class="project-actions-row">
+                                <a href="assets/work/Sprouts_Analysis.pdf" target="_blank" class="project-link btn-card-action">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                    View Report PDF
+                                </a>
+                                <button class="btn-card-action" data-navigate="systems" onclick="setTimeout(()=>switchSystemTab('sys-census'), 100)">
+                                    Blueprint
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Airbnb Demand & Price Elasticity (Span 4) -->
+                    <div class="project-card bento-span-4" data-category="technical">
+                        <div class="project-image">
+                            <img src="assets/work/airbnb_logo_v3.png" alt="Airbnb Operational Strategy & Econometrics">
+                        </div>
+                        <div class="project-info">
+                            <span class="project-tag">Econometrics in R</span>
+                            <h3>Airbnb Demand &amp; Elasticity</h3>
+                            <div class="project-tech-tags">
+                                <span class="tech-tag-chip">R Econometrics</span>
+                                <span class="tech-tag-chip">Log-Log Model</span>
+                                <span class="tech-tag-chip">OPE = -1.05</span>
+                            </div>
+                            <p>Multivariate econometric regressions across 133MB of Airbnb market data. Quantified Own-Price Elasticity of Demand and modeled revenue-maximizing pricing curves.</p>
+                            <div class="project-actions-row">
+                                <a href="assets/work/Airbnb_Case_Presentation.pdf" target="_blank" class="project-link btn-card-action">
+                                    View PDF
+                                </a>
+                                <button class="btn-card-action" data-navigate="systems" onclick="setTimeout(()=>switchSystemTab('sys-econometrics'), 100)">
+                                    Model
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. AI Implementation Strategy (Span 4) -->
+                    <div class="project-card bento-span-4" data-category="strategy">
+                        <div class="project-image">
+                            <img src="assets/work/ai_strategy_v3.png" alt="AI Implementation Strategy">
+                        </div>
+                        <div class="project-info">
+                            <span class="project-tag">AI Workflows</span>
+                            <h3>AI Implementation Strategy</h3>
+                            <div class="project-tech-tags">
+                                <span class="tech-tag-chip">Prompt Engineering</span>
+                                <span class="tech-tag-chip">SaaS Workflows</span>
+                                <span class="tech-tag-chip">PRD Automation</span>
+                            </div>
+                            <p>Company-wide framework for integrating generative AI into product workflows at Zark Parking Solutions, cutting PRD writing time by 40%.</p>
+                            <div class="project-actions-row">
+                                <a href="assets/work/AI_Training_Guide.pdf" target="_blank" class="project-link btn-card-action">
+                                    View Guide PDF
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7. NBA European Expansion (Span 4) -->
+                    <div class="project-card bento-span-4" data-category="strategy">
+                        <div class="project-image">
+                            <img src="assets/work/nba_logo_v3.png" alt="NBA International Expansion">
+                        </div>
+                        <div class="project-info">
+                            <span class="project-tag">Market Strategy &amp; Tableau</span>
+                            <h3>NBA International Expansion</h3>
+                            <div class="project-tech-tags">
+                                <span class="tech-tag-chip">Tableau BI</span>
+                                <span class="tech-tag-chip">European Entry</span>
+                                <span class="tech-tag-chip">TAM Modeling</span>
+                            </div>
+                            <p>Data-grounded strategy evaluating European metropolitan market entry, flight readiness, arena economics, and localized fan engagement tiers.</p>
+                            <div class="project-actions-row">
+                                <a href="assets/work/NBA_Presentation.pdf" target="_blank" class="project-link btn-card-action">
+                                    View Strategy PDF
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 8. Samsung Product Strategy (Span 4) -->
+                    <div class="project-card bento-span-4" data-category="strategy">
+                        <div class="project-image">
+                            <img src="assets/work/samsung_logo_v3.png" alt="Samsung Product Strategy">
+                        </div>
+                        <div class="project-info">
+                            <span class="project-tag">Product Management</span>
+                            <h3>Samsung Product Strategy</h3>
+                            <div class="project-tech-tags">
+                                <span class="tech-tag-chip">Product Lifecycle</span>
+                                <span class="tech-tag-chip">Competitive Moats</span>
+                                <span class="tech-tag-chip">Hardware Strategy</span>
+                            </div>
+                            <p>Strategic analysis of product life cycles, hardware margins, and competitive positioning against ecosystem competitors.</p>
+                            <div class="project-actions-row">
+                                <a href="assets/work/Samsung_Case.pdf" target="_blank" class="project-link btn-card-action">
+                                    View Case PDF
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 9. The Cougar Planner (Span 4) -->
+                    <div class="project-card bento-span-4" data-category="apps">
+                        <div class="project-image">
+                            <img src="assets/work/cougar_planner_mockup.png" alt="The Cougar Planner">
+                        </div>
+                        <div class="project-info">
+                            <span class="project-tag">Product Discovery &amp; Figma</span>
+                            <h3>The Cougar Planner</h3>
+                            <div class="project-tech-tags">
+                                <span class="tech-tag-chip">Figma Prototype</span>
+                                <span class="tech-tag-chip">Mendix Architecture</span>
+                                <span class="tech-tag-chip">User Interviews</span>
+                            </div>
+                            <p>End-to-end product design from user discovery interviews to interactive high-fidelity Figma prototypes and Mendix domain data model specifications.</p>
+                            <div class="project-actions-row">
+                                <a href="assets/work/The_Cougar_Planner.pdf" class="project-link btn-card-action">
+                                    View Spec PDF
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 10. DayLoom (Span 4) -->
+                    <div class="project-card bento-span-4" data-category="apps">
+                        <div class="project-image">
+                            <img src="assets/work/dayloom_thumb.png" alt="DayLoom Journal App">
+                        </div>
+                        <div class="project-info">
+                            <span class="project-tag">Mobile Application</span>
+                            <h3>DayLoom</h3>
+                            <div class="project-tech-tags">
+                                <span class="tech-tag-chip">React Native</span>
+                                <span class="tech-tag-chip">Mobile UX</span>
+                                <span class="tech-tag-chip">Open Source</span>
+                            </div>
+                            <p>A curated daily journaling mobile app built with React Native, designed around mindful reflection, smooth haptic micro-interactions, and local-first data storage.</p>
+                            <div class="project-actions-row">
+                                <a href="https://github.com/Luke-Christensen1/DailyJournal" target="_blank" class="btn-card-action">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                    GitHub Repo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             VIEW 5: LIFE, PERFORMING ARTS & PASSIONS (Authentic Personality)
+             =================================================================== -->
+        <section id="view-life" class="view-pane">
+            <div class="view-breadcrumb-bar">
+                <button class="btn-breadcrumb" data-navigate="overview">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+                    Back to Overview
+                </button>
+                <span class="breadcrumb-tag">Life &amp; Exploration</span>
+            </div>
+
+            <div class="slideshow-section fade-in" style="border: none; padding-top: 2rem;">
+                <div class="section-header">
+                    <h2>Life, Performing Arts &amp; Exploration</h2>
+                    <p>Building a vibrant life through performing arts with BYU Young Ambassadors, mountaineering in the Tetons, South American expeditions, and genuine connections.</p>
+                </div>
+                
+                <div class="slideshow-container">
+                    <!-- Tetons Kiss -->
+                    <div class="slide fade-animation active">
+                        <img src="./assets/P/IMG_1195.jpeg" style="object-fit: contain; background-color: #0b0f17;" alt="Tetons with wife">
+                    </div>
+                    <!-- Mountains Group -->
+                    <div class="slide fade-animation">
+                        <img src="./assets/P/IMG_1343.JPG" alt="Family and friends in the mountains">
+                    </div>
+                    <!-- Performers Group -->
+                    <div class="slide fade-animation">
+                        <img src="./assets/P/IMG_2092.JPG" alt="Performance group">
+                    </div>
+                    <!-- Dancing -->
+                    <div class="slide fade-animation">
+                        <img src="./assets/P/IMG_2630.JPG" alt="Dancing on stage">
+                    </div>
+                    <!-- Performing Jumping -->
+                    <div class="slide fade-animation">
+                        <img src="./assets/P/IMG_2634.JPG" style="object-fit: contain; background-color: #0b0f17;" alt="Performing jumping">
+                    </div>
+                    <!-- Iguazu Boat -->
+                    <div class="slide fade-animation">
+                        <img src="./assets/P/Iguazu Day 1-071.jpeg" style="object-fit: contain; background-color: #0b0f17;" alt="Iguazu Falls boat trip">
+                    </div>
+                    
+                    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                </div>
+                
+                <div class="slide-dots">
+                    <span class="dot active" onclick="currentSlide(1)"></span> 
+                    <span class="dot" onclick="currentSlide(2)"></span> 
+                    <span class="dot" onclick="currentSlide(3)"></span> 
+                    <span class="dot" onclick="currentSlide(4)"></span> 
+                    <span class="dot" onclick="currentSlide(5)"></span> 
+                    <span class="dot" onclick="currentSlide(6)"></span>  
+                </div>
             </div>
         </section>
     </main>

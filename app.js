@@ -1,20 +1,3 @@
-// Smooth scroll for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href === '#' || !href) return;
-        
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
 // Intersection Observer for scroll animations (fade in)
 const observerOptions = {
     root: null,
@@ -31,9 +14,6 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 document.addEventListener('DOMContentLoaded', () => {
-    const fadeElements = document.querySelectorAll('.fade-in');
-    fadeElements.forEach(el => observer.observe(el));
-    
     // --- Smart Navbar Hide on Scroll Down, Show on Scroll Up ---
     let lastScrollTop = 0;
     const navbar = document.getElementById('navbar');
@@ -41,14 +21,83 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         if (scrollTop > lastScrollTop && scrollTop > 120) {
-            // Scrolling down
             navbar.classList.add('hide');
         } else {
-            // Scrolling up
             navbar.classList.remove('hide');
         }
         lastScrollTop = Math.max(0, scrollTop);
     });
+
+    // --- Guided View Controller Logic (Progressive Disclosure) ---
+    const viewPanes = document.querySelectorAll('.view-pane');
+    const navLinks = document.querySelectorAll('.nav-links a[href^="#view-"]');
+
+    function activateView(viewId, updateHash = true) {
+        if (!viewId) viewId = 'overview';
+        const cleanId = viewId.replace(/^#?view-?/, '');
+        const targetPane = document.getElementById(`view-${cleanId}`) || document.getElementById('view-overview');
+        
+        if (!targetPane) return;
+
+        // Switch active view
+        viewPanes.forEach(pane => pane.classList.remove('active'));
+        targetPane.classList.add('active');
+
+        // Update nav active indicators
+        navLinks.forEach(link => {
+            const linkHref = link.getAttribute('href');
+            if (linkHref === `#view-${cleanId}`) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+
+        // Trigger animations
+        targetPane.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        if (updateHash) {
+            history.pushState(null, '', `#view-${cleanId}`);
+        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    window.activateView = activateView;
+
+    // Handle view navigation on data-navigate elements & nav links
+    document.querySelectorAll('[data-navigate]').forEach(el => {
+        el.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetView = el.dataset.navigate;
+            activateView(targetView);
+        });
+    });
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const viewId = link.getAttribute('href').replace('#view-', '');
+            activateView(viewId);
+        });
+    });
+
+    // Handle browser back/forward buttons
+    window.addEventListener('hashchange', () => {
+        const hash = window.location.hash;
+        if (hash && hash.startsWith('#view-')) {
+            activateView(hash.replace('#view-', ''), false);
+        } else if (!hash || hash === '#overview' || hash === '#') {
+            activateView('overview', false);
+        }
+    });
+
+    // Check initial hash on load
+    const initialHash = window.location.hash;
+    if (initialHash && initialHash.startsWith('#view-')) {
+        activateView(initialHash.replace('#view-', ''), false);
+    } else {
+        activateView('overview', false);
+    }
 
     // --- Interactive System Architecture & Pipeline Workbench Tabs ---
     const workbenchTabs = document.querySelectorAll('.workbench-tab-btn');
