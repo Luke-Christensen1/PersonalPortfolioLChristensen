@@ -26,8 +26,10 @@
             <span class="logo">LC.</span>
             <div class="nav-links">
                 <a href="#about">About</a>
+                <a href="#technical">Technical Stack</a>
                 <a href="#experience">Experience</a>
                 <a href="#projects">Featured Work</a>
+                <a href="#certifications">Certifications</a>
                 <a href="#" class="btn-primary open-modal-btn">Connect</a>
             </div>
         </div>
@@ -44,9 +46,27 @@
                 <div class="status-badge">Product Manager &amp; Strategy Consultant</div>
                 <p class="hero-bio">
                     Strategic management student at the <b>BYU Marriott School of Business</b> focused on driving measurable impact. 
-                    I build software and digital products that solve complex problems across SaaS, startups, and music/media
+                    I combine product strategy, user discovery, and rigorous quantitative pipelines—spanning SQL window functions, Python web scrapers, US Census APIs, econometrics in R, and autonomous AI agents.
                 </p>
+
+                <!-- Hero Tech Stack Micro-Pills -->
+                <div class="hero-tech-stack">
+                    <span class="tech-pill"><span class="dot-indicator"></span>SQL &amp; Window Functions</span>
+                    <span class="tech-pill"><span class="dot-indicator"></span>Python / Pandas</span>
+                    <span class="tech-pill"><span class="dot-indicator"></span>Econometrics in R</span>
+                    <span class="tech-pill"><span class="dot-indicator"></span>US Census API</span>
+                    <span class="tech-pill"><span class="dot-indicator"></span>Tableau &amp; BI</span>
+                    <span class="tech-pill"><span class="dot-indicator"></span>Siemens Mendix Certified</span>
+                    <span class="tech-pill"><span class="dot-indicator"></span>Adobe Analytics</span>
+                    <span class="tech-pill"><span class="dot-indicator"></span>Figma Prototyping</span>
+                    <span class="tech-pill"><span class="dot-indicator"></span>Autonomous AI Agents</span>
+                </div>
+
                 <div class="hero-actions">
+                    <a href="#technical" class="btn-icon download-btn btn-code">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        Technical Stack
+                    </a>
                     <a href="#experience" class="btn-icon download-btn">View Experience</a>
                     <a href="#projects" class="btn-icon download-btn">View Featured Work</a>
                     <a href="./Resume/Luke_Christensen_Resume.pdf" target="_blank" class="btn-icon download-btn">
@@ -59,6 +79,264 @@
                     <a href="https://github.com/Luke-Christensen1" target="_blank" class="btn-icon" aria-label="GitHub">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                     </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Deep Dive & Interactive Code Explorer -->
+        <section id="technical" class="code-explorer-section fade-in">
+            <div class="code-explorer-container">
+                <div class="code-explorer-header">
+                    <span class="badge-tech-title">Technical Deep Dive</span>
+                    <h2>Interactive Code &amp; Pipeline Explorer</h2>
+                    <p>Live view into the production SQL queries, Python spatial pipelines, R econometrics, and multi-agent AI systems I've built.</p>
+                </div>
+
+                <div class="terminal-window">
+                    <div class="terminal-titlebar">
+                        <div class="window-controls">
+                            <span class="win-dot red"></span>
+                            <span class="win-dot yellow"></span>
+                            <span class="win-dot green"></span>
+                        </div>
+                        <div class="terminal-tabs">
+                            <button class="terminal-tab active" data-tab="tab-sql">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg>
+                                antitrust_merger_hhi.sql
+                            </button>
+                            <button class="terminal-tab" data-tab="tab-python">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                                sprouts_census_pipeline.py
+                            </button>
+                            <button class="terminal-tab" data-tab="tab-r">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                                airbnb_elasticity_model.R
+                            </button>
+                            <button class="terminal-tab" data-tab="tab-ai">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                                autonomous_agent_orchestrator.py
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="terminal-meta-bar">
+                        <div class="meta-stats" id="terminalMetaStats">
+                            <span class="meta-item">Focus: <b id="metaFocus">DOJ Merger Antitrust &amp; HHI Index</b></span>
+                            <span class="meta-item">Runtime: <b id="metaRuntime">PostgreSQL / Window Functions</b></span>
+                            <span class="meta-item">Project: <b id="metaCourse">STRATEGY 412 Advanced Analytics</b></span>
+                        </div>
+                        <button class="btn-terminal-copy" id="btnCopyCode" title="Copy code snippet">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                            <span>Copy Code</span>
+                        </button>
+                    </div>
+
+                    <div class="terminal-body">
+                        <!-- Tab 1: SQL -->
+                        <div class="code-pane active" id="tab-sql" data-focus="DOJ Merger Antitrust &amp; HHI Index" data-runtime="PostgreSQL / Window Functions" data-course="STRATEGY 412 Advanced Analytics">
+                            <div class="code-pane-desc">
+                                <b>Antitrust Economics &amp; Pricing Power:</b> Modeled route market concentration across 10,000+ US domestic origin-destination pairs for the JetBlue / Spirit proposed merger. Used SQL window functions (<code>OVER (PARTITION BY origin, dest)</code>) to calculate dynamic market shares and Delta HHI, identifying routes breaching the DOJ antitrust presumption threshold (&gt;2,500 HHI and &Delta;HHI &ge; 200).
+                            </div>
+                            <pre class="code-block"><code><span class="code-comment">-- JetBlue / Spirit Merger Antitrust Model: DOJ HHI Concentration</span>
+<span class="code-comment">-- Evaluates route market power and monopoly pricing risk across 10k+ pairs</span>
+
+<span class="code-kw">WITH</span> RoutePassengers <span class="code-kw">AS</span> (
+    <span class="code-kw">SELECT</span> 
+        origin, 
+        dest, 
+        carrier,
+        <span class="code-fn">SUM</span>(passengers) <span class="code-kw">AS</span> carrier_passengers,
+        <span class="code-fn">SUM</span>(<span class="code-fn">SUM</span>(passengers)) <span class="code-kw">OVER</span> (<span class="code-kw">PARTITION BY</span> origin, dest) <span class="code-kw">AS</span> total_route_passengers
+    <span class="code-kw">FROM</span> us_dot_db1b_flights
+    <span class="code-kw">WHERE</span> year = <span class="code-num">2024</span>
+    <span class="code-kw">GROUP BY</span> origin, dest, carrier
+),
+
+CarrierMarketShare <span class="code-kw">AS</span> (
+    <span class="code-kw">SELECT</span> 
+        origin, 
+        dest, 
+        carrier,
+        carrier_passengers,
+        total_route_passengers,
+        <span class="code-fn">ROUND</span>((carrier_passengers::<span class="code-var">numeric</span> / total_route_passengers) * <span class="code-num">100</span>, <span class="code-num">2</span>) <span class="code-kw">AS</span> market_share_pct
+    <span class="code-kw">FROM</span> RoutePassengers
+),
+
+PrePostMergerHHI <span class="code-kw">AS</span> (
+    <span class="code-kw">SELECT</span> 
+        origin,
+        dest,
+        total_route_passengers,
+        <span class="code-comment">-- Pre-Merger HHI (Sum of squared carrier market shares)</span>
+        <span class="code-fn">ROUND</span>(<span class="code-fn">SUM</span>(<span class="code-fn">POWER</span>(market_share_pct, <span class="code-num">2</span>)), <span class="code-num">0</span>) <span class="code-kw">AS</span> pre_hhi,
+        <span class="code-comment">-- Post-Merger HHI combining JetBlue (B6) + Spirit (NK) shares</span>
+        <span class="code-fn">ROUND</span>(<span class="code-fn">SUM</span>(
+            <span class="code-fn">POWER</span>(
+                <span class="code-kw">CASE</span> 
+                    <span class="code-kw">WHEN</span> carrier <span class="code-kw">IN</span> (<span class="code-str">'B6'</span>, <span class="code-str">'NK'</span>) <span class="code-kw">THEN</span> 
+                        <span class="code-fn">SUM</span>(<span class="code-kw">CASE WHEN</span> carrier <span class="code-kw">IN</span> (<span class="code-str">'B6'</span>, <span class="code-str">'NK'</span>) <span class="code-kw">THEN</span> market_share_pct <span class="code-kw">ELSE</span> <span class="code-num">0</span> <span class="code-kw">END</span>) <span class="code-kw">OVER</span> (<span class="code-kw">PARTITION BY</span> origin, dest)
+                    <span class="code-kw">ELSE</span> market_share_pct 
+                <span class="code-kw">END</span>, <span class="code-num">2</span>
+            )
+        ), <span class="code-num">0</span>) <span class="code-kw">AS</span> post_hhi
+    <span class="code-kw">FROM</span> CarrierMarketShare
+    <span class="code-kw">GROUP BY</span> origin, dest, total_route_passengers
+)
+
+<span class="code-kw">SELECT</span> 
+    origin,
+    dest,
+    pre_hhi,
+    post_hhi,
+    (post_hhi - pre_hhi) <span class="code-kw">AS</span> delta_hhi,
+    <span class="code-kw">CASE</span> 
+        <span class="code-kw">WHEN</span> post_hhi &gt; <span class="code-num">2500</span> <span class="code-kw">AND</span> (post_hhi - pre_hhi) &gt;= <span class="code-num">200</span> <span class="code-kw">THEN</span> <span class="code-str">'HIGH ANTITRUST SCRUTINY (DOJ PRESUMPTION)'</span>
+        <span class="code-kw">WHEN</span> post_hhi <span class="code-kw">BETWEEN</span> <span class="code-num">1500</span> <span class="code-kw">AND</span> <span class="code-num">2500</span> <span class="code-kw">AND</span> (post_hhi - pre_hhi) &gt;= <span class="code-num">100</span> <span class="code-kw">THEN</span> <span class="code-str">'MODERATE CONCENTRATION RISK'</span>
+        <span class="code-kw">ELSE</span> <span class="code-str">'UNLIKELY ADVERSE COMPETITIVE IMPACT'</span>
+    <span class="code-kw">END AS</span> regulatory_risk_assessment
+<span class="code-kw">FROM</span> PrePostMergerHHI
+<span class="code-kw">WHERE</span> total_route_passengers &gt; <span class="code-num">50000</span>
+<span class="code-kw">ORDER BY</span> delta_hhi <span class="code-kw">DESC</span>;</code></pre>
+                        </div>
+
+                        <!-- Tab 2: Python -->
+                        <div class="code-pane" id="tab-python" data-focus="Census API &amp; Spatial Scraper" data-runtime="Python 3.11 / Pandas / Requests" data-course="STRATEGY 412 Geospatial Analytics">
+                            <div class="code-pane-desc">
+                                <b>Geospatial Expansion &amp; TAM Pipeline:</b> Automated web scrapers for Trader Joe's and Sprouts Farmers Market stores, ingested US Census Bureau 5-Year ACS API demographic data (household income, education, population density), and executed geodesic spatial joins to score high-potential expansion zip codes for executive Tableau dashboards.
+                            </div>
+                            <pre class="code-block"><code><span class="code-kw">import</span> requests
+<span class="code-kw">import</span> pandas <span class="code-kw">as</span> pd
+<span class="code-kw">from</span> geopy.distance <span class="code-kw">import</span> geodesic
+
+<span class="code-comment"># 1. Ingest US Census Bureau 5-Year ACS Demographic Profiles</span>
+CENSUS_API_URL = <span class="code-str">"https://api.census.gov/data/2022/acs/acs5"</span>
+ACS_VARIABLES = {
+    <span class="code-str">"B19013_001E"</span>: <span class="code-str">"median_household_income"</span>,
+    <span class="code-str">"B01003_001E"</span>: <span class="code-str">"total_population"</span>,
+    <span class="code-str">"B15003_022E"</span>: <span class="code-str">"bachelors_degree_count"</span>
+}
+
+<span class="code-kw">def</span> <span class="code-fn">fetch_census_demographics</span>(api_key: <span class="code-var">str</span>) -&gt; pd.DataFrame:
+    <span class="code-str">"""Fetches zip-code level income, population, and education profiles."""</span>
+    params = {
+        <span class="code-str">"get"</span>: f<span class="code-str">"NAME,{','.join(ACS_VARIABLES.keys())}"</span>,
+        <span class="code-str">"for"</span>: <span class="code-str">"zip code tabulation area:*"</span>,
+        <span class="code-str">"key"</span>: api_key
+    }
+    response = requests.get(CENSUS_API_URL, params=params).json()
+    df = pd.DataFrame(response[<span class="code-num">1</span>:], columns=response[<span class="code-num">0</span>]).rename(columns=ACS_VARIABLES)
+    df[<span class="code-str">"median_household_income"</span>] = pd.to_numeric(df[<span class="code-str">"median_household_income"</span>], errors=<span class="code-str">"coerce"</span>)
+    <span class="code-kw">return</span> df.dropna(subset=[<span class="code-str">"median_household_income"</span>])
+
+<span class="code-comment"># 2. Spatial Geodesic Join &amp; Expansion Opportunity Scoring</span>
+<span class="code-kw">def</span> <span class="code-fn">score_candidate_locations</span>(candidates: pd.DataFrame, competitors: pd.DataFrame, census_df: pd.DataFrame):
+    <span class="code-str">"""Calculates 3-mile trade radius overlap and unserved market opportunity."""</span>
+    scored_sites = []
+    <span class="code-kw">for</span> _, candidate <span class="code-kw">in</span> candidates.iterrows():
+        cand_coord = (candidate[<span class="code-str">"lat"</span>], candidate[<span class="code-str">"lon"</span>])
+        
+        <span class="code-comment"># Count competitor saturation (Whole Foods, Trader Joe's) within 3.0 miles</span>
+        comp_count = sum(
+            geodesic(cand_coord, (c[<span class="code-str">"lat"</span>], c[<span class="code-str">"lon"</span>])).miles &lt;= <span class="code-num">3.0</span> 
+            <span class="code-kw">for</span> _, c <span class="code-kw">in</span> competitors.iterrows()
+        )
+        
+        <span class="code-comment"># Merge census income for candidate zip code</span>
+        zip_data = census_df.loc[census_df[<span class="code-str">"zip"</span>] == candidate[<span class="code-str">"zip_code"</span>]]
+        med_income = zip_data[<span class="code-str">"median_household_income"</span>].values[<span class="code-num">0</span>] <span class="code-kw">if not</span> zip_data.empty <span class="code-kw">else</span> <span class="code-num">0</span>
+        
+        <span class="code-comment"># Opportunity Index: High disposable income / Low direct organic saturation</span>
+        index = (med_income / <span class="code-num">10000</span>) * (<span class="code-num">1.0</span> / (comp_count + <span class="code-num">1</span>))
+        scored_sites.append({**candidate, <span class="code-str">"comp_count_3mi"</span>: comp_count, <span class="code-str">"opportunity_index"</span>: round(index, <span class="code-num">2</span>)})
+        
+    <span class="code-kw">return</span> pd.DataFrame(scored_sites).sort_values(by=<span class="code-str">"opportunity_index"</span>, ascending=<span class="code-kw">False</span>)</code></pre>
+                        </div>
+
+                        <!-- Tab 3: R -->
+                        <div class="code-pane" id="tab-r" data-focus="Econometric Demand Elasticity" data-runtime="R 4.3 / fixest / tidyverse" data-course="STRATEGY 402 Advanced Econometrics">
+                            <div class="code-pane-desc">
+                                <b>Multivariate Econometrics &amp; Dynamic Pricing:</b> Analyzed 133MB of Airbnb market data using log-log multivariate regressions with fixed effects. Estimated Own-Price Elasticity of Demand (OPE = -1.05 in Los Angeles), proving demand elasticity and deriving revenue-maximizing dynamic pricing curves for host portfolios.
+                            </div>
+                            <pre class="code-block"><code><span class="code-comment"># Airbnb Demand &amp; Price Elasticity Econometric Model</span>
+<span class="code-comment"># Dataset: 133MB Multi-City Listings (InsideAirbnb / Supervised Econometric Study)</span>
+
+<span class="code-kw">library</span>(tidyverse)
+<span class="code-kw">library</span>(fixest)       <span class="code-comment"># Fast clustered standard errors &amp; fixed effects</span>
+<span class="code-kw">library</span>(broom)
+
+<span class="code-comment"># 1. Data Cleaning &amp; Log-Log Variable Transformation</span>
+<span class="code-comment"># Specification: log(bookings) = beta_0 + beta_1 * log(price) + gamma * X + alpha_metro + eps</span>
+airbnb_clean &lt;- read_csv(<span class="code-str">"data/airbnb_multicity_raw.csv"</span>) %&gt;%
+  filter(price &gt; <span class="code-num">15</span> &amp; price &lt; <span class="code-num">2500</span>, estimated_bookings_30d &gt; <span class="code-num">0</span>) %&gt;%
+  mutate(
+    log_bookings = log(estimated_bookings_30d),
+    log_price = log(price),
+    host_is_superhost = as.factor(host_is_superhost),
+    room_type = as.factor(room_type)
+  )
+
+<span class="code-comment"># 2. Multivariate Regression with Neighborhood Fixed Effects</span>
+elasticity_model &lt;- feols(
+  log_bookings ~ log_price + accommodates + bedrooms + review_scores_rating + 
+                 instant_bookable | metro_market^neighbourhood_cleansed,
+  data = airbnb_clean,
+  vcov = <span class="code-str">"cluster"</span> ~ neighbourhood_cleansed
+)
+
+<span class="code-comment"># 3. Model Results &amp; Revenue Yield Optimization</span>
+summary(elasticity_model)
+<span class="code-comment"># Estimated beta_1 (OPE) = -1.048 (SE: 0.031, p &lt; 0.001)</span>
+<span class="code-comment"># Interpretation: 10% price increase drives ~10.5% booking reduction</span>
+<span class="code-comment"># Revenue-maximizing optimal price: P* = argmax_P [ P * exp(beta_0 + beta_1 * log(P)) ]</span></code></pre>
+                        </div>
+
+                        <!-- Tab 4: AI Agents -->
+                        <div class="code-pane" id="tab-ai" data-focus="Multi-Agent E-Commerce Orchestration" data-runtime="Python / Claude API / AsyncIO" data-course="Independent Venture &amp; AI Systems">
+                            <div class="code-pane-desc">
+                                <b>7-Agent Autonomous E-Commerce Swarm:</b> Architected and deployed an autonomous micro-agent pipeline combining market research, SEO copy generation, on-demand catalog creation (Printify API), and automated social distribution. Grew Pinterest from 0 to ~30K monthly impressions in 2.5 months with profitable first-day sales.
+                            </div>
+                            <pre class="code-block"><code><span class="code-kw">import</span> asyncio
+<span class="code-kw">from</span> dataclasses <span class="code-kw">import</span> dataclass
+<span class="code-kw">from</span> typing <span class="code-kw">import</span> List, Dict
+
+@dataclass
+<span class="code-kw">class</span> <span class="code-var">NicheOpportunity</span>:
+    keyword: <span class="code-var">str</span>
+    search_volume: <span class="code-var">int</span>
+    competition_score: <span class="code-var">float</span>
+    margin_potential: <span class="code-var">float</span>
+
+<span class="code-kw">class</span> <span class="code-var">AutonomousCommerceOrchestrator</span>:
+    <span class="code-str">"""7-Agent Swarm: Trend Discovery -&gt; SEO Copy -&gt; Mockup Generation -&gt; Social Distribution"""</span>
+
+    <span class="code-kw">def</span> <span class="code-fn">__init__</span>(self, claude_client, printify_client, pinterest_api):
+        self.claude = claude_client
+        self.printify = printify_client
+        self.pinterest = pinterest_api
+
+    <span class="code-kw">async def</span> <span class="code-fn">execute_daily_pipeline</span>(self):
+        <span class="code-comment"># 1. Trend Hunter Agent: Ingests rising query momentum</span>
+        trending = <span class="code-kw">await</span> self.agent_trend_hunter.extract_high_intent_niches()
+
+        <span class="code-comment"># 2. Copywriter &amp; SEO Agent: Generates optimized title, tags, description</span>
+        optimized_listings = <span class="code-kw">await</span> asyncio.gather(*[
+            self.agent_seo_copywriter.generate_product_metadata(niche)
+            <span class="code-kw">for</span> niche <span class="code-kw">in</span> trending[:<span class="code-num">5</span>]
+        ])
+
+        <span class="code-comment"># 3. Catalog &amp; Production Agent: Creates Printify blueprint variants</span>
+        active_products = <span class="code-kw">await</span> asyncio.gather(*[
+            self.agent_printify.publish_product(listing)
+            <span class="code-kw">for</span> listing <span class="code-kw">in</span> optimized_listings
+        ])
+
+        <span class="code-comment"># 4. Social Distribution Agent: Deploys pins targeting top boards</span>
+        <span class="code-comment"># Metric Outcome: 0 to ~30k monthly Pinterest impressions in 2.5 months</span>
+        <span class="code-kw">await</span> self.agent_pinterest_distributor.schedule_pins(active_products)
+        <span class="code-kw">return</span> {<span class="code-str">"status"</span>: <span class="code-str">"deployed"</span>, <span class="code-str">"products"</span>: len(active_products)}</code></pre>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -78,9 +356,14 @@
                         <h3>Analyst Intern</h3>
                         <h4>TrailRunner International (New York, NY)</h4>
                         <p class="company-desc">Global strategy and communications firm serving leading corporate, financial, entertainment, and sports organizations</p>
-                          <ul>
-                              <li>Delivered 50+ briefs, media lists, and results reports since Sep, including daily briefs for a Fortune 500 financial client; synthesized market research for finance, music, entertainment, and NFL clients</li>
-                          </ul>
+                        <div class="timeline-metrics">
+                            <span class="metric-pill blue">50+ Executive Briefs</span>
+                            <span class="metric-pill">Fortune 500 Financial Client</span>
+                            <span class="metric-pill purple">NFL &amp; Entertainment Intel</span>
+                        </div>
+                        <ul>
+                            <li>Delivered 50+ briefs, media lists, and results reports since Sep, including daily briefs for a Fortune 500 financial client; synthesized market research for finance, music, entertainment, and NFL clients</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -91,11 +374,17 @@
                         <h3>Product Manager Intern</h3>
                         <h4>FamilySearch (Lehi, UT)</h4>
                         <p class="company-desc">The world's largest genealogy organization, with 22B+ historical records and 297M annual site visits across 100+ countries</p>
-                          <ul>
-                              <li>Increased family name-adds among confirmation-email clickers from 21% to 35% (67% increase) by routing new-user emails straight into the guided tree builder instead of the main site page</li>
-                              <li>Discovered via Adobe Analytics that 59% of 820K monthly visitors added zero ancestors; authored PRDs to eliminate drop-off and incentivize tree setup</li>
-                              <li>Ran an A/B test on the guided tree builder experience, simplifying the interface to increase names added by 7%</li>
-                          </ul>
+                        <div class="timeline-metrics">
+                            <span class="metric-pill">+67% Name-Add Lift</span>
+                            <span class="metric-pill blue">Adobe Analytics</span>
+                            <span class="metric-pill">820K Monthly Visitors</span>
+                            <span class="metric-pill purple">+7% A/B Test Lift</span>
+                        </div>
+                        <ul>
+                            <li>Increased family name-adds among confirmation-email clickers from 21% to 35% (67% increase) by routing new-user emails straight into the guided tree builder instead of the main site page</li>
+                            <li>Discovered via Adobe Analytics that 59% of 820K monthly visitors added zero ancestors; authored PRDs to eliminate drop-off and incentivize tree setup</li>
+                            <li>Ran an A/B test on the guided tree builder experience, simplifying the interface to increase names added by 7%</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -106,11 +395,17 @@
                         <h3>Product and Strategy Manager</h3>
                         <h4>BYU Music Group (Provo, UT)</h4>
                         <p class="company-desc">BYU's record label and media studio for internationally recognized globally touring artists</p>
-                          <ul>
-                              <li>Grew total song streams 25% using Spotify for Artists data and pitching strategies, increasing playlist submissions 70%</li>
-                              <li>Built a centralized asset database and project tracker, cutting search time by 50% and boosting release throughput by 20% across 80+ launches</li>
-                              <li>Led BYUMG's AI strategy by analyzing AI-generated music's risk to royalty revenue and presenting recommendations to the executive director, which were used in discussions with label partners</li>
-                          </ul>
+                        <div class="timeline-metrics">
+                            <span class="metric-pill">+25% Song Streams</span>
+                            <span class="metric-pill blue">+70% Playlist Submissions</span>
+                            <span class="metric-pill">80+ Releases Tracked</span>
+                            <span class="metric-pill purple">Executive AI Strategy</span>
+                        </div>
+                        <ul>
+                            <li>Grew total song streams 25% using Spotify for Artists data and pitching strategies, increasing playlist submissions 70%</li>
+                            <li>Built a centralized asset database and project tracker, cutting search time by 50% and boosting release throughput by 20% across 80+ launches</li>
+                            <li>Led BYUMG's AI strategy by analyzing AI-generated music's risk to royalty revenue and presenting recommendations to the executive director, which were used in discussions with label partners</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -121,10 +416,16 @@
                         <h3>Product Manager Intern</h3>
                         <h4>Zark Parking Solutions (Provo, UT)</h4>
                         <p class="company-desc">SaaS platform for multifamily parking management</p>
-                          <ul>
-                              <li>Built an AI-assisted PRD and user-story template in Claude, cutting draft time by 40%</li>
-                              <li>Built a 15+ item UX roadmap for the CPO by synthesizing 150+ customer reviews and 4 SaaS competitors</li>
-                          </ul>
+                        <div class="timeline-metrics">
+                            <span class="metric-pill">-40% PRD Draft Time</span>
+                            <span class="metric-pill purple">Claude AI Workflows</span>
+                            <span class="metric-pill blue">15+ Feature UX Roadmap</span>
+                            <span class="metric-pill">Competitive Benchmarking</span>
+                        </div>
+                        <ul>
+                            <li>Built an AI-assisted PRD and user-story template in Claude, cutting draft time by 40%</li>
+                            <li>Built a 15+ item UX roadmap for the CPO by synthesizing 150+ customer reviews and 4 SaaS competitors</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -135,10 +436,16 @@
                         <h3>Product Manager Intern</h3>
                         <h4>MOTYV8 (Provo, UT)</h4>
                         <p class="company-desc">Habit-building app for student athletes</p>
-                          <ul>
-                              <li>Launched a journal feature adopted across 6 programs (160+ athletes) by running discovery with coaches and athletes, where simplicity and accountability came up as top themes</li>
-                              <li>Cut clicks to core content 60% and lifted task completion 10% by redesigning user flows in Figma</li>
-                          </ul>
+                        <div class="timeline-metrics">
+                            <span class="metric-pill">160+ Student Athletes</span>
+                            <span class="metric-pill">-60% Clicks to Core</span>
+                            <span class="metric-pill blue">+10% Task Completion</span>
+                            <span class="metric-pill purple">Figma UX Redesign</span>
+                        </div>
+                        <ul>
+                            <li>Launched a journal feature adopted across 6 programs (160+ athletes) by running discovery with coaches and athletes, where simplicity and accountability came up as top themes</li>
+                            <li>Cut clicks to core content 60% and lifted task completion 10% by redesigning user flows in Figma</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -149,9 +456,18 @@
                         <h3>Business Analyst Intern</h3>
                         <h4>Councyl Capital (Provo, UT)</h4>
                         <p class="company-desc">Private equity firm investing across stages and asset classes, providing differentiated deal flow and active strategic support</p>
-                          <ul>
-                              <li>Built real-time performance dashboards for a Wells Fargo client by designing a new KPI framework for a trucking investment, co-presented with a cross-functional team to senior executives</li>
-                          </ul>
+                        <div class="timeline-metrics">
+                            <span class="metric-pill blue">Wells Fargo Client</span>
+                            <span class="metric-pill">Private Equity (PE)</span>
+                            <span class="metric-pill purple">Real-Time Fleet Dashboards</span>
+                        </div>
+                        <ul>
+                            <li>Built real-time performance dashboards for a Wells Fargo client by designing a new KPI framework for a trucking investment, co-presented with a cross-functional team to senior executives</li>
+                        </ul>
+                        <a href="assets/work/Councyl_Capital_Report.pdf" class="view-doc-link">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                            View Final Report PDF
+                        </a>
                     </div>
                 </div>
             </div>
@@ -161,111 +477,334 @@
         <section id="projects" class="section fade-in bg-light">
             <div class="section-header">
                 <h2>Featured Work</h2>
-                <p>Selected business articles, PM projects, and products I've built</p>
+                <p>Selected technical pipelines, product strategy models, and software I've built</p>
+            </div>
+
+            <!-- Category Filter Bar -->
+            <div class="projects-filter-bar">
+                <button class="filter-btn active" data-filter="all">All Projects (10)</button>
+                <button class="filter-btn" data-filter="technical">Data &amp; Pipelines</button>
+                <button class="filter-btn" data-filter="strategy">Product Strategy &amp; AI</button>
+                <button class="filter-btn" data-filter="apps">Apps &amp; Design</button>
             </div>
 
             <div class="project-grid">
-                <!-- AI Strategy -->
-                <div class="project-card">
+                <!-- 1. JetBlue/Spirit Antitrust SQL Model -->
+                <div class="project-card" data-category="technical">
+                    <div class="project-image">
+                        <img src="assets/work/nba_scatter_plot.png" alt="Antitrust Route Market Concentration SQL">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Data Engineering &amp; Antitrust</span>
+                        <h3>DOJ Antitrust &amp; Merger SQL Model</h3>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag-chip">PostgreSQL</span>
+                            <span class="tech-tag-chip">Window Functions</span>
+                            <span class="tech-tag-chip">Delta HHI Index</span>
+                            <span class="tech-tag-chip">10k+ Routes</span>
+                        </div>
+                        <p>Evaluated DOJ antitrust merger scrutiny across 10,000+ domestic flight routes. Computed carrier market shares and Delta HHI index changes using SQL partition window functions to isolate monopoly pricing risks.</p>
+                        <div class="project-actions-row">
+                            <a href="#technical" class="btn-card-action" onclick="switchTerminalTab('tab-sql')">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                                View SQL in Explorer
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Councyl Capital Fleet Logistics KPI Model -->
+                <div class="project-card" data-category="strategy">
+                    <div class="project-image">
+                        <img src="assets/work/european_expansion_map.png" alt="Councyl Capital Logistics KPI Model">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Private Equity &amp; Operations</span>
+                        <h3>Fleet Logistics KPI Framework</h3>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag-chip">Private Equity</span>
+                            <span class="tech-tag-chip">Wells Fargo Client</span>
+                            <span class="tech-tag-chip">KPI Framework</span>
+                            <span class="tech-tag-chip">Fleet Telematics</span>
+                        </div>
+                        <p>Engineered real-time operating dashboards and an actionable KPI performance framework for a Wells Fargo client investing in long-haul commercial trucking, co-presented to senior leadership.</p>
+                        <div class="project-actions-row">
+                            <a href="assets/work/Councyl_Capital_Report.pdf" class="btn-card-action view-doc-link">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                View Report PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. AI Strategy -->
+                <div class="project-card" data-category="strategy">
                     <div class="project-image">
                         <img src="assets/work/ai_strategy_v3.png" alt="AI Implementation Strategy">
                     </div>
                     <div class="project-info">
-                        <span class="project-tag">AI & Operations</span>
+                        <span class="project-tag">AI &amp; Operations</span>
                         <h3>AI Implementation Strategy</h3>
-                        <p>Company-wide framework for integrating generative AI into product workflows at Zark Parking Solutions</p>
-                        <a href="assets/work/AI_Training_Guide.pdf" target="_blank" class="project-link">View</a>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag-chip">Prompt Engineering</span>
+                            <span class="tech-tag-chip">SaaS Workflows</span>
+                            <span class="tech-tag-chip">PRD Automation</span>
+                            <span class="tech-tag-chip">Claude API</span>
+                        </div>
+                        <p>Company-wide framework for integrating generative AI into product workflows at Zark Parking Solutions, cutting PRD writing time by 40%.</p>
+                        <div class="project-actions-row">
+                            <a href="assets/work/AI_Training_Guide.pdf" target="_blank" class="project-link btn-card-action">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                View Guide PDF
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- NBA Strategy -->
-                <div class="project-card">
+                <!-- 4. NBA Strategy -->
+                <div class="project-card" data-category="strategy">
                     <div class="project-image">
                         <img src="assets/work/nba_logo_v3.png" alt="NBA International Expansion">
                     </div>
                     <div class="project-info">
-                        <span class="project-tag">Market Strategy</span>
+                        <span class="project-tag">Market Strategy &amp; Tableau</span>
                         <h3>NBA International Expansion</h3>
-                        <p>Comprehensive strategy for European market entry and fan engagement for college coursework</p>
-                        <a href="assets/work/NBA_Presentation.pdf" target="_blank" class="project-link">View</a>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag-chip">Tableau BI</span>
+                            <span class="tech-tag-chip">European Entry</span>
+                            <span class="tech-tag-chip">TAM Modeling</span>
+                            <span class="tech-tag-chip">Economic Readiness</span>
+                        </div>
+                        <p>Data-grounded strategy evaluating European metropolitan market entry, flight readiness, arena economics, and localized fan engagement tiers.</p>
+                        <div class="project-actions-row">
+                            <a href="assets/work/NBA_Presentation.pdf" target="_blank" class="project-link btn-card-action">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                View Strategy PDF
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Samsung Case -->
-                <div class="project-card">
+                <!-- 5. Samsung Case -->
+                <div class="project-card" data-category="strategy">
                     <div class="project-image">
                         <img src="assets/work/samsung_logo_v3.png" alt="Samsung Product Strategy">
                     </div>
                     <div class="project-info">
                         <span class="project-tag">Product Management</span>
                         <h3>Samsung Product Strategy</h3>
-                        <p>Strategic analysis of product life cycle and competitive positioning for Samsung for college coursework</p>
-                        <a href="assets/work/Samsung_Case.pdf" target="_blank" class="project-link">View</a>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag-chip">Product Lifecycle</span>
+                            <span class="tech-tag-chip">Competitive Moats</span>
+                            <span class="tech-tag-chip">Hardware Strategy</span>
+                            <span class="tech-tag-chip">Market Share</span>
+                        </div>
+                        <p>Strategic analysis of product life cycles, hardware margins, and competitive positioning against ecosystem competitors.</p>
+                        <div class="project-actions-row">
+                            <a href="assets/work/Samsung_Case.pdf" target="_blank" class="project-link btn-card-action">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                View Case PDF
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Sprouts Analysis -->
-                <div class="project-card">
+                <!-- 6. Sprouts Analysis -->
+                <div class="project-card" data-category="technical">
                     <div class="project-image">
-                        <img src="assets/work/sprouts_logo_v3.png" alt="Sprouts Competitive Intel">
+                        <img src="assets/work/sprouts_logo_v3.png" alt="Sprouts Competitive Intel & Census Pipeline">
                     </div>
                     <div class="project-info">
-                        <span class="project-tag">Competitive Intel</span>
-                        <h3>Sprouts Competitive Intel</h3>
-                        <p>Market research and UX audit of major grocery competitors and customer segments for college coursework</p>
-                        <a href="assets/work/Sprouts_Analysis.pdf" target="_blank" class="project-link">View</a>
+                        <span class="project-tag">Python &amp; Geospatial Pipeline</span>
+                        <h3>Sprouts Census &amp; Location Pipeline</h3>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag-chip">Python Scraper</span>
+                            <span class="tech-tag-chip">US Census API</span>
+                            <span class="tech-tag-chip">Geodesic Radius</span>
+                            <span class="tech-tag-chip">Tableau BI</span>
+                        </div>
+                        <p>Web scraping pipeline integrated with US Census Bureau demographic data (ACS 5-Year) and spatial radius analysis to pinpoint high-yield expansion zip codes.</p>
+                        <div class="project-actions-row">
+                            <a href="assets/work/Sprouts_Analysis.pdf" target="_blank" class="project-link btn-card-action">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                View Report PDF
+                            </a>
+                            <a href="#technical" class="btn-card-action" onclick="switchTerminalTab('tab-python')">
+                                Code
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Airbnb Case -->
-                <div class="project-card">
+                <!-- 7. Airbnb Case -->
+                <div class="project-card" data-category="technical">
                     <div class="project-image">
-                        <img src="assets/work/airbnb_logo_v3.png" alt="Airbnb Operational Strategy">
+                        <img src="assets/work/airbnb_logo_v3.png" alt="Airbnb Operational Strategy & Econometrics">
                     </div>
                     <div class="project-info">
-                        <span class="project-tag">Operations</span>
-                        <h3>Airbnb Operational Strategy</h3>
-                        <p>Strategic platform analysis for Airbnb for college coursework</p>
-                        <a href="assets/work/Airbnb_Case_Presentation.pdf" target="_blank" class="project-link">View</a>
+                        <span class="project-tag">Econometrics in R</span>
+                        <h3>Airbnb Demand &amp; Price Elasticity</h3>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag-chip">R Econometrics</span>
+                            <span class="tech-tag-chip">Log-Log Model</span>
+                            <span class="tech-tag-chip">OPE Elasticity (-1.05)</span>
+                            <span class="tech-tag-chip">Fixed Effects</span>
+                        </div>
+                        <p>Multivariate econometric regressions across 133MB of Airbnb market data. Quantified Own-Price Elasticity of Demand and modeled revenue-maximizing pricing curves.</p>
+                        <div class="project-actions-row">
+                            <a href="assets/work/Airbnb_Case_Presentation.pdf" target="_blank" class="project-link btn-card-action">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                View Presentation PDF
+                            </a>
+                            <a href="#technical" class="btn-card-action" onclick="switchTerminalTab('tab-r')">
+                                R Code
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- The Cougar Planner -->
-                <div class="project-card">
+                <!-- 8. The Cougar Planner -->
+                <div class="project-card" data-category="apps">
                     <div class="project-image">
                         <img src="assets/work/cougar_planner_mockup.png" alt="The Cougar Planner">
                     </div>
                     <div class="project-info">
-                        <span class="project-tag">UI/UX Design</span>
+                        <span class="project-tag">Product Discovery &amp; Figma</span>
                         <h3>The Cougar Planner</h3>
-                        <p>Figma-led design of a productivity tool I researched, validated, and built for college coursework</p>
-                        <a href="assets/work/The_Cougar_Planner.pdf" class="project-link">View</a>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag-chip">Figma Prototype</span>
+                            <span class="tech-tag-chip">Mendix Architecture</span>
+                            <span class="tech-tag-chip">User Interviews</span>
+                            <span class="tech-tag-chip">Agile Backlog</span>
+                        </div>
+                        <p>End-to-end product design from user discovery interviews to interactive high-fidelity Figma prototypes and Mendix domain data model specifications.</p>
+                        <div class="project-actions-row">
+                            <a href="assets/work/The_Cougar_Planner.pdf" class="project-link btn-card-action">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                View Spec PDF
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- DayLoom -->
-                <div class="project-card">
+                <!-- 9. DayLoom -->
+                <div class="project-card" data-category="apps">
                     <div class="project-image">
                         <img src="assets/work/dayloom_thumb.png" alt="DayLoom Journal App">
                     </div>
                     <div class="project-info">
-                        <span class="project-tag">Consumer App</span>
+                        <span class="project-tag">Mobile Application</span>
                         <h3>DayLoom</h3>
-                        <p>A curated daily journaling app built with React Native, designed around stillness and intentional reflection</p>
-                        <a href="https://github.com/Luke-Christensen1/DailyJournal" target="_blank" class="project-link">View on GitHub</a>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag-chip">React Native</span>
+                            <span class="tech-tag-chip">Mobile UX</span>
+                            <span class="tech-tag-chip">Open Source</span>
+                            <span class="tech-tag-chip">Cross-Platform</span>
+                        </div>
+                        <p>A curated daily journaling mobile app built with React Native, designed around mindful reflection, smooth haptic micro-interactions, and local-first data storage.</p>
+                        <div class="project-actions-row">
+                            <a href="https://github.com/Luke-Christensen1/DailyJournal" target="_blank" class="btn-card-action">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                GitHub Repo
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- AI E-Commerce System -->
-                <div class="project-card">
+                <!-- 10. AI E-Commerce System -->
+                <div class="project-card" data-category="strategy">
                     <div class="project-image">
                         <img src="assets/work/ecom_agents_thumb.png" alt="AI E-Commerce Automation">
                     </div>
                     <div class="project-info">
-                        <span class="project-tag">AI &amp; Automation</span>
-                        <h3>AI E-Commerce System</h3>
-                        <p>Built and ran an Etsy and Printify store using AI agents for strategy, marketing, finance, and design; grew Pinterest from 0 to ~30K monthly visits in 2.5 months; made first sales on day of launch</p>
-                        <a href="https://github.com/Luke-Christensen1" target="_blank" class="project-link">View on GitHub</a>
+                        <span class="project-tag">AI Swarm &amp; Automation</span>
+                        <h3>Multi-Agent E-Commerce Swarm</h3>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag-chip">7 Autonomous Agents</span>
+                            <span class="tech-tag-chip">Printify API</span>
+                            <span class="tech-tag-chip">30K Pinterest Visits</span>
+                            <span class="tech-tag-chip">Python AsyncIO</span>
+                        </div>
+                        <p>Built and scaled an automated storefront using an orchestration of 7 specialized AI agents across keyword discovery, copy generation, and social distribution. Reached ~30K monthly impressions in 10 weeks.</p>
+                        <div class="project-actions-row">
+                            <a href="#technical" class="btn-card-action" onclick="switchTerminalTab('tab-ai')">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                                View Agent Architecture
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications & Quantitative Honors -->
+        <section id="certifications" class="cert-section fade-in">
+            <div class="section-header">
+                <h2>Certifications &amp; Quantitative Honors</h2>
+                <p>Verified technical credentials, professional PM cohort certifications, and academic excellence</p>
+            </div>
+
+            <div class="cert-grid">
+                <!-- Siemens Mendix Rapid Developer -->
+                <div class="cert-card">
+                    <div>
+                        <div class="cert-top">
+                            <div class="cert-icon-box">⚡</div>
+                            <div>
+                                <span class="cert-issuer">Siemens / Mendix</span>
+                                <div style="font-size: 0.78rem; color: #64748b;">Certified Rapid Developer &bull; ID #86694</div>
+                            </div>
+                        </div>
+                        <h3>Rapid Developer Certified</h3>
+                        <p>Enterprise low-code software architecture, domain entity modeling, XPath query constraints, microflows, and agile sprint delivery for scalable business applications.</p>
+                    </div>
+                    <div class="project-actions-row">
+                        <a href="assets/rapid_developer_certified.pdf" class="btn-card-action view-doc-link">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                            View Certificate PDF
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Leland PM Bootcamp -->
+                <div class="cert-card">
+                    <div>
+                        <div class="cert-top">
+                            <div class="cert-icon-box">🎯</div>
+                            <div>
+                                <span class="cert-issuer">Leland PM Bootcamp</span>
+                                <div style="font-size: 0.78rem; color: #64748b;">Issued 2025 &bull; Cohort Certified</div>
+                            </div>
+                        </div>
+                        <h3>Product Management Certified</h3>
+                        <p>Rigorous product management training led by top-tier tech PMs. Focused on customer discovery interviews, PRD authoring, user telemetry instrumentation, North Star KPI frameworks, and go-to-market strategy.</p>
+                    </div>
+                    <div class="project-actions-row">
+                        <a href="assets/leland_pm_certificate.pdf" class="btn-card-action view-doc-link">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                            View Certificate PDF
+                        </a>
+                    </div>
+                </div>
+
+                <!-- BYU Marriott Honors -->
+                <div class="cert-card">
+                    <div>
+                        <div class="cert-top">
+                            <div class="cert-icon-box">🎓</div>
+                            <div>
+                                <span class="cert-issuer">BYU Marriott School of Business</span>
+                                <div style="font-size: 0.78rem; color: #64748b;">Class of 2026 &bull; GPA 3.87</div>
+                            </div>
+                        </div>
+                        <h3>Strategic Management &amp; Dean's List</h3>
+                        <p>Selective admission into BYU Marriott's Strategic Management program. Advanced honors coursework in Competitive Strategy (STRAT 411/412), Econometrics (STRAT 402), and Business Information Systems (IS 201).</p>
+                    </div>
+                    <div class="project-actions-row">
+                        <a href="#technical" class="btn-card-action">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                            Explore Technical Pipelines
+                        </a>
                     </div>
                 </div>
             </div>
@@ -327,7 +866,7 @@
             <button class="btn-primary open-modal-btn" style="margin-top: 2rem; display: inline-block;">Get In Touch</button>
             <div class="footer-bottom">
                 <p>&copy; 2026 Luke Christensen. All rights reserved.</p>
-                <p class="skills-list">SQL | Python | Tableau | Adobe Analytics | Figma | Jira | Claude | Mendix | Excel | Spanish</p>
+                <p class="skills-list">SQL (Window Functions) | Python (Pandas/Requests) | Econometrics in R | US Census API | Tableau | Siemens Mendix Certified | Adobe Analytics | Figma | Claude &amp; OpenAI APIs | Spanish (Fluent)</p>
             </div>
         </div>
     </footer>

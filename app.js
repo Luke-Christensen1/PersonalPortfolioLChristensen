@@ -191,4 +191,87 @@ document.addEventListener('DOMContentLoaded', () => {
     viewerModal.addEventListener('click', (e) => {
         if (e.target === viewerModal) hideViewer();
     });
+
+    // --- Interactive Terminal & Code Explorer Logic ---
+    const terminalTabs = document.querySelectorAll('.terminal-tab');
+    const codePanes = document.querySelectorAll('.code-pane');
+    const metaFocus = document.getElementById('metaFocus');
+    const metaRuntime = document.getElementById('metaRuntime');
+    const metaCourse = document.getElementById('metaCourse');
+    const btnCopyCode = document.getElementById('btnCopyCode');
+
+    window.switchTerminalTab = function(tabId) {
+        terminalTabs.forEach(tab => {
+            if (tab.dataset.tab === tabId) {
+                tab.classList.add('active');
+            } else {
+                tab.classList.remove('active');
+            }
+        });
+
+        codePanes.forEach(pane => {
+            if (pane.id === tabId) {
+                pane.classList.add('active');
+                if (metaFocus && pane.dataset.focus) metaFocus.textContent = pane.dataset.focus;
+                if (metaRuntime && pane.dataset.runtime) metaRuntime.textContent = pane.dataset.runtime;
+                if (metaCourse && pane.dataset.course) metaCourse.textContent = pane.dataset.course;
+            } else {
+                pane.classList.remove('active');
+            }
+        });
+    };
+
+    terminalTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const tabId = tab.dataset.tab;
+            if (tabId) {
+                window.switchTerminalTab(tabId);
+            }
+        });
+    });
+
+    if (btnCopyCode) {
+        btnCopyCode.addEventListener('click', async () => {
+            const activePane = document.querySelector('.code-pane.active');
+            if (!activePane) return;
+            const codeEl = activePane.querySelector('.code-block code');
+            if (!codeEl) return;
+
+            try {
+                await navigator.clipboard.writeText(codeEl.innerText);
+                const originalHtml = btnCopyCode.innerHTML;
+                btnCopyCode.innerHTML = `
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#27c93f" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span style="color:#27c93f;">Copied!</span>
+                `;
+                setTimeout(() => {
+                    btnCopyCode.innerHTML = originalHtml;
+                }, 2000);
+            } catch (err) {
+                console.error('Failed to copy code: ', err);
+            }
+        });
+    }
+
+    // --- Featured Work Category Filter Logic ---
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.dataset.filter;
+            projectCards.forEach(card => {
+                const category = card.dataset.category;
+                if (filter === 'all' || category === filter) {
+                    card.style.display = 'flex';
+                    card.classList.add('visible');
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
 });
