@@ -3,313 +3,330 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luke Christensen | Product Manager</title>
+    <title>Luke Christensen | Product Manager &amp; Technical Strategist</title>
     
     <!-- SEO & Social Media (Open Graph) Tags -->
-    <meta name="description" content="Portfolio of Luke Christensen, Product Manager specializing in data-driven product development, competitive analysis, and strategic operations.">
-    <meta property="og:title" content="Luke Christensen | Product Manager">
-    <meta property="og:description" content="Portfolio of Luke Christensen, Product Manager specializing in data-driven product development, competitive analysis, and strategic operations.">
-    <meta property="og:image" content="https://ui-avatars.com/api/?name=Luke+Christensen&size=800&background=1d1d1f&color=fff&font-size=0.33">
+    <meta name="description" content="Executive portfolio of Luke Christensen, Product Manager and Technical Strategist specializing in data engineering pipelines, econometric modeling, multi-agent AI systems, and product discovery.">
+    <meta property="og:title" content="Luke Christensen | Product Manager &amp; Technical Strategist">
+    <meta property="og:description" content="Portfolio of Luke Christensen — BYU Marriott Strategic Management (3.87 GPA). Data-driven product development, SQL pipelines, AI systems, and quantitative strategy.">
+    <meta property="og:image" content="https://ui-avatars.com/api/?name=Luke+Christensen&size=800&background=0e131f&color=6366f1&font-size=0.33">
     <meta property="og:type" content="website">
 
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%231d1d1f%22/><text x=%2250%22 y=%2250%22 font-family=%22Inter, sans-serif%22 font-size=%2240%22 font-weight=%22bold%22 fill=%22white%22 text-anchor=%22middle%22 dominant-baseline=%22central%22>LC</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23080b11%22/><text x=%2250%22 y=%2250%22 font-family=%22Inter, sans-serif%22 font-size=%2240%22 font-weight=%22bold%22 fill=%22%236366f1%22 text-anchor=%22middle%22 dominant-baseline=%22central%22>LC</text></svg>">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Floating Frosted Island Navbar -->
     <nav class="navbar" id="navbar">
         <div class="nav-content">
-            <span class="logo">LC.</span>
+            <a href="#about" class="logo">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                Luke Christensen
+            </a>
             <div class="nav-links">
                 <a href="#about">About</a>
-                <a href="#technical">Technical Stack</a>
-                <a href="#experience">Experience</a>
-                <a href="#projects">Featured Work</a>
+                <a href="#systems">Systems &amp; Architecture</a>
+                <a href="#experience">Track Record</a>
+                <a href="#work">Featured Work</a>
                 <a href="#certifications">Certifications</a>
-                <a href="#" class="btn-primary open-modal-btn">Connect</a>
+                <a href="#life">Life</a>
+                <a href="#" class="btn-primary open-modal-btn">
+                    <span class="pulse-dot" style="width:6px;height:6px;"></span>
+                    Connect
+                </a>
             </div>
         </div>
     </nav>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Hero Section: Executive Technical PM -->
         <section id="about" class="hero fade-in">
             <div class="hero-content">
                 <div class="headshot-container">
-                    <img src="./BYU-Marriott-Student-Headshots-Cam2-(192 of 377).jpg" alt="Luke Christensen Headshot" class="headshot" onerror="this.outerHTML='<svg class=\'headshot\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\' currentColor\' stroke-width=\'1\'><circle cx=\'12\' cy=\'8\' r=\'5\'/><path d=\'M20 21a8 8 0 1 0-16 0\'/></svg>'">
+                    <img src="./BYU-Marriott-Student-Headshots-Cam2-(192 of 377).jpg" alt="Luke Christensen Headshot" class="headshot" onerror="this.outerHTML='<svg class=\'headshot\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\'><circle cx=\'12\' cy=\'8\' r=\'5\'/><path d=\'M20 21a8 8 0 1 0-16 0\'/></svg>'">
                 </div>
+                
+                <!-- Live Status Pulse Badge -->
+                <div>
+                    <div class="hero-status-pill">
+                        <span class="pulse-dot"></span>
+                        Available for Product &amp; Strategy Roles
+                    </div>
+                </div>
+
                 <h1 class="hero-title">Luke Christensen</h1>
-                <div class="status-badge">Product Manager &amp; Strategy Consultant</div>
+                <div class="hero-subtitle">Product Manager &amp; Technical Strategist</div>
+                
                 <p class="hero-bio">
-                    Strategic management student at the <b>BYU Marriott School of Business</b> focused on driving measurable impact. 
-                    I combine product strategy, user discovery, and rigorous quantitative pipelines—spanning SQL window functions, Python web scrapers, US Census APIs, econometrics in R, and autonomous AI agents.
+                    Strategic Management at the <b>BYU Marriott School of Business (3.87 GPA)</b>. I bridge enterprise product strategy, user discovery, and quantitative engineering—from optimizing conversion on a <b>22B-record platform</b> and orchestrating <b>multi-agent AI systems</b> to modeling <b>DOJ antitrust merger concentration</b> across 10,000+ flight routes.
                 </p>
 
-                <!-- Hero Tech Stack Micro-Pills -->
-                <div class="hero-tech-stack">
-                    <span class="tech-pill"><span class="dot-indicator"></span>SQL &amp; Window Functions</span>
-                    <span class="tech-pill"><span class="dot-indicator"></span>Python / Pandas</span>
-                    <span class="tech-pill"><span class="dot-indicator"></span>Econometrics in R</span>
-                    <span class="tech-pill"><span class="dot-indicator"></span>US Census API</span>
-                    <span class="tech-pill"><span class="dot-indicator"></span>Tableau &amp; BI</span>
-                    <span class="tech-pill"><span class="dot-indicator"></span>Siemens Mendix Certified</span>
-                    <span class="tech-pill"><span class="dot-indicator"></span>Adobe Analytics</span>
-                    <span class="tech-pill"><span class="dot-indicator"></span>Figma Prototyping</span>
-                    <span class="tech-pill"><span class="dot-indicator"></span>Autonomous AI Agents</span>
+                <!-- Executive Telemetry Strip -->
+                <div class="hero-stat-strip">
+                    <div class="stat-item">
+                        <span class="stat-value">3.87</span>
+                        <span class="stat-label">BYU Marriott GPA</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">22B+</span>
+                        <span class="stat-label">Records / 820k Users</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">10,000+</span>
+                        <span class="stat-label">Routes Modeled (SQL)</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">Certified</span>
+                        <span class="stat-label">Mendix Rapid / Leland PM</span>
+                    </div>
                 </div>
 
+                <!-- Tech Stack Micro-Pills -->
+                <div class="hero-tech-stack">
+                    <span class="tech-pill"><span class="dot-indicator"></span>SQL (Window Partitioning)</span>
+                    <span class="tech-pill"><span class="dot-indicator"></span>Python / Pandas Data Pipelines</span>
+                    <span class="tech-pill"><span class="dot-indicator"></span>Econometric Demand Modeling in R</span>
+                    <span class="tech-pill"><span class="dot-indicator"></span>US Census Bureau API</span>
+                    <span class="tech-pill"><span class="dot-indicator"></span>Tableau Business Intelligence</span>
+                    <span class="tech-pill"><span class="dot-indicator"></span>Siemens Mendix Certified</span>
+                    <span class="tech-pill"><span class="dot-indicator"></span>Adobe Analytics Telemetry</span>
+                    <span class="tech-pill"><span class="dot-indicator"></span>Figma Product Prototyping</span>
+                    <span class="tech-pill"><span class="dot-indicator"></span>Autonomous Multi-Agent AI</span>
+                </div>
+
+                <!-- Action CTAs -->
                 <div class="hero-actions">
-                    <a href="#technical" class="btn-icon download-btn btn-code">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                        Technical Stack
+                    <a href="#systems" class="btn-hero-primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        Explore System Blueprints
                     </a>
-                    <a href="#experience" class="btn-icon download-btn">View Experience</a>
-                    <a href="#projects" class="btn-icon download-btn">View Featured Work</a>
-                    <a href="./Resume/Luke_Christensen_Resume.pdf" target="_blank" class="btn-icon download-btn">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-                        Resume
+                    <a href="#experience" class="btn-hero-secondary">
+                        View Track Record
                     </a>
-                    <a href="https://www.linkedin.com/in/christensen-luke-r" target="_blank" class="btn-icon" aria-label="LinkedIn">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                    <a href="./Resume/Luke_Christensen_Resume.pdf" target="_blank" class="btn-hero-secondary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                        Resume PDF
                     </a>
-                    <a href="https://github.com/Luke-Christensen1" target="_blank" class="btn-icon" aria-label="GitHub">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    <a href="https://www.linkedin.com/in/christensen-luke-r" target="_blank" class="btn-hero-icon" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="https://github.com/Luke-Christensen1" target="_blank" class="btn-hero-icon" aria-label="GitHub">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Technical Deep Dive & Interactive Code Explorer -->
-        <section id="technical" class="code-explorer-section fade-in">
-            <div class="code-explorer-container">
-                <div class="code-explorer-header">
-                    <span class="badge-tech-title">Technical Deep Dive</span>
-                    <h2>Interactive Code &amp; Pipeline Explorer</h2>
-                    <p>Live view into the production SQL queries, Python spatial pipelines, R econometrics, and multi-agent AI systems I've built.</p>
+        <!-- INTERACTIVE SYSTEM ARCHITECTURE & PIPELINE WORKBENCH -->
+        <section id="systems" class="workbench-section fade-in">
+            <div class="workbench-container">
+                <div class="section-header-dark">
+                    <span class="section-tag-badge">System Blueprints</span>
+                    <h2>Technical Architecture &amp; Data Engines</h2>
+                    <p>Instead of superficial scripts, explore the real system blueprints, mathematical modeling, and engineering trade-offs behind my technical work.</p>
                 </div>
 
-                <div class="terminal-window">
-                    <div class="terminal-titlebar">
-                        <div class="window-controls">
-                            <span class="win-dot red"></span>
-                            <span class="win-dot yellow"></span>
-                            <span class="win-dot green"></span>
-                        </div>
-                        <div class="terminal-tabs">
-                            <button class="terminal-tab active" data-tab="tab-sql">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg>
-                                antitrust_merger_hhi.sql
-                            </button>
-                            <button class="terminal-tab" data-tab="tab-python">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                                sprouts_census_pipeline.py
-                            </button>
-                            <button class="terminal-tab" data-tab="tab-r">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-                                airbnb_elasticity_model.R
-                            </button>
-                            <button class="terminal-tab" data-tab="tab-ai">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                                autonomous_agent_orchestrator.py
-                            </button>
-                        </div>
-                    </div>
+                <!-- Navigation Tabs -->
+                <div class="workbench-tabs">
+                    <button class="workbench-tab-btn active" data-tab="sys-antitrust">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg>
+                        DOJ Antitrust &amp; Route Concentration
+                    </button>
+                    <button class="workbench-tab-btn" data-tab="sys-agents">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        Autonomous Multi-Agent Swarm
+                    </button>
+                    <button class="workbench-tab-btn" data-tab="sys-econometrics">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                        Econometric Demand &amp; Dynamic Pricing
+                    </button>
+                    <button class="workbench-tab-btn" data-tab="sys-census">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+                        Retail Geospatial &amp; Census Pipeline
+                    </button>
+                </div>
 
-                    <div class="terminal-meta-bar">
-                        <div class="meta-stats" id="terminalMetaStats">
-                            <span class="meta-item">Focus: <b id="metaFocus">DOJ Merger Antitrust &amp; HHI Index</b></span>
-                            <span class="meta-item">Runtime: <b id="metaRuntime">PostgreSQL / Window Functions</b></span>
-                            <span class="meta-item">Project: <b id="metaCourse">STRATEGY 412 Advanced Analytics</b></span>
-                        </div>
-                        <button class="btn-terminal-copy" id="btnCopyCode" title="Copy code snippet">
-                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                            <span>Copy Code</span>
-                        </button>
-                    </div>
-
-                    <div class="terminal-body">
-                        <!-- Tab 1: SQL -->
-                        <div class="code-pane active" id="tab-sql" data-focus="DOJ Merger Antitrust &amp; HHI Index" data-runtime="PostgreSQL / Window Functions" data-course="STRATEGY 412 Advanced Analytics">
-                            <div class="code-pane-desc">
-                                <b>Antitrust Economics &amp; Pricing Power:</b> Modeled route market concentration across 10,000+ US domestic origin-destination pairs for the JetBlue / Spirit proposed merger. Used SQL window functions (<code>OVER (PARTITION BY origin, dest)</code>) to calculate dynamic market shares and Delta HHI, identifying routes breaching the DOJ antitrust presumption threshold (&gt;2,500 HHI and &Delta;HHI &ge; 200).
+                <!-- System Canvas Window -->
+                <div class="system-canvas">
+                    
+                    <!-- TAB 1: DOJ ANTITRUST & ROUTE CONCENTRATION -->
+                    <div class="system-pane active" id="sys-antitrust">
+                        <div class="canvas-header">
+                            <div class="canvas-title-group">
+                                <h3>DOJ Antitrust Route Concentration Engine</h3>
+                                <div style="font-size: 0.85rem; color: #94a3b8;">Antitrust Evaluation of JetBlue / Spirit Merger &bull; STRATEGY 412</div>
                             </div>
-                            <pre class="code-block"><code><span class="code-comment">-- JetBlue / Spirit Merger Antitrust Model: DOJ HHI Concentration</span>
-<span class="code-comment">-- Evaluates route market power and monopoly pricing risk across 10k+ pairs</span>
+                            <div class="canvas-tech-badge-row">
+                                <span class="tech-tag-chip">PostgreSQL</span>
+                                <span class="tech-tag-chip">Window Functions</span>
+                                <span class="tech-tag-chip">DOJ 2023 Guidelines</span>
+                                <span class="tech-tag-chip">10,000+ Flight Routes</span>
+                            </div>
+                        </div>
 
+                        <!-- Visual 3-Node Architecture Flow -->
+                        <div class="architecture-flow" style="margin-top: 1.8rem;">
+                            <div class="flow-node">
+                                <div class="flow-node-header">
+                                    <span class="node-step-badge blue">Node 01 // Ingestion</span>
+                                </div>
+                                <h4>US DOT DB1B Flight Data</h4>
+                                <p>Ingested 10,000+ Origin-Destination (O&amp;D) route pairs from Bureau of Transportation Statistics, normalizing ticketing volumes and airline carriers.</p>
+                            </div>
+                            <div class="flow-node">
+                                <div class="flow-node-header">
+                                    <span class="node-step-badge purple">Node 02 // Analytical Engine</span>
+                                </div>
+                                <h4>SQL Window Partitioning</h4>
+                                <p>Computed carrier route market shares dynamically via <code>OVER (PARTITION BY origin, dest)</code> to evaluate Route Herfindahl-Hirschman Indices ($HHI$).</p>
+                            </div>
+                            <div class="flow-node">
+                                <div class="flow-node-header">
+                                    <span class="node-step-badge green">Node 03 // Decision Engine</span>
+                                </div>
+                                <h4>Litigation Risk Flags</h4>
+                                <p>Identified high-concentration routes where Post-Merger $HHI &gt; 2500$ and $\Delta HHI \ge 200$, matching the exact DOJ antitrust presumption threshold for route monopoly scrutiny.</p>
+                            </div>
+                        </div>
+
+                        <!-- System Details Grid -->
+                        <div class="system-details-grid">
+                            <div class="detail-card">
+                                <h5>📐 Quantitative Economic Model</h5>
+                                <ul>
+                                    <li><b>Herfindahl-Hirschman Index:</b> $HHI = \sum_{i=1}^N s_i^2$, where $s_i$ is carrier market share percentage on route $(origin, dest)$.</li>
+                                    <li><b>Antitrust Presumption:</b> Post-merger market concentration change: $\Delta HHI = 2 s_{JetBlue} s_{Spirit}$.</li>
+                                    <li><b>Regulatory Scrutiny Threshold:</b> Flagged routes with Post-HHI &gt; 2,500 and $\Delta HHI \ge 200$ as highly anticompetitive.</li>
+                                </ul>
+                            </div>
+                            <div class="detail-card">
+                                <h5>🎯 Strategic PM &amp; Executive Takeaway</h5>
+                                <ul>
+                                    <li>Demonstrated why nationwide airline market share figures are deceptive; antitrust scrutiny lives and dies on route-level city-pair market power.</li>
+                                    <li>Provided senior leadership with exact divestiture recommendations (slot remedy airports) required to overcome DOJ regulatory challenges.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Collapsible Code Drawer -->
+                        <details class="code-drawer">
+                            <summary>
+                                <span>▶ Inspect Underlying SQL Query Pipeline (PostgreSQL)</span>
+                                <span style="font-size:0.75rem; color:#6366f1;">Click to expand</span>
+                            </summary>
+                            <div class="code-drawer-content">
+                                <pre class="code-block-dark"><code><span class="code-comment">-- JetBlue / Spirit Merger Antitrust Model: DOJ HHI Concentration</span>
 <span class="code-kw">WITH</span> RoutePassengers <span class="code-kw">AS</span> (
     <span class="code-kw">SELECT</span> 
-        origin, 
-        dest, 
-        carrier,
+        origin, dest, carrier,
         <span class="code-fn">SUM</span>(passengers) <span class="code-kw">AS</span> carrier_passengers,
         <span class="code-fn">SUM</span>(<span class="code-fn">SUM</span>(passengers)) <span class="code-kw">OVER</span> (<span class="code-kw">PARTITION BY</span> origin, dest) <span class="code-kw">AS</span> total_route_passengers
     <span class="code-kw">FROM</span> us_dot_db1b_flights
-    <span class="code-kw">WHERE</span> year = <span class="code-num">2024</span>
     <span class="code-kw">GROUP BY</span> origin, dest, carrier
 ),
-
 CarrierMarketShare <span class="code-kw">AS</span> (
     <span class="code-kw">SELECT</span> 
-        origin, 
-        dest, 
-        carrier,
-        carrier_passengers,
-        total_route_passengers,
+        origin, dest, carrier,
         <span class="code-fn">ROUND</span>((carrier_passengers::<span class="code-var">numeric</span> / total_route_passengers) * <span class="code-num">100</span>, <span class="code-num">2</span>) <span class="code-kw">AS</span> market_share_pct
     <span class="code-kw">FROM</span> RoutePassengers
 ),
-
 PrePostMergerHHI <span class="code-kw">AS</span> (
     <span class="code-kw">SELECT</span> 
-        origin,
-        dest,
-        total_route_passengers,
-        <span class="code-comment">-- Pre-Merger HHI (Sum of squared carrier market shares)</span>
+        origin, dest,
         <span class="code-fn">ROUND</span>(<span class="code-fn">SUM</span>(<span class="code-fn">POWER</span>(market_share_pct, <span class="code-num">2</span>)), <span class="code-num">0</span>) <span class="code-kw">AS</span> pre_hhi,
-        <span class="code-comment">-- Post-Merger HHI combining JetBlue (B6) + Spirit (NK) shares</span>
-        <span class="code-fn">ROUND</span>(<span class="code-fn">SUM</span>(
-            <span class="code-fn">POWER</span>(
-                <span class="code-kw">CASE</span> 
-                    <span class="code-kw">WHEN</span> carrier <span class="code-kw">IN</span> (<span class="code-str">'B6'</span>, <span class="code-str">'NK'</span>) <span class="code-kw">THEN</span> 
-                        <span class="code-fn">SUM</span>(<span class="code-kw">CASE WHEN</span> carrier <span class="code-kw">IN</span> (<span class="code-str">'B6'</span>, <span class="code-str">'NK'</span>) <span class="code-kw">THEN</span> market_share_pct <span class="code-kw">ELSE</span> <span class="code-num">0</span> <span class="code-kw">END</span>) <span class="code-kw">OVER</span> (<span class="code-kw">PARTITION BY</span> origin, dest)
-                    <span class="code-kw">ELSE</span> market_share_pct 
-                <span class="code-kw">END</span>, <span class="code-num">2</span>
-            )
-        ), <span class="code-num">0</span>) <span class="code-kw">AS</span> post_hhi
+        <span class="code-fn">ROUND</span>(<span class="code-fn">SUM</span>(<span class="code-fn">POWER</span>(
+            <span class="code-kw">CASE</span> <span class="code-kw">WHEN</span> carrier <span class="code-kw">IN</span> (<span class="code-str">'B6'</span>, <span class="code-str">'NK'</span>) <span class="code-kw">THEN</span> 
+                <span class="code-fn">SUM</span>(<span class="code-kw">CASE WHEN</span> carrier <span class="code-kw">IN</span> (<span class="code-str">'B6'</span>, <span class="code-str">'NK'</span>) <span class="code-kw">THEN</span> market_share_pct <span class="code-kw">ELSE</span> <span class="code-num">0</span> <span class="code-kw">END</span>) <span class="code-kw">OVER</span> (<span class="code-kw">PARTITION BY</span> origin, dest)
+            <span class="code-kw">ELSE</span> market_share_pct <span class="code-kw">END</span>, <span class="code-num">2</span>)), <span class="code-num">0</span>) <span class="code-kw">AS</span> post_hhi
     <span class="code-kw">FROM</span> CarrierMarketShare
-    <span class="code-kw">GROUP BY</span> origin, dest, total_route_passengers
+    <span class="code-kw">GROUP BY</span> origin, dest
 )
-
-<span class="code-kw">SELECT</span> 
-    origin,
-    dest,
-    pre_hhi,
-    post_hhi,
-    (post_hhi - pre_hhi) <span class="code-kw">AS</span> delta_hhi,
-    <span class="code-kw">CASE</span> 
-        <span class="code-kw">WHEN</span> post_hhi &gt; <span class="code-num">2500</span> <span class="code-kw">AND</span> (post_hhi - pre_hhi) &gt;= <span class="code-num">200</span> <span class="code-kw">THEN</span> <span class="code-str">'HIGH ANTITRUST SCRUTINY (DOJ PRESUMPTION)'</span>
-        <span class="code-kw">WHEN</span> post_hhi <span class="code-kw">BETWEEN</span> <span class="code-num">1500</span> <span class="code-kw">AND</span> <span class="code-num">2500</span> <span class="code-kw">AND</span> (post_hhi - pre_hhi) &gt;= <span class="code-num">100</span> <span class="code-kw">THEN</span> <span class="code-str">'MODERATE CONCENTRATION RISK'</span>
-        <span class="code-kw">ELSE</span> <span class="code-str">'UNLIKELY ADVERSE COMPETITIVE IMPACT'</span>
-    <span class="code-kw">END AS</span> regulatory_risk_assessment
+<span class="code-kw">SELECT</span> origin, dest, pre_hhi, post_hhi, (post_hhi - pre_hhi) <span class="code-kw">AS</span> delta_hhi,
+    <span class="code-kw">CASE WHEN</span> post_hhi > <span class="code-num">2500</span> <span class="code-kw">AND</span> (post_hhi - pre_hhi) >= <span class="code-num">200</span> <span class="code-kw">THEN</span> <span class="code-str">'DOJ PRESUMPTION OF ANTICOMPETITIVE HARM'</span>
+         <span class="code-kw">ELSE</span> <span class="code-str">'UNLIKELY ADVERSE IMPACT'</span> <span class="code-kw">END AS</span> regulatory_assessment
 <span class="code-kw">FROM</span> PrePostMergerHHI
-<span class="code-kw">WHERE</span> total_route_passengers &gt; <span class="code-num">50000</span>
 <span class="code-kw">ORDER BY</span> delta_hhi <span class="code-kw">DESC</span>;</code></pre>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- TAB 2: AUTONOMOUS MULTI-AGENT SWARM -->
+                    <div class="system-pane" id="sys-agents">
+                        <div class="canvas-header">
+                            <div class="canvas-title-group">
+                                <h3>7-Agent Autonomous E-Commerce Swarm</h3>
+                                <div style="font-size: 0.85rem; color: #94a3b8;">End-to-End Autonomous Commerce &amp; Distribution Architecture</div>
+                            </div>
+                            <div class="canvas-tech-badge-row">
+                                <span class="tech-tag-chip">AsyncIO Architecture</span>
+                                <span class="tech-tag-chip">Printify API</span>
+                                <span class="tech-tag-chip">Pinterest Graph</span>
+                                <span class="tech-tag-chip">Claude Structured Output</span>
+                            </div>
                         </div>
 
-                        <!-- Tab 2: Python -->
-                        <div class="code-pane" id="tab-python" data-focus="Census API &amp; Spatial Scraper" data-runtime="Python 3.11 / Pandas / Requests" data-course="STRATEGY 412 Geospatial Analytics">
-                            <div class="code-pane-desc">
-                                <b>Geospatial Expansion &amp; TAM Pipeline:</b> Automated web scrapers for Trader Joe's and Sprouts Farmers Market stores, ingested US Census Bureau 5-Year ACS API demographic data (household income, education, population density), and executed geodesic spatial joins to score high-potential expansion zip codes for executive Tableau dashboards.
+                        <!-- Visual 3-Node Architecture Flow -->
+                        <div class="architecture-flow" style="margin-top: 1.8rem;">
+                            <div class="flow-node">
+                                <div class="flow-node-header">
+                                    <span class="node-step-badge blue">Node 01 // Trend Discovery</span>
+                                </div>
+                                <h4>Market Research Agent</h4>
+                                <p>Ingests trending search velocity across Pinterest and Google Trends APIs, ranking unserved product niches by search-volume-to-competition ratio.</p>
                             </div>
-                            <pre class="code-block"><code><span class="code-kw">import</span> requests
-<span class="code-kw">import</span> pandas <span class="code-kw">as</span> pd
-<span class="code-kw">from</span> geopy.distance <span class="code-kw">import</span> geodesic
-
-<span class="code-comment"># 1. Ingest US Census Bureau 5-Year ACS Demographic Profiles</span>
-CENSUS_API_URL = <span class="code-str">"https://api.census.gov/data/2022/acs/acs5"</span>
-ACS_VARIABLES = {
-    <span class="code-str">"B19013_001E"</span>: <span class="code-str">"median_household_income"</span>,
-    <span class="code-str">"B01003_001E"</span>: <span class="code-str">"total_population"</span>,
-    <span class="code-str">"B15003_022E"</span>: <span class="code-str">"bachelors_degree_count"</span>
-}
-
-<span class="code-kw">def</span> <span class="code-fn">fetch_census_demographics</span>(api_key: <span class="code-var">str</span>) -&gt; pd.DataFrame:
-    <span class="code-str">"""Fetches zip-code level income, population, and education profiles."""</span>
-    params = {
-        <span class="code-str">"get"</span>: f<span class="code-str">"NAME,{','.join(ACS_VARIABLES.keys())}"</span>,
-        <span class="code-str">"for"</span>: <span class="code-str">"zip code tabulation area:*"</span>,
-        <span class="code-str">"key"</span>: api_key
-    }
-    response = requests.get(CENSUS_API_URL, params=params).json()
-    df = pd.DataFrame(response[<span class="code-num">1</span>:], columns=response[<span class="code-num">0</span>]).rename(columns=ACS_VARIABLES)
-    df[<span class="code-str">"median_household_income"</span>] = pd.to_numeric(df[<span class="code-str">"median_household_income"</span>], errors=<span class="code-str">"coerce"</span>)
-    <span class="code-kw">return</span> df.dropna(subset=[<span class="code-str">"median_household_income"</span>])
-
-<span class="code-comment"># 2. Spatial Geodesic Join &amp; Expansion Opportunity Scoring</span>
-<span class="code-kw">def</span> <span class="code-fn">score_candidate_locations</span>(candidates: pd.DataFrame, competitors: pd.DataFrame, census_df: pd.DataFrame):
-    <span class="code-str">"""Calculates 3-mile trade radius overlap and unserved market opportunity."""</span>
-    scored_sites = []
-    <span class="code-kw">for</span> _, candidate <span class="code-kw">in</span> candidates.iterrows():
-        cand_coord = (candidate[<span class="code-str">"lat"</span>], candidate[<span class="code-str">"lon"</span>])
-        
-        <span class="code-comment"># Count competitor saturation (Whole Foods, Trader Joe's) within 3.0 miles</span>
-        comp_count = sum(
-            geodesic(cand_coord, (c[<span class="code-str">"lat"</span>], c[<span class="code-str">"lon"</span>])).miles &lt;= <span class="code-num">3.0</span> 
-            <span class="code-kw">for</span> _, c <span class="code-kw">in</span> competitors.iterrows()
-        )
-        
-        <span class="code-comment"># Merge census income for candidate zip code</span>
-        zip_data = census_df.loc[census_df[<span class="code-str">"zip"</span>] == candidate[<span class="code-str">"zip_code"</span>]]
-        med_income = zip_data[<span class="code-str">"median_household_income"</span>].values[<span class="code-num">0</span>] <span class="code-kw">if not</span> zip_data.empty <span class="code-kw">else</span> <span class="code-num">0</span>
-        
-        <span class="code-comment"># Opportunity Index: High disposable income / Low direct organic saturation</span>
-        index = (med_income / <span class="code-num">10000</span>) * (<span class="code-num">1.0</span> / (comp_count + <span class="code-num">1</span>))
-        scored_sites.append({**candidate, <span class="code-str">"comp_count_3mi"</span>: comp_count, <span class="code-str">"opportunity_index"</span>: round(index, <span class="code-num">2</span>)})
-        
-    <span class="code-kw">return</span> pd.DataFrame(scored_sites).sort_values(by=<span class="code-str">"opportunity_index"</span>, ascending=<span class="code-kw">False</span>)</code></pre>
+                            <div class="flow-node">
+                                <div class="flow-node-header">
+                                    <span class="node-step-badge purple">Node 02 // Asset &amp; SKU Synthesis</span>
+                                </div>
+                                <h4>Catalog &amp; Copy Agents</h4>
+                                <p>Generates high-converting SEO copy and creates live production variants across print providers via asynchronous Printify REST APIs.</p>
+                            </div>
+                            <div class="flow-node">
+                                <div class="flow-node-header">
+                                    <span class="node-step-badge green">Node 03 // Growth Engine</span>
+                                </div>
+                                <h4>Distribution Agent</h4>
+                                <p>Schedules algorithmic pin deployment across buyer boards. Scaled the storefront from 0 to ~30,000 monthly impressions in 10 weeks with day-one profitability.</p>
+                            </div>
                         </div>
 
-                        <!-- Tab 3: R -->
-                        <div class="code-pane" id="tab-r" data-focus="Econometric Demand Elasticity" data-runtime="R 4.3 / fixest / tidyverse" data-course="STRATEGY 402 Advanced Econometrics">
-                            <div class="code-pane-desc">
-                                <b>Multivariate Econometrics &amp; Dynamic Pricing:</b> Analyzed 133MB of Airbnb market data using log-log multivariate regressions with fixed effects. Estimated Own-Price Elasticity of Demand (OPE = -1.05 in Los Angeles), proving demand elasticity and deriving revenue-maximizing dynamic pricing curves for host portfolios.
+                        <!-- System Details Grid -->
+                        <div class="system-details-grid">
+                            <div class="detail-card">
+                                <h5>⚙️ Multi-Agent Orchestration Logic</h5>
+                                <ul>
+                                    <li><b>Role Specialization:</b> Decomposed operations into 7 micro-agents (Trend Hunter, SEO Copywriter, Mockup Generator, Catalog Creator, Pricing Optimizer, Pin Scheduler, and Telemetry Auditor).</li>
+                                    <li><b>Async Pipeline:</b> Parallelized catalog deployment using Python <code>asyncio.gather</code>, cutting SKU launch cycle from 45 minutes to under 30 seconds.</li>
+                                    <li><b>Zero Human Overhead:</b> Validated strict JSON schemas to eliminate AI hallucination before publishing live storefront listings.</li>
+                                </ul>
                             </div>
-                            <pre class="code-block"><code><span class="code-comment"># Airbnb Demand &amp; Price Elasticity Econometric Model</span>
-<span class="code-comment"># Dataset: 133MB Multi-City Listings (InsideAirbnb / Supervised Econometric Study)</span>
-
-<span class="code-kw">library</span>(tidyverse)
-<span class="code-kw">library</span>(fixest)       <span class="code-comment"># Fast clustered standard errors &amp; fixed effects</span>
-<span class="code-kw">library</span>(broom)
-
-<span class="code-comment"># 1. Data Cleaning &amp; Log-Log Variable Transformation</span>
-<span class="code-comment"># Specification: log(bookings) = beta_0 + beta_1 * log(price) + gamma * X + alpha_metro + eps</span>
-airbnb_clean &lt;- read_csv(<span class="code-str">"data/airbnb_multicity_raw.csv"</span>) %&gt;%
-  filter(price &gt; <span class="code-num">15</span> &amp; price &lt; <span class="code-num">2500</span>, estimated_bookings_30d &gt; <span class="code-num">0</span>) %&gt;%
-  mutate(
-    log_bookings = log(estimated_bookings_30d),
-    log_price = log(price),
-    host_is_superhost = as.factor(host_is_superhost),
-    room_type = as.factor(room_type)
-  )
-
-<span class="code-comment"># 2. Multivariate Regression with Neighborhood Fixed Effects</span>
-elasticity_model &lt;- feols(
-  log_bookings ~ log_price + accommodates + bedrooms + review_scores_rating + 
-                 instant_bookable | metro_market^neighbourhood_cleansed,
-  data = airbnb_clean,
-  vcov = <span class="code-str">"cluster"</span> ~ neighbourhood_cleansed
-)
-
-<span class="code-comment"># 3. Model Results &amp; Revenue Yield Optimization</span>
-summary(elasticity_model)
-<span class="code-comment"># Estimated beta_1 (OPE) = -1.048 (SE: 0.031, p &lt; 0.001)</span>
-<span class="code-comment"># Interpretation: 10% price increase drives ~10.5% booking reduction</span>
-<span class="code-comment"># Revenue-maximizing optimal price: P* = argmax_P [ P * exp(beta_0 + beta_1 * log(P)) ]</span></code></pre>
+                            <div class="detail-card">
+                                <h5>📈 Quantified Business Lift</h5>
+                                <ul>
+                                    <li>Grew organic impressions from <b>0 to ~30,000 monthly views</b> within 2.5 months.</li>
+                                    <li>Achieved profitable first sales on day of launch with zero paid advertising spend.</li>
+                                    <li>Demonstrated how agentic workflows transform solo operators into high-volume product companies.</li>
+                                </ul>
+                            </div>
                         </div>
 
-                        <!-- Tab 4: AI Agents -->
-                        <div class="code-pane" id="tab-ai" data-focus="Multi-Agent E-Commerce Orchestration" data-runtime="Python / Claude API / AsyncIO" data-course="Independent Venture &amp; AI Systems">
-                            <div class="code-pane-desc">
-                                <b>7-Agent Autonomous E-Commerce Swarm:</b> Architected and deployed an autonomous micro-agent pipeline combining market research, SEO copy generation, on-demand catalog creation (Printify API), and automated social distribution. Grew Pinterest from 0 to ~30K monthly impressions in 2.5 months with profitable first-day sales.
-                            </div>
-                            <pre class="code-block"><code><span class="code-kw">import</span> asyncio
+                        <!-- Collapsible Code Drawer -->
+                        <details class="code-drawer">
+                            <summary>
+                                <span>▶ Inspect Agent Swarm Orchestrator Implementation</span>
+                                <span style="font-size:0.75rem; color:#6366f1;">Click to expand</span>
+                            </summary>
+                            <div class="code-drawer-content">
+                                <pre class="code-block-dark"><code><span class="code-kw">import</span> asyncio
 <span class="code-kw">from</span> dataclasses <span class="code-kw">import</span> dataclass
-<span class="code-kw">from</span> typing <span class="code-kw">import</span> List, Dict
-
-@dataclass
-<span class="code-kw">class</span> <span class="code-var">NicheOpportunity</span>:
-    keyword: <span class="code-var">str</span>
-    search_volume: <span class="code-var">int</span>
-    competition_score: <span class="code-var">float</span>
-    margin_potential: <span class="code-var">float</span>
 
 <span class="code-kw">class</span> <span class="code-var">AutonomousCommerceOrchestrator</span>:
-    <span class="code-str">"""7-Agent Swarm: Trend Discovery -&gt; SEO Copy -&gt; Mockup Generation -&gt; Social Distribution"""</span>
-
+    <span class="code-str">"""7-Agent Swarm: Trend Discovery -> Copywriting -> Catalog Sync -> Social Distribution"""</span>
     <span class="code-kw">def</span> <span class="code-fn">__init__</span>(self, claude_client, printify_client, pinterest_api):
         self.claude = claude_client
         self.printify = printify_client
@@ -319,13 +336,13 @@ summary(elasticity_model)
         <span class="code-comment"># 1. Trend Hunter Agent: Ingests rising query momentum</span>
         trending = <span class="code-kw">await</span> self.agent_trend_hunter.extract_high_intent_niches()
 
-        <span class="code-comment"># 2. Copywriter &amp; SEO Agent: Generates optimized title, tags, description</span>
+        <span class="code-comment"># 2. Copywriter & SEO Agent: Generates optimized title, tags, description</span>
         optimized_listings = <span class="code-kw">await</span> asyncio.gather(*[
             self.agent_seo_copywriter.generate_product_metadata(niche)
             <span class="code-kw">for</span> niche <span class="code-kw">in</span> trending[:<span class="code-num">5</span>]
         ])
 
-        <span class="code-comment"># 3. Catalog &amp; Production Agent: Creates Printify blueprint variants</span>
+        <span class="code-comment"># 3. Catalog & Production Agent: Creates Printify blueprint variants</span>
         active_products = <span class="code-kw">await</span> asyncio.gather(*[
             self.agent_printify.publish_product(listing)
             <span class="code-kw">for</span> listing <span class="code-kw">in</span> optimized_listings
@@ -335,17 +352,194 @@ summary(elasticity_model)
         <span class="code-comment"># Metric Outcome: 0 to ~30k monthly Pinterest impressions in 2.5 months</span>
         <span class="code-kw">await</span> self.agent_pinterest_distributor.schedule_pins(active_products)
         <span class="code-kw">return</span> {<span class="code-str">"status"</span>: <span class="code-str">"deployed"</span>, <span class="code-str">"products"</span>: len(active_products)}</code></pre>
-                        </div>
+                            </div>
+                        </details>
                     </div>
+
+                    <!-- TAB 3: ECONOMETRIC DEMAND & PRICING -->
+                    <div class="system-pane" id="sys-econometrics">
+                        <div class="canvas-header">
+                            <div class="canvas-title-group">
+                                <h3>Airbnb Econometric Demand &amp; Elasticity Engine</h3>
+                                <div style="font-size: 0.85rem; color: #94a3b8;">Multivariate Fixed Effects Regressions &bull; STRATEGY 402</div>
+                            </div>
+                            <div class="canvas-tech-badge-row">
+                                <span class="tech-tag-chip">R / fixest</span>
+                                <span class="tech-tag-chip">Log-Log Model</span>
+                                <span class="tech-tag-chip">133MB Multi-City Data</span>
+                                <span class="tech-tag-chip">OPE = -1.05</span>
+                            </div>
+                        </div>
+
+                        <!-- Visual 3-Node Architecture Flow -->
+                        <div class="architecture-flow" style="margin-top: 1.8rem;">
+                            <div class="flow-node">
+                                <div class="flow-node-header">
+                                    <span class="node-step-badge blue">Node 01 // Data Engineering</span>
+                                </div>
+                                <h4>133MB Cleaned Listings</h4>
+                                <p>Processed multi-city listing datasets, filtering extreme outliers, normalizing cleaning fees, and imputing 30-day booking demand velocity.</p>
+                            </div>
+                            <div class="flow-node">
+                                <div class="flow-node-header">
+                                    <span class="node-step-badge purple">Node 02 // Econometric Spec</span>
+                                </div>
+                                <h4>Fixed Effects Regression</h4>
+                                <p>Specified log-log multivariate model with neighborhood clustered standard errors to isolate pure price elasticity from location confounders.</p>
+                            </div>
+                            <div class="flow-node">
+                                <div class="flow-node-header">
+                                    <span class="node-step-badge green">Node 03 // Revenue Yield</span>
+                                </div>
+                                <h4>Dynamic Pricing Curves</h4>
+                                <p>Quantified Own-Price Elasticity ($OPE = -1.05$ in Los Angeles), establishing revenue-maximizing price floors and seasonal ceiling limits.</p>
+                            </div>
+                        </div>
+
+                        <!-- System Details Grid -->
+                        <div class="system-details-grid">
+                            <div class="detail-card">
+                                <h5>📊 Econometric Model Specification</h5>
+                                <ul>
+                                    <li><b>Log-Log Equation:</b> $\ln(Bookings) = \beta_0 + \beta_1 \ln(Price) + \sum \gamma_k X_k + \alpha_{neighborhood} + \epsilon$.</li>
+                                    <li><b>Elasticity Coefficient:</b> $\beta_1 = -1.048$ ($p &lt; 0.001$), indicating slightly price-elastic consumer demand in primary metro markets.</li>
+                                    <li><b>Control Covariates:</b> Accommodates, bedrooms, review scores rating, instant bookable, and superhost status.</li>
+                                </ul>
+                            </div>
+                            <div class="detail-card">
+                                <h5>💡 Platform Strategy Implications</h5>
+                                <ul>
+                                    <li>Identified that hosts uniformly underprice listings during low-season and overprice during high-season, missing optimal platform booking fees.</li>
+                                    <li>Designed host dynamic pricing recommendation algorithm that maximizes Gross Booking Value (GBV) without sacrificing occupancy.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Collapsible Code Drawer -->
+                        <details class="code-drawer">
+                            <summary>
+                                <span>▶ Inspect Econometric R Modeling Code</span>
+                                <span style="font-size:0.75rem; color:#6366f1;">Click to expand</span>
+                            </summary>
+                            <div class="code-drawer-content">
+                                <pre class="code-block-dark"><code><span class="code-comment"># Airbnb Demand & Price Elasticity Econometric Model</span>
+<span class="code-kw">library</span>(tidyverse)
+<span class="code-kw">library</span>(fixest)       <span class="code-comment"># Fast clustered standard errors & fixed effects</span>
+
+airbnb_clean &lt;- read_csv(<span class="code-str">"data/airbnb_multicity.csv"</span>) %&gt;%
+  filter(price &gt; <span class="code-num">15</span> &amp; price &lt; <span class="code-num">2500</span>, estimated_bookings_30d &gt; <span class="code-num">0</span>) %&gt;%
+  mutate(log_bookings = log(estimated_bookings_30d), log_price = log(price))
+
+<span class="code-comment"># Multivariate Regression with Neighborhood Fixed Effects</span>
+elasticity_model &lt;- feols(
+  log_bookings ~ log_price + accommodates + bedrooms + review_scores_rating + 
+                 instant_bookable | metro_market^neighbourhood_cleansed,
+  data = airbnb_clean,
+  vcov = <span class="code-str">"cluster"</span> ~ neighbourhood_cleansed
+)
+
+summary(elasticity_model)
+<span class="code-comment"># Estimated beta_1 (OPE) = -1.048 (SE: 0.031, p &lt; 0.001)</span></code></pre>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- TAB 4: RETAIL GEOSPATIAL & CENSUS -->
+                    <div class="system-pane" id="sys-census">
+                        <div class="canvas-header">
+                            <div class="canvas-title-group">
+                                <h3>Sprouts Geospatial &amp; Census TAM Pipeline</h3>
+                                <div style="font-size: 0.85rem; color: #94a3b8;">Automated Store Scrapers &bull; US Census ACS 5-Year API &bull; Tableau BI</div>
+                            </div>
+                            <div class="canvas-tech-badge-row">
+                                <span class="tech-tag-chip">Python Web Scraper</span>
+                                <span class="tech-tag-chip">US Census API</span>
+                                <span class="tech-tag-chip">Geodesic Radius</span>
+                                <span class="tech-tag-chip">Tableau Dashboards</span>
+                            </div>
+                        </div>
+
+                        <!-- Visual 3-Node Architecture Flow -->
+                        <div class="architecture-flow" style="margin-top: 1.8rem;">
+                            <div class="flow-node">
+                                <div class="flow-node-header">
+                                    <span class="node-step-badge blue">Node 01 // Location Scraping</span>
+                                </div>
+                                <h4>Competitor Location Harvesting</h4>
+                                <p>Automated scrapers for Whole Foods, Trader Joe's, and Sprouts locations, extracting precise latitude/longitude coordinates across target metro zones.</p>
+                            </div>
+                            <div class="flow-node">
+                                <div class="flow-node-header">
+                                    <span class="node-step-badge purple">Node 02 // Census Ingestion</span>
+                                </div>
+                                <h4>Demographic Join Engine</h4>
+                                <p>Queried US Census Bureau 5-Year ACS API for median household income, bachelor's degree attainment, and population density at the Zip Code Tabulation level.</p>
+                            </div>
+                            <div class="flow-node">
+                                <div class="flow-node-header">
+                                    <span class="node-step-badge green">Node 03 // Spatial Scoring</span>
+                                </div>
+                                <h4>3-Mile Radius Scoring</h4>
+                                <p>Executed geodesic buffer spatial joins to score unserved expansion zip codes, exporting clean analytical tables to executive Tableau workbooks.</p>
+                            </div>
+                        </div>
+
+                        <!-- System Details Grid -->
+                        <div class="system-details-grid">
+                            <div class="detail-card">
+                                <h5>🗺️ Spatial Scoring Algorithm</h5>
+                                <ul>
+                                    <li><b>Trade Area Buffer:</b> 3.0-mile geodesic radius calculated around each prospective zip centroid.</li>
+                                    <li><b>Cannibalization Penalty:</b> Counted direct organic retail competitor density within the primary trade area.</li>
+                                    <li><b>TAM Opportunity Index:</b> $\text{Score} = \left(\frac{\text{Median Income}}{10,000}\right) \times \left(\frac{1}{\text{Competitors} + 1}\right)$.</li>
+                                </ul>
+                            </div>
+                            <div class="detail-card">
+                                <h5>🏢 Executive Real Estate Value</h5>
+                                <ul>
+                                    <li>Enabled real estate site selection committees to objectively rank top-tier expansion locations based on demographic spend capability.</li>
+                                    <li>Eliminated gut-feel store openings with reproducible spatial data pipelines.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Collapsible Code Drawer -->
+                        <details class="code-drawer">
+                            <summary>
+                                <span>▶ Inspect Census &amp; Spatial Pipeline Script</span>
+                                <span style="font-size:0.75rem; color:#6366f1;">Click to expand</span>
+                            </summary>
+                            <div class="code-drawer-content">
+                                <pre class="code-block-dark"><code><span class="code-kw">import</span> requests, pandas <span class="code-kw">as</span> pd
+<span class="code-kw">from</span> geopy.distance <span class="code-kw">import</span> geodesic
+
+<span class="code-comment"># Ingest US Census Bureau 5-Year ACS Profiles</span>
+CENSUS_API_URL = <span class="code-str">"https://api.census.gov/data/2022/acs/acs5"</span>
+ACS_VARIABLES = {<span class="code-str">"B19013_001E"</span>: <span class="code-str">"median_household_income"</span>, <span class="code-str">"B01003_001E"</span>: <span class="code-str">"total_pop"</span>}
+
+<span class="code-kw">def</span> <span class="code-fn">score_candidate_locations</span>(candidates: pd.DataFrame, competitors: pd.DataFrame, census_df: pd.DataFrame):
+    scored = []
+    <span class="code-kw">for</span> _, cand <span class="code-kw">in</span> candidates.iterrows():
+        coord = (cand[<span class="code-str">"lat"</span>], cand[<span class="code-str">"lon"</span>])
+        comp_count = sum(geodesic(coord, (c[<span class="code-str">"lat"</span>], c[<span class="code-str">"lon"</span>])).miles &lt;= <span class="code-num">3.0</span> <span class="code-kw">for</span> _, c <span class="code-kw">in</span> competitors.iterrows())
+        zip_data = census_df.loc[census_df[<span class="code-str">"zip"</span>] == cand[<span class="code-str">"zip_code"</span>]]
+        income = zip_data[<span class="code-str">"median_household_income"</span>].values[<span class="code-num">0</span>] <span class="code-kw">if not</span> zip_data.empty <span class="code-kw">else</span> <span class="code-num">0</span>
+        score = (income / <span class="code-num">10000</span>) * (<span class="code-num">1.0</span> / (comp_count + <span class="code-num">1</span>))
+        scored.append({**cand, <span class="code-str">"comp_3mi"</span>: comp_count, <span class="code-str">"opportunity_score"</span>: round(score, <span class="code-num">2</span>)})
+    <span class="code-kw">return</span> pd.DataFrame(scored).sort_values(by=<span class="code-str">"opportunity_score"</span>, ascending=<span class="code-kw">False</span>)</code></pre>
+                            </div>
+                        </details>
+                    </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- Experience Section -->
+        <!-- TRACK RECORD & PROFESSIONAL EXPERIENCE -->
         <section id="experience" class="section fade-in">
             <div class="section-header">
-                <h2>Experience</h2>
-                <p>A track record of driving strategic growth and product excellence</p>
+                <h2>Track Record &amp; Experience</h2>
+                <p>Quantified product impact across scale platforms, corporate strategy firms, SaaS startups, and private equity.</p>
             </div>
             
             <div class="timeline">
@@ -464,7 +658,7 @@ summary(elasticity_model)
                         <ul>
                             <li>Built real-time performance dashboards for a Wells Fargo client by designing a new KPI framework for a trucking investment, co-presented with a cross-functional team to senior executives</li>
                         </ul>
-                        <a href="assets/work/Councyl_Capital_Report.pdf" class="view-doc-link">
+                        <a href="assets/work/Councyl_Capital_Report.pdf" class="btn-card-action view-doc-link" style="margin-top:1rem;">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                             View Final Report PDF
                         </a>
@@ -473,48 +667,48 @@ summary(elasticity_model)
             </div>
         </section>
 
-        <!-- Projects & Case Studies -->
-        <section id="projects" class="section fade-in bg-light">
+        <!-- FEATURED WORK: ASYMMETRICAL BENTO GRID -->
+        <section id="work" class="bento-section fade-in">
             <div class="section-header">
                 <h2>Featured Work</h2>
-                <p>Selected technical pipelines, product strategy models, and software I've built</p>
+                <p>Selected strategy blueprints, quantitative modeling, and digital software products.</p>
             </div>
 
             <!-- Category Filter Bar -->
             <div class="projects-filter-bar">
-                <button class="filter-btn active" data-filter="all">All Projects (10)</button>
-                <button class="filter-btn" data-filter="technical">Data &amp; Pipelines</button>
+                <button class="filter-btn active" data-filter="all">All Work (10)</button>
+                <button class="filter-btn" data-filter="technical">Data &amp; Systems</button>
                 <button class="filter-btn" data-filter="strategy">Product Strategy &amp; AI</button>
                 <button class="filter-btn" data-filter="apps">Apps &amp; Design</button>
             </div>
 
-            <div class="project-grid">
-                <!-- 1. JetBlue/Spirit Antitrust SQL Model -->
-                <div class="project-card" data-category="technical">
+            <div class="bento-grid">
+                <!-- 1. Flagship Bento Hero Card: Antitrust SQL Model (Span 8) -->
+                <div class="project-card bento-span-8" data-category="technical">
                     <div class="project-image">
                         <img src="assets/work/nba_scatter_plot.png" alt="Antitrust Route Market Concentration SQL">
                     </div>
                     <div class="project-info">
-                        <span class="project-tag">Data Engineering &amp; Antitrust</span>
-                        <h3>DOJ Antitrust &amp; Merger SQL Model</h3>
+                        <span class="project-tag">Flagship Quantitative Model // STRATEGY 412</span>
+                        <h3>DOJ Antitrust &amp; Route Concentration Engine</h3>
                         <div class="project-tech-tags">
                             <span class="tech-tag-chip">PostgreSQL</span>
                             <span class="tech-tag-chip">Window Functions</span>
                             <span class="tech-tag-chip">Delta HHI Index</span>
-                            <span class="tech-tag-chip">10k+ Routes</span>
+                            <span class="tech-tag-chip">10,000+ Flight Routes</span>
                         </div>
-                        <p>Evaluated DOJ antitrust merger scrutiny across 10,000+ domestic flight routes. Computed carrier market shares and Delta HHI index changes using SQL partition window functions to isolate monopoly pricing risks.</p>
+                        <p>Evaluated DOJ antitrust merger scrutiny across 10,000+ domestic flight routes for the proposed JetBlue/Spirit merger. Computed carrier market shares and Delta HHI index changes using SQL partition window functions to isolate monopoly pricing risks.</p>
                         <div class="project-actions-row">
-                            <a href="#technical" class="btn-card-action" onclick="switchTerminalTab('tab-sql')">
+                            <a href="#systems" class="btn-card-action" onclick="switchSystemTab('sys-antitrust')">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                                View SQL in Explorer
+                                Explore System Blueprint
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2. Councyl Capital Fleet Logistics KPI Model -->
-                <div class="project-card" data-category="strategy">
+                <!-- 2. Councyl Capital Fleet Logistics KPI Model (Span 4) -->
+                <div class="project-card bento-span-4" data-category="strategy">
                     <div class="project-image">
                         <img src="assets/work/european_expansion_map.png" alt="Councyl Capital Logistics KPI Model">
                     </div>
@@ -522,12 +716,11 @@ summary(elasticity_model)
                         <span class="project-tag">Private Equity &amp; Operations</span>
                         <h3>Fleet Logistics KPI Framework</h3>
                         <div class="project-tech-tags">
-                            <span class="tech-tag-chip">Private Equity</span>
                             <span class="tech-tag-chip">Wells Fargo Client</span>
                             <span class="tech-tag-chip">KPI Framework</span>
                             <span class="tech-tag-chip">Fleet Telematics</span>
                         </div>
-                        <p>Engineered real-time operating dashboards and an actionable KPI performance framework for a Wells Fargo client investing in long-haul commercial trucking, co-presented to senior leadership.</p>
+                        <p>Engineered real-time operating dashboards and an actionable KPI performance framework for a Wells Fargo client investing in commercial trucking.</p>
                         <div class="project-actions-row">
                             <a href="assets/work/Councyl_Capital_Report.pdf" class="btn-card-action view-doc-link">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
@@ -537,32 +730,106 @@ summary(elasticity_model)
                     </div>
                 </div>
 
-                <!-- 3. AI Strategy -->
-                <div class="project-card" data-category="strategy">
+                <!-- 3. Autonomous E-Commerce Swarm (Span 6) -->
+                <div class="project-card bento-span-6" data-category="strategy">
+                    <div class="project-image">
+                        <img src="assets/work/ecom_agents_thumb.png" alt="AI E-Commerce Automation">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Autonomous Systems</span>
+                        <h3>7-Agent Autonomous Commerce Swarm</h3>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag-chip">7 Distributed Agents</span>
+                            <span class="tech-tag-chip">Printify API</span>
+                            <span class="tech-tag-chip">~30k Monthly Views</span>
+                            <span class="tech-tag-chip">AsyncIO</span>
+                        </div>
+                        <p>Architected and deployed an autonomous micro-agent pipeline combining keyword discovery, copy generation, on-demand catalog creation (Printify API), and automated social distribution. Grew Pinterest account from 0 to ~30K monthly impressions in 2.5 months.</p>
+                        <div class="project-actions-row">
+                            <a href="#systems" class="btn-card-action" onclick="switchSystemTab('sys-agents')">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                                View Architecture
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Sprouts Census & Geospatial Pipeline (Span 6) -->
+                <div class="project-card bento-span-6" data-category="technical">
+                    <div class="project-image">
+                        <img src="assets/work/sprouts_logo_v3.png" alt="Sprouts Competitive Intel & Census Pipeline">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Geospatial Analytics</span>
+                        <h3>Sprouts Census &amp; Location Pipeline</h3>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag-chip">Python Scraper</span>
+                            <span class="tech-tag-chip">US Census API</span>
+                            <span class="tech-tag-chip">Geodesic Radius</span>
+                            <span class="tech-tag-chip">Tableau BI</span>
+                        </div>
+                        <p>Web scraping pipeline integrated with US Census Bureau demographic data (ACS 5-Year) and spatial radius analysis to pinpoint high-yield expansion zip codes for organic retail.</p>
+                        <div class="project-actions-row">
+                            <a href="assets/work/Sprouts_Analysis.pdf" target="_blank" class="project-link btn-card-action">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                View Report PDF
+                            </a>
+                            <a href="#systems" class="btn-card-action" onclick="switchSystemTab('sys-census')">
+                                Blueprint
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Airbnb Demand & Price Elasticity (Span 4) -->
+                <div class="project-card bento-span-4" data-category="technical">
+                    <div class="project-image">
+                        <img src="assets/work/airbnb_logo_v3.png" alt="Airbnb Operational Strategy & Econometrics">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Econometrics in R</span>
+                        <h3>Airbnb Demand &amp; Elasticity</h3>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag-chip">R Econometrics</span>
+                            <span class="tech-tag-chip">Log-Log Model</span>
+                            <span class="tech-tag-chip">OPE = -1.05</span>
+                        </div>
+                        <p>Multivariate econometric regressions across 133MB of Airbnb market data. Quantified Own-Price Elasticity of Demand and modeled revenue-maximizing pricing curves.</p>
+                        <div class="project-actions-row">
+                            <a href="assets/work/Airbnb_Case_Presentation.pdf" target="_blank" class="project-link btn-card-action">
+                                View PDF
+                            </a>
+                            <a href="#systems" class="btn-card-action" onclick="switchSystemTab('sys-econometrics')">
+                                Model
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. AI Implementation Strategy (Span 4) -->
+                <div class="project-card bento-span-4" data-category="strategy">
                     <div class="project-image">
                         <img src="assets/work/ai_strategy_v3.png" alt="AI Implementation Strategy">
                     </div>
                     <div class="project-info">
-                        <span class="project-tag">AI &amp; Operations</span>
+                        <span class="project-tag">AI Workflows</span>
                         <h3>AI Implementation Strategy</h3>
                         <div class="project-tech-tags">
                             <span class="tech-tag-chip">Prompt Engineering</span>
                             <span class="tech-tag-chip">SaaS Workflows</span>
                             <span class="tech-tag-chip">PRD Automation</span>
-                            <span class="tech-tag-chip">Claude API</span>
                         </div>
                         <p>Company-wide framework for integrating generative AI into product workflows at Zark Parking Solutions, cutting PRD writing time by 40%.</p>
                         <div class="project-actions-row">
                             <a href="assets/work/AI_Training_Guide.pdf" target="_blank" class="project-link btn-card-action">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                                 View Guide PDF
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- 4. NBA Strategy -->
-                <div class="project-card" data-category="strategy">
+                <!-- 7. NBA European Expansion (Span 4) -->
+                <div class="project-card bento-span-4" data-category="strategy">
                     <div class="project-image">
                         <img src="assets/work/nba_logo_v3.png" alt="NBA International Expansion">
                     </div>
@@ -573,20 +840,18 @@ summary(elasticity_model)
                             <span class="tech-tag-chip">Tableau BI</span>
                             <span class="tech-tag-chip">European Entry</span>
                             <span class="tech-tag-chip">TAM Modeling</span>
-                            <span class="tech-tag-chip">Economic Readiness</span>
                         </div>
                         <p>Data-grounded strategy evaluating European metropolitan market entry, flight readiness, arena economics, and localized fan engagement tiers.</p>
                         <div class="project-actions-row">
                             <a href="assets/work/NBA_Presentation.pdf" target="_blank" class="project-link btn-card-action">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                                 View Strategy PDF
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- 5. Samsung Case -->
-                <div class="project-card" data-category="strategy">
+                <!-- 8. Samsung Product Strategy (Span 4) -->
+                <div class="project-card bento-span-4" data-category="strategy">
                     <div class="project-image">
                         <img src="assets/work/samsung_logo_v3.png" alt="Samsung Product Strategy">
                     </div>
@@ -597,74 +862,18 @@ summary(elasticity_model)
                             <span class="tech-tag-chip">Product Lifecycle</span>
                             <span class="tech-tag-chip">Competitive Moats</span>
                             <span class="tech-tag-chip">Hardware Strategy</span>
-                            <span class="tech-tag-chip">Market Share</span>
                         </div>
                         <p>Strategic analysis of product life cycles, hardware margins, and competitive positioning against ecosystem competitors.</p>
                         <div class="project-actions-row">
                             <a href="assets/work/Samsung_Case.pdf" target="_blank" class="project-link btn-card-action">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                                 View Case PDF
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- 6. Sprouts Analysis -->
-                <div class="project-card" data-category="technical">
-                    <div class="project-image">
-                        <img src="assets/work/sprouts_logo_v3.png" alt="Sprouts Competitive Intel & Census Pipeline">
-                    </div>
-                    <div class="project-info">
-                        <span class="project-tag">Python &amp; Geospatial Pipeline</span>
-                        <h3>Sprouts Census &amp; Location Pipeline</h3>
-                        <div class="project-tech-tags">
-                            <span class="tech-tag-chip">Python Scraper</span>
-                            <span class="tech-tag-chip">US Census API</span>
-                            <span class="tech-tag-chip">Geodesic Radius</span>
-                            <span class="tech-tag-chip">Tableau BI</span>
-                        </div>
-                        <p>Web scraping pipeline integrated with US Census Bureau demographic data (ACS 5-Year) and spatial radius analysis to pinpoint high-yield expansion zip codes.</p>
-                        <div class="project-actions-row">
-                            <a href="assets/work/Sprouts_Analysis.pdf" target="_blank" class="project-link btn-card-action">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                                View Report PDF
-                            </a>
-                            <a href="#technical" class="btn-card-action" onclick="switchTerminalTab('tab-python')">
-                                Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 7. Airbnb Case -->
-                <div class="project-card" data-category="technical">
-                    <div class="project-image">
-                        <img src="assets/work/airbnb_logo_v3.png" alt="Airbnb Operational Strategy & Econometrics">
-                    </div>
-                    <div class="project-info">
-                        <span class="project-tag">Econometrics in R</span>
-                        <h3>Airbnb Demand &amp; Price Elasticity</h3>
-                        <div class="project-tech-tags">
-                            <span class="tech-tag-chip">R Econometrics</span>
-                            <span class="tech-tag-chip">Log-Log Model</span>
-                            <span class="tech-tag-chip">OPE Elasticity (-1.05)</span>
-                            <span class="tech-tag-chip">Fixed Effects</span>
-                        </div>
-                        <p>Multivariate econometric regressions across 133MB of Airbnb market data. Quantified Own-Price Elasticity of Demand and modeled revenue-maximizing pricing curves.</p>
-                        <div class="project-actions-row">
-                            <a href="assets/work/Airbnb_Case_Presentation.pdf" target="_blank" class="project-link btn-card-action">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                                View Presentation PDF
-                            </a>
-                            <a href="#technical" class="btn-card-action" onclick="switchTerminalTab('tab-r')">
-                                R Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 8. The Cougar Planner -->
-                <div class="project-card" data-category="apps">
+                <!-- 9. The Cougar Planner (Span 4) -->
+                <div class="project-card bento-span-4" data-category="apps">
                     <div class="project-image">
                         <img src="assets/work/cougar_planner_mockup.png" alt="The Cougar Planner">
                     </div>
@@ -675,20 +884,18 @@ summary(elasticity_model)
                             <span class="tech-tag-chip">Figma Prototype</span>
                             <span class="tech-tag-chip">Mendix Architecture</span>
                             <span class="tech-tag-chip">User Interviews</span>
-                            <span class="tech-tag-chip">Agile Backlog</span>
                         </div>
                         <p>End-to-end product design from user discovery interviews to interactive high-fidelity Figma prototypes and Mendix domain data model specifications.</p>
                         <div class="project-actions-row">
                             <a href="assets/work/The_Cougar_Planner.pdf" class="project-link btn-card-action">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                                 View Spec PDF
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- 9. DayLoom -->
-                <div class="project-card" data-category="apps">
+                <!-- 10. DayLoom (Span 4) -->
+                <div class="project-card bento-span-4" data-category="apps">
                     <div class="project-image">
                         <img src="assets/work/dayloom_thumb.png" alt="DayLoom Journal App">
                     </div>
@@ -699,7 +906,6 @@ summary(elasticity_model)
                             <span class="tech-tag-chip">React Native</span>
                             <span class="tech-tag-chip">Mobile UX</span>
                             <span class="tech-tag-chip">Open Source</span>
-                            <span class="tech-tag-chip">Cross-Platform</span>
                         </div>
                         <p>A curated daily journaling mobile app built with React Native, designed around mindful reflection, smooth haptic micro-interactions, and local-first data storage.</p>
                         <div class="project-actions-row">
@@ -710,38 +916,14 @@ summary(elasticity_model)
                         </div>
                     </div>
                 </div>
-
-                <!-- 10. AI E-Commerce System -->
-                <div class="project-card" data-category="strategy">
-                    <div class="project-image">
-                        <img src="assets/work/ecom_agents_thumb.png" alt="AI E-Commerce Automation">
-                    </div>
-                    <div class="project-info">
-                        <span class="project-tag">AI Swarm &amp; Automation</span>
-                        <h3>Multi-Agent E-Commerce Swarm</h3>
-                        <div class="project-tech-tags">
-                            <span class="tech-tag-chip">7 Autonomous Agents</span>
-                            <span class="tech-tag-chip">Printify API</span>
-                            <span class="tech-tag-chip">30K Pinterest Visits</span>
-                            <span class="tech-tag-chip">Python AsyncIO</span>
-                        </div>
-                        <p>Built and scaled an automated storefront using an orchestration of 7 specialized AI agents across keyword discovery, copy generation, and social distribution. Reached ~30K monthly impressions in 10 weeks.</p>
-                        <div class="project-actions-row">
-                            <a href="#technical" class="btn-card-action" onclick="switchTerminalTab('tab-ai')">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                                View Agent Architecture
-                            </a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
-        <!-- Certifications & Quantitative Honors -->
+        <!-- CERTIFICATIONS & QUANTITATIVE HONORS -->
         <section id="certifications" class="cert-section fade-in">
             <div class="section-header">
                 <h2>Certifications &amp; Quantitative Honors</h2>
-                <p>Verified technical credentials, professional PM cohort certifications, and academic excellence</p>
+                <p>Verified technical credentials, professional PM cohort certifications, and academic excellence.</p>
             </div>
 
             <div class="cert-grid">
@@ -801,25 +983,26 @@ summary(elasticity_model)
                         <p>Selective admission into BYU Marriott's Strategic Management program. Advanced honors coursework in Competitive Strategy (STRAT 411/412), Econometrics (STRAT 402), and Business Information Systems (IS 201).</p>
                     </div>
                     <div class="project-actions-row">
-                        <a href="#technical" class="btn-card-action">
+                        <a href="#systems" class="btn-card-action">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                            Explore Technical Pipelines
+                            Explore System Blueprints
                         </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Skills & Interests Slideshow -->
-        <section id="interests" class="section fade-in bg-light">
+        <!-- PERSONAL LIFE & SKILLS SLIDESHOW -->
+        <section id="life" class="slideshow-section fade-in">
             <div class="section-header">
-                <h2>Skills & Interests</h2>
-                <p>Building a life of impact through performing arts, global exploration, and meaningful connections</p>
+                <h2>Life, Performing Arts &amp; Exploration</h2>
+                <p>Building a high-impact life through performing arts, mountaineering, global exploration, and genuine connection.</p>
             </div>
+            
             <div class="slideshow-container">
                 <!-- Tetons Kiss -->
                 <div class="slide fade-animation active">
-                    <img src="./assets/P/IMG_1195.jpeg" style="object-fit: contain; background-color: #f5f5f7;" alt="Tetons with wife">
+                    <img src="./assets/P/IMG_1195.jpeg" style="object-fit: contain; background-color: #0b0f17;" alt="Tetons with wife">
                 </div>
                 <!-- Mountains Group -->
                 <div class="slide fade-animation">
@@ -835,13 +1018,12 @@ summary(elasticity_model)
                 </div>
                 <!-- Performing Jumping -->
                 <div class="slide fade-animation">
-                    <img src="./assets/P/IMG_2634.JPG" style="object-fit: contain; background-color: #f5f5f7;" alt="Performing jumping">
+                    <img src="./assets/P/IMG_2634.JPG" style="object-fit: contain; background-color: #0b0f17;" alt="Performing jumping">
                 </div>
                 <!-- Iguazu Boat -->
                 <div class="slide fade-animation">
-                    <img src="./assets/P/Iguazu Day 1-071.jpeg" style="object-fit: contain; background-color: #f5f5f7;" alt="Iguazu Falls boat trip">
+                    <img src="./assets/P/Iguazu Day 1-071.jpeg" style="object-fit: contain; background-color: #0b0f17;" alt="Iguazu Falls boat trip">
                 </div>
-                
                 
                 <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
                 <a class="next" onclick="changeSlide(1)">&#10095;</a>
@@ -858,20 +1040,23 @@ summary(elasticity_model)
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer id="contact">
         <div class="footer-content">
-            <h2>Let's build something great.</h2>
-            <p>Ready to discuss product strategy, data analysis, or the next big opportunity</p>
-            <button class="btn-primary open-modal-btn" style="margin-top: 2rem; display: inline-block;">Get In Touch</button>
+            <h2>Let's build something significant.</h2>
+            <p>Ready to discuss product strategy, data pipelines, or high-leverage PM opportunities.</p>
+            <button class="btn-hero-primary open-modal-btn" style="margin-top: 1rem; cursor: pointer;">
+                <span class="pulse-dot" style="width:7px;height:7px;"></span>
+                Get In Touch
+            </button>
             <div class="footer-bottom">
                 <p>&copy; 2026 Luke Christensen. All rights reserved.</p>
-                <p class="skills-list">SQL (Window Functions) | Python (Pandas/Requests) | Econometrics in R | US Census API | Tableau | Siemens Mendix Certified | Adobe Analytics | Figma | Claude &amp; OpenAI APIs | Spanish (Fluent)</p>
+                <p class="skills-list">SQL (Window Partitioning) | Python (Pandas/Requests) | Econometrics in R | US Census API | Tableau | Siemens Mendix Certified | Adobe Analytics | Figma | Claude &amp; OpenAI APIs | Spanish (Fluent)</p>
             </div>
         </div>
     </footer>
 
-    <!-- Document Viewer Modal -->
+    <!-- DOCUMENT VIEWER MODAL -->
     <div class="modal-backdrop viewer-modal" id="viewerModal">
         <div class="modal-content viewer-content">
             <button class="modal-close" id="closeViewer">
@@ -880,7 +1065,7 @@ summary(elasticity_model)
             <div class="viewer-header">
                 <h2 id="viewerTitle">Document Viewer</h2>
                 <div class="viewer-actions">
-                    <a href="#" id="viewerExternalLink" target="_blank" class="btn-secondary btn-small">Open in New Tab</a>
+                    <a href="#" id="viewerExternalLink" target="_blank" class="btn-small">Open in New Tab</a>
                 </div>
             </div>
             <div class="viewer-body" id="viewerBody">
@@ -889,7 +1074,7 @@ summary(elasticity_model)
         </div>
     </div>
 
-    <!-- Contact Modal -->
+    <!-- CONTACT DRAFT MODAL -->
     <div class="modal-backdrop" id="contactModal">
         <div class="modal-content">
             <button class="modal-close" id="closeModal">
@@ -897,18 +1082,18 @@ summary(elasticity_model)
             </button>
             <div class="modal-header">
                 <h2>Connect with Luke</h2>
-                <p>Fill out the form below to prep an introduction email. This will immediately open in your email app perfectly formatted.</p>
+                <p>Fill out the form below to prep an introduction email. This will immediately open in your email client pre-formatted.</p>
             </div>
             <div class="modal-form-group">
                 <label for="contactName">Your Name / Organization</label>
-                <input type="text" id="contactName" placeholder="e.g. Jane Doe from TechCorp" required>
+                <input type="text" id="contactName" placeholder="e.g. Jane Doe from Stripe" required>
             </div>
             <div class="modal-form-group">
                 <label for="contactMessage">Message</label>
                 <textarea id="contactMessage" placeholder="I saw your portfolio and would love to chat about..." required></textarea>
             </div>
             <button class="modal-submit" id="submitModal">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
                 Launch Draft Email
             </button>
         </div>
@@ -917,4 +1102,3 @@ summary(elasticity_model)
     <script src="app.js"></script>
 </body>
 </html>
-
