@@ -15,15 +15,17 @@
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23000000%22/><text x=%2250%22 y=%2250%22 font-family=%22-apple-system, sans-serif%22 font-size=%2240%22 font-weight=%22bold%22 fill=%22%23ffffff%22 text-anchor=%22middle%22 dominant-baseline=%22central%22>LC</text></svg>">
 
-    <link rel="stylesheet" href="style.css?v=20261013v3">
+    <link rel="stylesheet" href="style.css?v=20261013v4">
 </head>
-<body data-ui-theme="studio">
+<body data-ui-theme="glass">
     <!-- Ambient & Grid Background Enhancements -->
     <div id="ambient-glow" class="ambient-glow-container" aria-hidden="true">
         <div class="glow-orb orb-1"></div>
         <div class="glow-orb orb-2"></div>
         <div class="glow-orb orb-3"></div>
         <div class="glow-orb orb-4"></div>
+        <!-- Fluid Ambient Mouse Spotlight -->
+        <div class="mouse-ambient-light" id="mouseAmbientLight"></div>
     </div>
     <div id="grid-backdrop" class="grid-backdrop-container" aria-hidden="true">
         <div class="grid-pattern"></div>
@@ -847,11 +849,11 @@ for (m in metros) {
     <div class="visual-style-picker" id="stylePicker">
         <div class="picker-pill">
             <span class="picker-label">✦ Style:</span>
-            <button class="style-choice-btn active" data-style="studio" title="All enhancements harmonized">Apple Studio</button>
-            <button class="style-choice-btn" data-style="ambient" title="Option 1: Soft Keynote Atmospheric Glow">1. Ambient Glow</button>
-            <button class="style-choice-btn" data-style="grid" title="Option 2: Precision Micro-Grid & Spotlight">2. Micro-Grid</button>
-            <button class="style-choice-btn" data-style="glass" title="Option 3: Frosted Glass & Dynamic Borders">3. Frosted Glass</button>
-            <button class="style-choice-btn" data-style="bezels" title="Option 4: Safari Browser & Device Frames">4. Device Frames</button>
+            <button class="style-choice-btn active" data-style="glass" title="Frosted Glass cards + Ambient glow + Fluid cursor light">✦ Frosted Glass + Light</button>
+            <button class="style-choice-btn" data-style="ambient" title="Option 1: Soft Keynote Atmospheric Glow">Ambient Glow</button>
+            <button class="style-choice-btn" data-style="studio" title="All enhancements harmonized">Apple Studio</button>
+            <button class="style-choice-btn" data-style="grid" title="Option 2: Precision Micro-Grid & Spotlight">Micro-Grid</button>
+            <button class="style-choice-btn" data-style="bezels" title="Option 4: Safari Browser & Device Frames">Device Frames</button>
             <button class="style-choice-btn" data-style="minimal" title="Original Pure Flat Black">Pure Black</button>
             <button class="picker-close-btn" id="hidePickerBtn" title="Minimize Switcher">&times;</button>
         </div>
@@ -872,8 +874,8 @@ for (m in metros) {
             try { localStorage.setItem('preferred-ui-theme', theme); } catch(e) {}
         }
 
-        var saved = 'studio';
-        try { saved = localStorage.getItem('preferred-ui-theme') || 'studio'; } catch(e) {}
+        var saved = 'glass';
+        try { saved = localStorage.getItem('preferred-ui-theme') || 'glass'; } catch(e) {}
         activateTheme(saved);
 
         document.querySelectorAll('.style-choice-btn').forEach(function(btn) {
@@ -898,14 +900,29 @@ for (m in metros) {
             });
         }
 
+        // Fluid Ambient Mouse Tracking (Cursor-following glow)
         window.addEventListener('mousemove', function(e) {
-            var x = Math.round((e.clientX / window.innerWidth) * 100);
-            var y = Math.round((e.clientY / window.innerHeight) * 100);
-            document.documentElement.style.setProperty('--spot-x', x + '%');
-            document.documentElement.style.setProperty('--spot-y', y + '%');
+            document.documentElement.style.setProperty('--cursor-x', e.clientX + 'px');
+            document.documentElement.style.setProperty('--cursor-y', e.clientY + 'px');
+            var xPct = Math.round((e.clientX / window.innerWidth) * 100);
+            var yPct = Math.round((e.clientY / window.innerHeight) * 100);
+            document.documentElement.style.setProperty('--spot-x', xPct + '%');
+            document.documentElement.style.setProperty('--spot-y', yPct + '%');
+        });
+
+        // Fast hover-driven spotlight inside frosted cards
+        document.addEventListener('mouseover', function(e) {
+            var card = e.target.closest('.highlight-card, .work-card, .timeline-card, .tech-canvas, .cert-card-clean, .track-card');
+            if (card) {
+                card.onmousemove = function(ev) {
+                    var rect = card.getBoundingClientRect();
+                    card.style.setProperty('--mouse-card-x', (ev.clientX - rect.left) + 'px');
+                    card.style.setProperty('--mouse-card-y', (ev.clientY - rect.top) + 'px');
+                };
+            }
         });
     })();
     </script>
-    <script src="app.js?v=20261013v3"></script>
+    <script src="app.js?v=20261013v4"></script>
 </body>
 </html>

@@ -1270,6 +1270,28 @@ footer {
     animation: orbDrift1 24s ease-in-out infinite alternate-reverse;
 }
 
+/* Fluid Ambient Mouse Spotlight (Follows Cursor & Glows Through Glass) */
+.mouse-ambient-light {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 2;
+    background: radial-gradient(circle, rgba(41, 151, 255, 0.40) 0%, rgba(138, 92, 246, 0.22) 35%, rgba(41, 151, 255, 0.06) 55%, transparent 75%);
+    filter: blur(55px);
+    transform: translate(calc(var(--cursor-x, 50vw) - 300px), calc(var(--cursor-y, 50vh) - 300px));
+    transition: transform 0.05s ease-out, opacity 0.3s ease;
+    will-change: transform;
+    opacity: 0.95;
+}
+
+body[data-ui-theme="minimal"] .mouse-ambient-light {
+    display: none !important;
+}
+
 @keyframes orbDrift1 {
     0% { transform: translate(0, 0) scale(1); }
     100% { transform: translate(-80px, 100px) scale(1.15); }
@@ -1328,11 +1350,52 @@ body[data-ui-theme="studio"] .timeline-card,
 body[data-ui-theme="studio"] .tech-canvas,
 body[data-ui-theme="studio"] .cert-card-clean,
 body[data-ui-theme="studio"] .track-card {
-    background: rgba(24, 25, 32, 0.65) !important;
-    backdrop-filter: blur(24px) saturate(190%) !important;
-    -webkit-backdrop-filter: blur(24px) saturate(190%) !important;
+    background: rgba(20, 22, 28, 0.65) !important;
+    backdrop-filter: blur(26px) saturate(190%) !important;
+    -webkit-backdrop-filter: blur(26px) saturate(190%) !important;
     border: 1px solid rgba(255, 255, 255, 0.16) !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle mouse tracking ambient light inside each frosted card */
+body[data-ui-theme="glass"] .highlight-card::before,
+body[data-ui-theme="glass"] .work-card::before,
+body[data-ui-theme="glass"] .timeline-card::before,
+body[data-ui-theme="glass"] .tech-canvas::before,
+body[data-ui-theme="glass"] .cert-card-clean::before,
+body[data-ui-theme="glass"] .track-card::before,
+body[data-ui-theme="studio"] .highlight-card::before,
+body[data-ui-theme="studio"] .work-card::before,
+body[data-ui-theme="studio"] .timeline-card::before,
+body[data-ui-theme="studio"] .tech-canvas::before,
+body[data-ui-theme="studio"] .cert-card-clean::before,
+body[data-ui-theme="studio"] .track-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(450px circle at var(--mouse-card-x, 50%) var(--mouse-card-y, 50%), rgba(41, 151, 255, 0.18), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+body[data-ui-theme="glass"] .highlight-card:hover::before,
+body[data-ui-theme="glass"] .work-card:hover::before,
+body[data-ui-theme="glass"] .timeline-card:hover::before,
+body[data-ui-theme="glass"] .tech-canvas:hover::before,
+body[data-ui-theme="glass"] .cert-card-clean:hover::before,
+body[data-ui-theme="glass"] .track-card:hover::before,
+body[data-ui-theme="studio"] .highlight-card:hover::before,
+body[data-ui-theme="studio"] .work-card:hover::before,
+body[data-ui-theme="studio"] .timeline-card:hover::before,
+body[data-ui-theme="studio"] .tech-canvas:hover::before,
+body[data-ui-theme="studio"] .cert-card-clean:hover::before,
+body[data-ui-theme="studio"] .track-card:hover::before {
+    opacity: 1;
 }
 
 body[data-ui-theme="glass"] .work-card:hover,
