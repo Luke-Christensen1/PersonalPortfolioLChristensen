@@ -227,11 +227,11 @@
                         <!-- SUBTAB 1: IMAGE PREP -->
                         <div class="agent-subpane active" id="subtab-image">
                             <div class="tech-what-i-did">
-                                <h4>Stage 1: Perimeter Flood-Fill &amp; Halo Removal</h4>
+                                <h4>Stage 1: Removing Backgrounds Cleanly</h4>
                                 <ul>
-                                    <li>Uses a <b>Breadth-First Search (BFS)</b> queue seeded along the outer canvas perimeter to flood-fill and strip backgrounds without accidentally deleting internal design white fills.</li>
-                                    <li>Runs an anti-aliasing kernel scanning 4-way neighboring pixels <code>[(0,1), (1,0), (0,-1), (-1,0)]</code> to eliminate blurry compression halos along dark contours.</li>
-                                    <li>Crops directly to the artwork bounding box with a 2% proportional safety margin for print alignment.</li>
+                                    <li><b>Traces edges inward</b> so solid backgrounds disappear without accidentally erasing white text or details inside the artwork.</li>
+                                    <li><b>Cleans up blurry edge halos</b> left by compression artifacts so the design prints crisp and sharp on fabric.</li>
+                                    <li><b>Crops with balanced padding</b> so the graphic sits centered and sized properly on apparel and stickers.</li>
                                 </ul>
                             </div>
                             <details class="clean-code-drawer" open>
@@ -275,11 +275,11 @@ def clean_design_background(input_path):
                         <!-- SUBTAB 2: QUALITY CHECK -->
                         <div class="agent-subpane" id="subtab-qa">
                             <div class="tech-what-i-did">
-                                <h4>Stage 2: Pre-Flight Automated Quality Gate</h4>
+                                <h4>Stage 2: Catching Errors Before Uploading</h4>
                                 <ul>
-                                    <li><b>Transparency Enforcement:</b> Inspects the RGBA alpha channel to verify true transparent cutouts and reject solid-background files before upload.</li>
-                                    <li><b>Canvas Coverage Check:</b> Calculates bounding-box area ratio to reject artwork with excessive transparent margin padding (threshold &ge;85%).</li>
-                                    <li><b>Resolution Gate:</b> Enforces a strict 1,000&times;1,000px minimum dimension to guarantee crisp physical merchandise printing.</li>
+                                    <li><b>Checks for true transparent cutouts</b> so customers never receive shirts with ugly white background boxes.</li>
+                                    <li><b>Rejects designs with too much empty border</b> to ensure the artwork fills the printable space nicely.</li>
+                                    <li><b>Enforces a 1,000px resolution minimum</b> so pixelated or blurry files never make it to the printer.</li>
                                 </ul>
                             </div>
                             <details class="clean-code-drawer" open>
@@ -318,11 +318,11 @@ def verify_print_quality(image_path, min_dim=1000):
                         <!-- SUBTAB 3: DYNAMIC PRICING -->
                         <div class="agent-subpane" id="subtab-pricing">
                             <div class="tech-what-i-did">
-                                <h4>Stage 3: Landed-Cost Pricing &amp; Margin Model</h4>
+                                <h4>Stage 3: Pricing for Real Margins</h4>
                                 <ul>
-                                    <li><b>Shipping Cost Absorption:</b> Explicitly integrates $4.00 standard tracked shipping into product landed cost to protect margins.</li>
-                                    <li><b>30% Gross Margin Target:</b> Applies a 1.30 multiplier across base manufacturing costs to maintain sustainable profit buffers.</li>
-                                    <li><b>Retail Psychology Rounding:</b> Automatically maps calculated cents to consumer-friendly <code>.49</code> or <code>.99</code> endings with hard category price floors ($2.49 for stickers).</li>
+                                    <li><b>Bakes in $4.00 tracked shipping upfront</b> so the shop can offer "free shipping" to buyers without eating profit.</li>
+                                    <li><b>Adds a 30% gross profit margin</b> on top of manufacturing costs to make sure every order is sustainable.</li>
+                                    <li><b>Rounds prices to .49 or .99</b> with category minimums ($2.49 for stickers) to match retail buying habits.</li>
                                 </ul>
                             </div>
                             <details class="clean-code-drawer" open>
@@ -358,11 +358,11 @@ def calculate_retail_price(base_cost_map, product_type):
                         <!-- SUBTAB 4: STORE PUBLISHING -->
                         <div class="agent-subpane" id="subtab-publish">
                             <div class="tech-what-i-did">
-                                <h4>Stage 4: Automated Storefront REST API Publishing</h4>
+                                <h4>Stage 4: Pushing Listings Live Automatically</h4>
                                 <ul>
-                                    <li><b>Media Library Ingestion:</b> Base64-encodes processed artwork and streams it directly to the Printify uploads API.</li>
-                                    <li><b>Variant Catalog Mapping:</b> Queries provider blueprints (Bella+Canvas 3001, SwiftPOD) to match curated colors and apparel sizes (S–2XL).</li>
-                                    <li><b>Print Coordinate Positioning:</b> Programmatically configures front placeholder print bounds (<code>scale: 0.9, x: 0.5, y: 0.5</code>) and pushes drafts to Etsy API v3.</li>
+                                    <li><b>Uploads artwork directly to Printify</b> using base64 encoding without manual file dragging.</li>
+                                    <li><b>Selects popular shirt colors and sizes (S–2XL)</b> automatically from print provider catalogs like Bella+Canvas 3001.</li>
+                                    <li><b>Positions the graphic on the front chest</b> and creates a ready-to-sell draft on Etsy in a few seconds.</li>
                                 </ul>
                             </div>
                             <details class="clean-code-drawer" open>
