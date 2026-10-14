@@ -15,10 +15,10 @@
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23000000%22/><text x=%2250%22 y=%2250%22 font-family=%22-apple-system, sans-serif%22 font-size=%2240%22 font-weight=%22bold%22 fill=%22%23ffffff%22 text-anchor=%22middle%22 dominant-baseline=%22central%22>LC</text></svg>">
 
-    <link rel="stylesheet" href="style.css?v=20261013v4">
+    <link rel="stylesheet" href="style.css?v=20261013v5">
 </head>
-<body data-ui-theme="glass">
-    <!-- Ambient & Grid Background Enhancements -->
+<body>
+    <!-- Ambient Background Glow & Fluid Mouse Light -->
     <div id="ambient-glow" class="ambient-glow-container" aria-hidden="true">
         <div class="glow-orb orb-1"></div>
         <div class="glow-orb orb-2"></div>
@@ -26,10 +26,6 @@
         <div class="glow-orb orb-4"></div>
         <!-- Fluid Ambient Mouse Spotlight -->
         <div class="mouse-ambient-light" id="mouseAmbientLight"></div>
-    </div>
-    <div id="grid-backdrop" class="grid-backdrop-container" aria-hidden="true">
-        <div class="grid-pattern"></div>
-        <div class="grid-spotlight"></div>
     </div>
 
     <!-- Apple-Style Floating Frosted Navbar -->
@@ -846,68 +842,12 @@ for (m in metros) {
     </div>
 
     <!-- Live UI Experience Previewer Pill -->
-    <div class="visual-style-picker" id="stylePicker">
-        <div class="picker-pill">
-            <span class="picker-label">✦ Style:</span>
-            <button class="style-choice-btn active" data-style="glass" title="Frosted Glass cards + Ambient glow + Fluid cursor light">✦ Frosted Glass + Light</button>
-            <button class="style-choice-btn" data-style="ambient" title="Option 1: Soft Keynote Atmospheric Glow">Ambient Glow</button>
-            <button class="style-choice-btn" data-style="studio" title="All enhancements harmonized">Apple Studio</button>
-            <button class="style-choice-btn" data-style="grid" title="Option 2: Precision Micro-Grid & Spotlight">Micro-Grid</button>
-            <button class="style-choice-btn" data-style="bezels" title="Option 4: Safari Browser & Device Frames">Device Frames</button>
-            <button class="style-choice-btn" data-style="minimal" title="Original Pure Flat Black">Pure Black</button>
-            <button class="picker-close-btn" id="hidePickerBtn" title="Minimize Switcher">&times;</button>
-        </div>
-    </div>
-    <button class="style-launcher-badge" id="showPickerBtn">✦ UI Styles</button>
-
     <script>
     (function() {
-        function activateTheme(theme) {
-            document.body.setAttribute('data-ui-theme', theme);
-            document.querySelectorAll('.style-choice-btn').forEach(function(btn) {
-                if (btn.getAttribute('data-style') === theme) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
-            });
-            try { localStorage.setItem('preferred-ui-theme', theme); } catch(e) {}
-        }
-
-        var saved = 'glass';
-        try { saved = localStorage.getItem('preferred-ui-theme') || 'glass'; } catch(e) {}
-        activateTheme(saved);
-
-        document.querySelectorAll('.style-choice-btn').forEach(function(btn) {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                var theme = this.getAttribute('data-style');
-                activateTheme(theme);
-            });
-        });
-
-        var hideBtn = document.getElementById('hidePickerBtn');
-        var showBtn = document.getElementById('showPickerBtn');
-        var picker = document.getElementById('stylePicker');
-        if (hideBtn && showBtn && picker) {
-            hideBtn.addEventListener('click', function() {
-                picker.style.display = 'none';
-                showBtn.style.display = 'block';
-            });
-            showBtn.addEventListener('click', function() {
-                picker.style.display = 'flex';
-                showBtn.style.display = 'none';
-            });
-        }
-
-        // Fluid Ambient Mouse Tracking (Cursor-following glow)
+        // Fluid Ambient Mouse Tracking (Cursor-following ambient glow)
         window.addEventListener('mousemove', function(e) {
             document.documentElement.style.setProperty('--cursor-x', e.clientX + 'px');
             document.documentElement.style.setProperty('--cursor-y', e.clientY + 'px');
-            var xPct = Math.round((e.clientX / window.innerWidth) * 100);
-            var yPct = Math.round((e.clientY / window.innerHeight) * 100);
-            document.documentElement.style.setProperty('--spot-x', xPct + '%');
-            document.documentElement.style.setProperty('--spot-y', yPct + '%');
         });
 
         // Fast hover-driven spotlight inside frosted cards
@@ -923,6 +863,6 @@ for (m in metros) {
         });
     })();
     </script>
-    <script src="app.js?v=20261013v4"></script>
+    <script src="app.js?v=20261013v5"></script>
 </body>
 </html>

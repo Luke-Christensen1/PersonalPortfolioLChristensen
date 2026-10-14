@@ -1288,10 +1288,6 @@ footer {
     opacity: 0.95;
 }
 
-body[data-ui-theme="minimal"] .mouse-ambient-light {
-    display: none !important;
-}
-
 @keyframes orbDrift1 {
     0% { transform: translate(0, 0) scale(1); }
     100% { transform: translate(-80px, 100px) scale(1.15); }
@@ -1307,49 +1303,15 @@ body[data-ui-theme="minimal"] .mouse-ambient-light {
     100% { transform: translate(-60px, -80px) scale(1.2); }
 }
 
-/* 2. Precision Micro-Grid & Interactive Spotlight */
-.grid-backdrop-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    z-index: 1;
-    overflow: hidden;
-    transition: opacity 0.5s ease;
-}
-
-.grid-pattern {
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.22) 1.5px, transparent 1.5px);
-    background-size: 28px 28px;
-    mask-image: radial-gradient(ellipse 80% 70% at 50% 35%, #000 40%, transparent 85%);
-    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 35%, #000 40%, transparent 85%);
-    opacity: 0.85;
-}
-
-.grid-spotlight {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(650px circle at var(--spot-x, 50%) var(--spot-y, 35%), rgba(41, 151, 255, 0.25), transparent 70%);
-    transition: background 0.1s ease-out;
-}
-
-/* 3. Frosted Glass & Dynamic Light-Borders */
-body[data-ui-theme="glass"] .highlight-card,
-body[data-ui-theme="glass"] .work-card,
-body[data-ui-theme="glass"] .timeline-card,
-body[data-ui-theme="glass"] .tech-canvas,
-body[data-ui-theme="glass"] .cert-card-clean,
-body[data-ui-theme="glass"] .track-card,
-body[data-ui-theme="studio"] .highlight-card,
-body[data-ui-theme="studio"] .work-card,
-body[data-ui-theme="studio"] .timeline-card,
-body[data-ui-theme="studio"] .tech-canvas,
-body[data-ui-theme="studio"] .cert-card-clean,
-body[data-ui-theme="studio"] .track-card {
+/* ==========================================================================
+   FROSTED GLASS & DYNAMIC FLUID LIGHT CARDS (Native Approved UI)
+   ========================================================================== */
+.highlight-card,
+.work-card,
+.timeline-card,
+.tech-canvas,
+.cert-card-clean,
+.track-card {
     background: rgba(20, 22, 28, 0.65) !important;
     backdrop-filter: blur(26px) saturate(190%) !important;
     -webkit-backdrop-filter: blur(26px) saturate(190%) !important;
@@ -1359,19 +1321,13 @@ body[data-ui-theme="studio"] .track-card {
     overflow: hidden;
 }
 
-/* Subtle mouse tracking ambient light inside each frosted card */
-body[data-ui-theme="glass"] .highlight-card::before,
-body[data-ui-theme="glass"] .work-card::before,
-body[data-ui-theme="glass"] .timeline-card::before,
-body[data-ui-theme="glass"] .tech-canvas::before,
-body[data-ui-theme="glass"] .cert-card-clean::before,
-body[data-ui-theme="glass"] .track-card::before,
-body[data-ui-theme="studio"] .highlight-card::before,
-body[data-ui-theme="studio"] .work-card::before,
-body[data-ui-theme="studio"] .timeline-card::before,
-body[data-ui-theme="studio"] .tech-canvas::before,
-body[data-ui-theme="studio"] .cert-card-clean::before,
-body[data-ui-theme="studio"] .track-card::before {
+/* Subtle mouse tracking ambient sheen inside each frosted card */
+.highlight-card::before,
+.work-card::before,
+.timeline-card::before,
+.tech-canvas::before,
+.cert-card-clean::before,
+.track-card::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -1383,39 +1339,28 @@ body[data-ui-theme="studio"] .track-card::before {
     z-index: 1;
 }
 
-body[data-ui-theme="glass"] .highlight-card:hover::before,
-body[data-ui-theme="glass"] .work-card:hover::before,
-body[data-ui-theme="glass"] .timeline-card:hover::before,
-body[data-ui-theme="glass"] .tech-canvas:hover::before,
-body[data-ui-theme="glass"] .cert-card-clean:hover::before,
-body[data-ui-theme="glass"] .track-card:hover::before,
-body[data-ui-theme="studio"] .highlight-card:hover::before,
-body[data-ui-theme="studio"] .work-card:hover::before,
-body[data-ui-theme="studio"] .timeline-card:hover::before,
-body[data-ui-theme="studio"] .tech-canvas:hover::before,
-body[data-ui-theme="studio"] .cert-card-clean:hover::before,
-body[data-ui-theme="studio"] .track-card:hover::before {
+.highlight-card:hover::before,
+.work-card:hover::before,
+.timeline-card:hover::before,
+.tech-canvas:hover::before,
+.cert-card-clean:hover::before,
+.track-card:hover::before {
     opacity: 1;
 }
 
-body[data-ui-theme="glass"] .work-card:hover,
-body[data-ui-theme="glass"] .highlight-card:hover,
-body[data-ui-theme="glass"] .timeline-card:hover,
-body[data-ui-theme="glass"] .cert-card-clean:hover,
-body[data-ui-theme="glass"] .track-card:hover,
-body[data-ui-theme="studio"] .work-card:hover,
-body[data-ui-theme="studio"] .highlight-card:hover,
-body[data-ui-theme="studio"] .timeline-card:hover,
-body[data-ui-theme="studio"] .cert-card-clean:hover,
-body[data-ui-theme="studio"] .track-card:hover {
+.work-card:hover,
+.highlight-card:hover,
+.timeline-card:hover,
+.cert-card-clean:hover,
+.track-card:hover {
     transform: translateY(-4px) !important;
     border-color: #2997ff !important;
     box-shadow: 0 16px 40px -10px rgba(41, 151, 255, 0.35), 0 0 1px 1px rgba(41, 151, 255, 0.4) !important;
 }
 
-/* 4. Mockup Browser & Device Frames */
+/* Mockup Browser & Device Frames for Portfolio Showcases */
 .mockup-browser-bar {
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0.45rem 0.85rem;
@@ -1455,7 +1400,7 @@ body[data-ui-theme="studio"] .track-card:hover {
 }
 
 .mockup-mobile-bar {
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0.4rem 0.85rem;
@@ -1474,161 +1419,4 @@ body[data-ui-theme="studio"] .track-card:hover {
     font-size: 0.68rem;
     color: #86868b;
     font-weight: 500;
-}
-
-body[data-ui-theme="bezels"] .mockup-browser-bar,
-body[data-ui-theme="bezels"] .mockup-mobile-bar,
-body[data-ui-theme="studio"] .mockup-browser-bar,
-body[data-ui-theme="studio"] .mockup-mobile-bar {
-    display: flex !important;
-}
-
-/* Theme State Switches */
-body[data-ui-theme="minimal"] .ambient-glow-container,
-body[data-ui-theme="minimal"] .grid-backdrop-container {
-    display: none !important;
-}
-body[data-ui-theme="minimal"] .mockup-browser-bar,
-body[data-ui-theme="minimal"] .mockup-mobile-bar {
-    display: none !important;
-}
-
-body[data-ui-theme="ambient"] .ambient-glow-container {
-    display: block !important;
-}
-body[data-ui-theme="ambient"] .grid-backdrop-container {
-    display: none !important;
-}
-body[data-ui-theme="ambient"] .mockup-browser-bar,
-body[data-ui-theme="ambient"] .mockup-mobile-bar {
-    display: none !important;
-}
-
-body[data-ui-theme="grid"] .ambient-glow-container {
-    display: none !important;
-}
-body[data-ui-theme="grid"] .grid-backdrop-container {
-    display: block !important;
-}
-body[data-ui-theme="grid"] .mockup-browser-bar,
-body[data-ui-theme="grid"] .mockup-mobile-bar {
-    display: none !important;
-}
-
-body[data-ui-theme="glass"] .ambient-glow-container {
-    display: block !important;
-    opacity: 0.75;
-}
-body[data-ui-theme="glass"] .grid-backdrop-container {
-    display: none !important;
-}
-body[data-ui-theme="glass"] .mockup-browser-bar,
-body[data-ui-theme="glass"] .mockup-mobile-bar {
-    display: none !important;
-}
-
-body[data-ui-theme="bezels"] .ambient-glow-container,
-body[data-ui-theme="bezels"] .grid-backdrop-container {
-    display: none !important;
-}
-
-body[data-ui-theme="studio"] .ambient-glow-container {
-    display: block !important;
-}
-body[data-ui-theme="studio"] .grid-backdrop-container {
-    display: block !important;
-}
-
-/* Floating Visual Style Picker Pill */
-.visual-style-picker {
-    position: fixed;
-    bottom: 1.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10000;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
-}
-
-.picker-pill {
-    background: rgba(20, 20, 23, 0.88);
-    backdrop-filter: blur(24px) saturate(180%);
-    -webkit-backdrop-filter: blur(24px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    border-radius: 9999px;
-    padding: 0.35rem 0.55rem;
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.65), 0 0 1px rgba(255, 255, 255, 0.2);
-}
-
-.picker-label {
-    font-size: 0.72rem;
-    font-weight: 600;
-    color: #a1a1a6;
-    padding: 0 0.4rem;
-    letter-spacing: 0.02em;
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-}
-
-.style-choice-btn {
-    background: transparent;
-    border: 1px solid transparent;
-    color: #86868b;
-    font-family: var(--font-sans);
-    font-size: 0.75rem;
-    font-weight: 500;
-    padding: 0.32rem 0.75rem;
-    border-radius: 9999px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    white-space: nowrap;
-}
-
-.style-choice-btn:hover {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.08);
-}
-
-.style-choice-btn.active {
-    color: #ffffff;
-    background: rgba(41, 151, 255, 0.22);
-    border-color: rgba(41, 151, 255, 0.45);
-    box-shadow: 0 2px 8px rgba(41, 151, 255, 0.25);
-}
-
-.picker-close-btn {
-    background: transparent;
-    border: none;
-    color: #6e6e73;
-    padding: 0.25rem 0.4rem;
-    cursor: pointer;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: color 0.2s;
-}
-.picker-close-btn:hover {
-    color: #ffffff;
-}
-
-.style-launcher-badge {
-    display: none;
-    position: fixed;
-    bottom: 1.5rem;
-    right: 1.5rem;
-    z-index: 10000;
-    background: rgba(20, 20, 23, 0.88);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    border-radius: 9999px;
-    padding: 0.45rem 0.95rem;
-    color: #ffffff;
-    font-size: 0.75rem;
-    font-weight: 500;
-    cursor: pointer;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
 }
