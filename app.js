@@ -164,8 +164,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Make Work Cards Fully Clickable ---
-    document.querySelectorAll('.work-card').forEach(card => {
+    // --- Make Work Cards & Cert Cards Fully Clickable ---
+    document.querySelectorAll('.work-card, .cert-card-clean').forEach(card => {
         card.addEventListener('click', (e) => {
             if (!e.target.closest('a') && !e.target.closest('button')) {
                 const primaryLink = card.querySelector('a');
