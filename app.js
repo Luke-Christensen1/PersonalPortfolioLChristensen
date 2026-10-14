@@ -283,4 +283,52 @@ document.addEventListener('DOMContentLoaded', () => {
             hideContact();
         });
     }
+
+    // --- Interactive UI Style Switcher Controller ---
+    const stylePicker = document.getElementById('stylePicker');
+    const styleChoiceBtns = document.querySelectorAll('.style-choice-btn');
+    const hidePickerBtn = document.getElementById('hidePickerBtn');
+    const showPickerBtn = document.getElementById('showPickerBtn');
+
+    function applyUITheme(themeName) {
+        document.body.dataset.uiTheme = themeName;
+        styleChoiceBtns.forEach(btn => {
+            if (btn.dataset.style === themeName) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+        localStorage.setItem('preferred-ui-theme', themeName);
+    }
+
+    const savedTheme = localStorage.getItem('preferred-ui-theme') || 'studio';
+    applyUITheme(savedTheme);
+
+    styleChoiceBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const style = btn.dataset.style;
+            applyUITheme(style);
+        });
+    });
+
+    if (hidePickerBtn && stylePicker && showPickerBtn) {
+        hidePickerBtn.addEventListener('click', () => {
+            stylePicker.style.display = 'none';
+            showPickerBtn.style.display = 'block';
+        });
+
+        showPickerBtn.addEventListener('click', () => {
+            stylePicker.style.display = 'flex';
+            showPickerBtn.style.display = 'none';
+        });
+    }
+
+    // Interactive Spotlight Tracking on Mouse Move
+    window.addEventListener('mousemove', (e) => {
+        const x = Math.round((e.clientX / window.innerWidth) * 100);
+        const y = Math.round((e.clientY / window.innerHeight) * 100);
+        document.documentElement.style.setProperty('--spot-x', `${x}%`);
+        document.documentElement.style.setProperty('--spot-y', `${y}%`);
+    });
 });
