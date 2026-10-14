@@ -160,12 +160,12 @@
                     <!-- Highlight 3: E-Commerce Store -->
                     <div class="highlight-card">
                         <div>
-                            <span class="highlight-badge">AI &bull; Entrepreneurship</span>
-                            <h4>Automated E-Commerce Store</h4>
-                            <p>Built an online store using AI tools to assist with product ideas, copy, and Pinterest marketing. Grew the account to ~30,000 monthly impressions in about 10 weeks.</p>
+                            <span class="highlight-badge">Python &bull; Multi-Agent AI</span>
+                            <h4>Automated E-Commerce System</h4>
+                            <p>Engineered a 7-agent Python automation pipeline coordinating image QA, SEO, dynamic pricing, and Printify publishing. Scaled to ~30,000 monthly impressions with $0 ad spend.</p>
                         </div>
-                        <a href="#view-work" class="track-link-cta" data-navigate="work">
-                            View Project <span>→</span>
+                        <a href="#view-systems" class="track-link-cta" data-navigate="systems" onclick="window.switchTechTab('tech-agents')">
+                            View Architecture <span>→</span>
                         </a>
                     </div>
                 </div>
@@ -200,6 +200,9 @@
                     </button>
                     <button class="tech-tab-btn" data-tab="tech-r">
                         Airbnb Pricing (R)
+                    </button>
+                    <button class="tech-tab-btn" data-tab="tech-agents">
+                        E-Commerce Multi-Agent (Python)
                     </button>
                 </div>
 
@@ -361,6 +364,82 @@ for (m in metros) {
   OPE &lt;- dQ_dP * P / Q
   results &lt;- rbind(results, data.frame(metro = m, OPE = OPE))
 }</code></pre>
+                        </details>
+                    </div>
+
+                    <!-- TAB 4: MULTI-AGENT E-COMMERCE (PYTHON) -->
+                    <div class="tech-pane" id="tech-agents">
+                        <div class="tech-pane-top">
+                            <div class="tech-context-tag">INDEPENDENT VENTURE &bull; Multi-Agent System</div>
+                            <h3>E-Commerce Automation Architecture</h3>
+                            <p>Engineered a 7-agent Python automation system coordinating the end-to-end storefront pipeline—from image pre-flight validation and niche SEO to dynamic landed-cost pricing and live API publishing.</p>
+                        </div>
+
+                        <div class="tech-what-i-did">
+                            <h4>What I Did</h4>
+                            <ul>
+                                <li>Designed a supervisor orchestration pattern (<code>supervisor.py</code>) to route incoming creative assets across 10+ product formats (apparel, embroidery, drinkware, kiss-cut stickers) and coordinate task execution across specialized agents.</li>
+                                <li>Built an automated image pre-flight validation agent (<code>qa_agent.py</code>) using Pillow (PIL) to inspect alpha transparency, enforce bounding-box canvas coverage, and verify print-grade resolution thresholds (&ge;1000&times;1000px) prior to upload.</li>
+                                <li>Engineered a dynamic landed-cost pricing engine (<code>financial_agent.py</code>) incorporating wholesale manufacturing costs, $4.00 standard tracked shipping absorption, a 30% target gross margin, and psychological retail rounding (.49 / .99).</li>
+                                <li>Automated live catalog creation and social distribution by connecting directly to the Printify and Etsy API v3 endpoints alongside automated Pinterest marketing feeds.</li>
+                            </ul>
+                        </div>
+
+                        <details class="clean-code-drawer">
+                            <summary>
+                                <span>View Core Agent Logic Snippet</span>
+                                <span style="font-size:0.75rem; color:var(--accent-blue);">Click to view</span>
+                            </summary>
+                            <pre><code># Multi-Agent E-Commerce: Automated QA Validation & Landed-Cost Pricing
+from PIL import Image
+
+def validate_print_quality(image_path, min_dim=1000):
+    """Pre-flight QA Agent: Inspects alpha channel, bounding box, and resolution."""
+    with Image.open(image_path) as img:
+        # Enforce alpha channel transparency
+        if img.mode not in ('RGBA', 'LA'):
+            img = img.convert('RGBA')
+        
+        # Verify cutouts contain true transparent pixels
+        extrema = img.getextrema()
+        if extrema[3][0] == 255:
+            return False, "QA Rejected: Design lacks transparent background."
+        
+        # Guard against excessive empty canvas margins
+        bbox = img.getbbox()
+        if bbox:
+            w, h = img.size
+            bw, bh = bbox[2] - bbox[0], bbox[3] - bbox[1]
+            if bw < w * 0.85 and bh < h * 0.85:
+                return False, f"QA Rejected: Artwork utilization below threshold ({bw}x{bh})."
+        
+        # Print resolution gate
+        if img.width < min_dim or img.height < min_dim:
+            return False, f"QA Rejected: Resolution below {min_dim}px ({img.width}x{img.height})."
+            
+        return True, "QA Passed: Ready for Printify upload"
+
+def calculate_retail_price(base_cost_map, product_type):
+    """Financial Agent: Calculates landed cost, margin buffer, and psychological price points."""
+    retail_prices = {}
+    SHIPPING_CENTS = 400     # Absorb $4.00 standard tracked shipping
+    TARGET_MARGIN = 1.30     # 30% gross margin target
+    
+    for variant_id, base_cost in base_cost_map.items():
+        landed_cost = base_cost + SHIPPING_CENTS
+        calculated = int(landed_cost * TARGET_MARGIN)
+        
+        # Psychological rounding (.49 or .99)
+        cents = calculated % 100
+        base_dollars = (calculated // 100) * 100
+        retail_cents = base_dollars + (49 if cents < 50 else 99)
+        
+        # Enforce category margin floor
+        if product_type in ("Die-Cut", "Kiss-Cut"):
+            retail_cents = max(retail_cents, 249)  # $2.49 minimum floor
+            
+        retail_prices[variant_id] = retail_cents
+    return retail_prices</code></pre>
                         </details>
                     </div>
 
@@ -605,9 +684,12 @@ for (m in metros) {
                             <img src="assets/work/ecom_agents_thumb.png" alt="Automated E-Commerce Store">
                         </div>
                         <div class="work-card-info">
-                            <span class="work-card-tag">AI &bull; Entrepreneurship</span>
+                            <span class="work-card-tag">Python &bull; Multi-Agent System</span>
                             <h3>Automated E-Commerce Store</h3>
-                            <p>Launched an automated online apparel storefront on Etsy using Printify and AI tools for market research, SEO copy, and Pinterest distribution. Scaled to ~30,000 monthly impressions and achieved day-one sales with $0 ad spend.</p>
+                            <p>Launched an automated online apparel storefront on Etsy using a 7-agent Python system for pre-flight image QA, SEO tagging, dynamic pricing, and Printify API publishing. Scaled to ~30,000 monthly impressions with $0 ad spend.</p>
+                            <a href="#view-systems" class="view-pdf-btn project-link" data-navigate="systems" onclick="window.switchTechTab('tech-agents')">
+                                View Technical Architecture
+                            </a>
                         </div>
                     </div>
 
@@ -623,7 +705,7 @@ for (m in metros) {
                         <div class="work-card-info">
                             <span class="work-card-tag">Mobile App</span>
                             <h3>DayLoom</h3>
-                            <p>A curated daily journaling mobile app built with React Native, designed around mindful reflection.</p>
+                            <p>A curated daily micro-journaling app built with React Native and Expo, designed around "The Curated Stillness."</p>
                             <a href="https://github.com/Luke-Christensen1/DailyJournal" target="_blank" class="view-pdf-btn">
                                 GitHub Repo
                             </a>
