@@ -622,6 +622,57 @@ h1, h2, h3, h4, h5 {
     color: var(--accent-blue);
 }
 
+/* Mini-Switcher for Agent Pipeline Stages */
+.agent-subswitcher {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0.35rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.agent-sub-btn {
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--text-secondary);
+    padding: 0.45rem 0.95rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.agent-sub-btn:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.agent-sub-btn.active {
+    background: rgba(41, 151, 255, 0.18);
+    border-color: rgba(41, 151, 255, 0.4);
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(41, 151, 255, 0.18);
+}
+
+.agent-subpane {
+    display: none;
+    animation: fadeInSubpane 0.2s ease;
+}
+
+.agent-subpane.active {
+    display: block;
+}
+
+@keyframes fadeInSubpane {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /* Collapsible Code Drawer */
 .clean-code-drawer {
     background: #000000;

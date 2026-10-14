@@ -212,56 +212,127 @@
                     <div class="tech-pane active" id="tech-agents">
                         <div class="tech-pane-top">
                             <div class="tech-context-tag">INDEPENDENT VENTURE &bull; Multi-Agent System</div>
-                            <h3>E-Commerce Automation Architecture</h3>
-                            <p>Engineered a 7-agent Python automation system coordinating the end-to-end storefront pipeline—from image pre-flight validation and niche SEO to dynamic landed-cost pricing and live API publishing.</p>
+                            <h3>E-Commerce Pipeline Architecture</h3>
+                            <p>An automated 4-stage Python pipeline that ingests raw designs, cleans background transparency, verifies print specs, prices for margin, and publishes live to the storefront.</p>
                         </div>
 
-                        <div class="tech-what-i-did">
-                            <h4>What I Did</h4>
-                            <ul>
-                                <li>Designed a supervisor orchestration pattern (<code>supervisor.py</code>) to route incoming creative assets across 10+ product formats (apparel, embroidery, drinkware, kiss-cut stickers) and coordinate task execution across specialized agents.</li>
-                                <li>Built an automated image pre-flight validation agent (<code>qa_agent.py</code>) using Pillow (PIL) to inspect alpha transparency, enforce bounding-box canvas coverage, and verify print-grade resolution thresholds (&ge;1000&times;1000px) prior to upload.</li>
-                                <li>Engineered a dynamic landed-cost pricing engine (<code>financial_agent.py</code>) incorporating wholesale manufacturing costs, $4.00 standard tracked shipping absorption, a 30% target gross margin, and psychological retail rounding (.49 / .99).</li>
-                                <li>Automated live catalog creation and social distribution by connecting directly to the Printify and Etsy API v3 endpoints alongside automated Pinterest marketing feeds.</li>
-                            </ul>
+                        <!-- Mini-Switcher: 4 Stages of the Pipeline -->
+                        <div class="agent-subswitcher">
+                            <button class="agent-sub-btn active" data-subtab="subtab-image">1. Image Prep</button>
+                            <button class="agent-sub-btn" data-subtab="subtab-qa">2. Quality Check</button>
+                            <button class="agent-sub-btn" data-subtab="subtab-pricing">3. Dynamic Pricing</button>
+                            <button class="agent-sub-btn" data-subtab="subtab-publish">4. Store Publishing</button>
                         </div>
 
-                        <details class="clean-code-drawer">
-                            <summary>
-                                <span>View Core Agent Logic Snippet</span>
-                                <span style="font-size:0.75rem; color:var(--accent-blue);">Click to view</span>
-                            </summary>
-                            <pre><code># Multi-Agent E-Commerce: Automated QA Validation & Landed-Cost Pricing
+                        <!-- SUBTAB 1: IMAGE PREP -->
+                        <div class="agent-subpane active" id="subtab-image">
+                            <div class="tech-what-i-did">
+                                <h4>Stage 1: Perimeter Flood-Fill &amp; Halo Removal</h4>
+                                <ul>
+                                    <li>Uses a <b>Breadth-First Search (BFS)</b> queue seeded along the outer canvas perimeter to flood-fill and strip backgrounds without accidentally deleting internal design white fills.</li>
+                                    <li>Runs an anti-aliasing kernel scanning 4-way neighboring pixels <code>[(0,1), (1,0), (0,-1), (-1,0)]</code> to eliminate blurry compression halos along dark contours.</li>
+                                    <li>Crops directly to the artwork bounding box with a 2% proportional safety margin for print alignment.</li>
+                                </ul>
+                            </div>
+                            <details class="clean-code-drawer" open>
+                                <summary>
+                                    <span>View Python Code: Perimeter BFS Flood-Fill</span>
+                                    <span style="font-size:0.75rem; color:var(--accent-blue);">image_processor.py</span>
+                                </summary>
+                                <pre><code># Stage 1: Perimeter BFS Flood-Fill & Anti-Aliasing Cleanup
+from PIL import Image
+from collections import deque
+
+def clean_design_background(input_path):
+    """Perimeter flood-fill: Removes background without erasing internal design elements."""
+    img = Image.open(input_path).convert("RGBA")
+    width, height = img.size
+    pixels = img.load()
+    
+    visited, queue = set(), deque()
+    # Seed perimeter pixels into the BFS queue
+    for x in range(width):
+        queue.extend([(x, 0), (x, height - 1)])
+    for y in range(height):
+        queue.extend([(0, y), (width - 1, y)])
+        
+    while queue:
+        x, y = queue.popleft()
+        if (x, y) in visited or not (0 <= x < width and 0 <= y < height):
+            continue
+        visited.add((x, y))
+        
+        r, g, b, a = pixels[x, y]
+        if r > 180 and g > 180 and b > 180 and a > 0:
+            pixels[x, y] = (0, 0, 0, 0)
+            for dx, dy in [(0, 1), (1, 0), (0, -1), (-1, 0)]:
+                queue.append((x + dx, y + dy))
+                
+    return img</code></pre>
+                            </details>
+                        </div>
+
+                        <!-- SUBTAB 2: QUALITY CHECK -->
+                        <div class="agent-subpane" id="subtab-qa">
+                            <div class="tech-what-i-did">
+                                <h4>Stage 2: Pre-Flight Automated Quality Gate</h4>
+                                <ul>
+                                    <li><b>Transparency Enforcement:</b> Inspects the RGBA alpha channel to verify true transparent cutouts and reject solid-background files before upload.</li>
+                                    <li><b>Canvas Coverage Check:</b> Calculates bounding-box area ratio to reject artwork with excessive transparent margin padding (threshold &ge;85%).</li>
+                                    <li><b>Resolution Gate:</b> Enforces a strict 1,000&times;1,000px minimum dimension to guarantee crisp physical merchandise printing.</li>
+                                </ul>
+                            </div>
+                            <details class="clean-code-drawer" open>
+                                <summary>
+                                    <span>View Python Code: Pre-Flight Quality Gate</span>
+                                    <span style="font-size:0.75rem; color:var(--accent-blue);">qa_agent.py</span>
+                                </summary>
+                                <pre><code># Stage 2: Automated Pre-Flight Quality Gate
 from PIL import Image
 
-def validate_print_quality(image_path, min_dim=1000):
-    """Pre-flight QA Agent: Inspects alpha channel, bounding box, and resolution."""
+def verify_print_quality(image_path, min_dim=1000):
+    """Pre-flight QA: Validates transparency, canvas coverage, and resolution."""
     with Image.open(image_path) as img:
-        # Enforce alpha channel transparency
-        if img.mode not in ('RGBA', 'LA'):
-            img = img.convert('RGBA')
+        img = img.convert("RGBA")
         
-        # Verify cutouts contain true transparent pixels
-        extrema = img.getextrema()
-        if extrema[3][0] == 255:
-            return False, "QA Rejected: Design lacks transparent background."
+        # 1. Reject if design lacks transparent cutouts
+        if img.getextrema()[3][0] == 255:
+            return False, "QA Fail: Missing transparent background."
         
-        # Guard against excessive empty canvas margins
+        # 2. Reject if artwork utilization is too low (excessive whitespace)
         bbox = img.getbbox()
         if bbox:
             w, h = img.size
             bw, bh = bbox[2] - bbox[0], bbox[3] - bbox[1]
             if bw < w * 0.85 and bh < h * 0.85:
-                return False, f"QA Rejected: Artwork utilization below threshold ({bw}x{bh})."
+                return False, f"QA Fail: Design utilization too low ({bw}x{bh})."
         
-        # Print resolution gate
+        # 3. Minimum resolution gate for physical merchandise
         if img.width < min_dim or img.height < min_dim:
-            return False, f"QA Rejected: Resolution below {min_dim}px ({img.width}x{img.height})."
+            return False, f"QA Fail: Resolution below {min_dim}px minimum."
             
-        return True, "QA Passed: Ready for Printify upload"
+        return True, "QA Passed: Approved for publishing"</code></pre>
+                            </details>
+                        </div>
 
+                        <!-- SUBTAB 3: DYNAMIC PRICING -->
+                        <div class="agent-subpane" id="subtab-pricing">
+                            <div class="tech-what-i-did">
+                                <h4>Stage 3: Landed-Cost Pricing &amp; Margin Model</h4>
+                                <ul>
+                                    <li><b>Shipping Cost Absorption:</b> Explicitly integrates $4.00 standard tracked shipping into product landed cost to protect margins.</li>
+                                    <li><b>30% Gross Margin Target:</b> Applies a 1.30 multiplier across base manufacturing costs to maintain sustainable profit buffers.</li>
+                                    <li><b>Retail Psychology Rounding:</b> Automatically maps calculated cents to consumer-friendly <code>.49</code> or <code>.99</code> endings with hard category price floors ($2.49 for stickers).</li>
+                                </ul>
+                            </div>
+                            <details class="clean-code-drawer" open>
+                                <summary>
+                                    <span>View Python Code: Landed-Cost Margin Engine</span>
+                                    <span style="font-size:0.75rem; color:var(--accent-blue);">financial_agent.py</span>
+                                </summary>
+                                <pre><code># Stage 3: Landed-Cost Pricing & Margin Engine
 def calculate_retail_price(base_cost_map, product_type):
-    """Financial Agent: Calculates landed cost, margin buffer, and psychological price points."""
+    """Calculates landed cost, absorbs shipping, and optimizes retail price points."""
     retail_prices = {}
     SHIPPING_CENTS = 400     # Absorb $4.00 standard tracked shipping
     TARGET_MARGIN = 1.30     # 30% gross margin target
@@ -270,18 +341,60 @@ def calculate_retail_price(base_cost_map, product_type):
         landed_cost = base_cost + SHIPPING_CENTS
         calculated = int(landed_cost * TARGET_MARGIN)
         
-        # Psychological rounding (.49 or .99)
+        # Psychological price rounding (.49 or .99)
         cents = calculated % 100
         base_dollars = (calculated // 100) * 100
         retail_cents = base_dollars + (49 if cents < 50 else 99)
         
-        # Enforce category margin floor
+        # Enforce category price floor
         if product_type in ("Die-Cut", "Kiss-Cut"):
             retail_cents = max(retail_cents, 249)  # $2.49 minimum floor
             
         retail_prices[variant_id] = retail_cents
     return retail_prices</code></pre>
-                        </details>
+                            </details>
+                        </div>
+
+                        <!-- SUBTAB 4: STORE PUBLISHING -->
+                        <div class="agent-subpane" id="subtab-publish">
+                            <div class="tech-what-i-did">
+                                <h4>Stage 4: Automated Storefront REST API Publishing</h4>
+                                <ul>
+                                    <li><b>Media Library Ingestion:</b> Base64-encodes processed artwork and streams it directly to the Printify uploads API.</li>
+                                    <li><b>Variant Catalog Mapping:</b> Queries provider blueprints (Bella+Canvas 3001, SwiftPOD) to match curated colors and apparel sizes (S–2XL).</li>
+                                    <li><b>Print Coordinate Positioning:</b> Programmatically configures front placeholder print bounds (<code>scale: 0.9, x: 0.5, y: 0.5</code>) and pushes drafts to Etsy API v3.</li>
+                                </ul>
+                            </div>
+                            <details class="clean-code-drawer" open>
+                                <summary>
+                                    <span>View Python Code: Store Publishing Pipeline</span>
+                                    <span style="font-size:0.75rem; color:var(--accent-blue);">publishing_agent.py</span>
+                                </summary>
+                                <pre><code># Stage 4: Automated REST API Publishing Pipeline
+import requests, base64, os
+
+def publish_product(shop_id, image_path, title, tags, retail_prices):
+    """Uploads artwork and drafts live listing via Printify API."""
+    # 1. Base64 encode and upload to media library
+    with open(image_path, "rb") as f:
+        encoded = base64.b64encode(f.read()).decode("utf-8")
+    upload_resp = requests.post(
+        "https://api.printify.com/v1/uploads/images.json",
+        headers=HEADERS,
+        json={"file_name": os.path.basename(image_path), "contents": encoded}
+    )
+    image_id = upload_resp.json()["id"]
+    
+    # 2. Configure variants, print coordinates, and draft product
+    payload = {
+        "title": title, "tags": tags,
+        "blueprint_id": 12, "print_provider_id": 29,  # Bella+Canvas 3001
+        "variants": [{"id": vid, "price": p, "is_enabled": True} for vid, p in retail_prices.items()],
+        "print_areas": [{"placeholders": [{"position": "front", "images": [{"id": image_id, "scale": 0.9}]}]}]
+    }
+    return requests.post(f"https://api.printify.com/v1/shops/{shop_id}/products.json", headers=HEADERS, json=payload)</code></pre>
+                            </details>
+                        </div>
                     </div>
 
                     <!-- TAB 2: AIRLINE MERGER SQL -->
@@ -826,9 +939,9 @@ for (m in metros) {
                 </div>
                 
                 <div class="slideshow-container">
-                    <!-- Tetons Kiss -->
+                    <!-- Wedding in the hills -->
                     <div class="slide active">
-                        <img src="./assets/P/IMG_1195.jpeg" style="object-fit: contain; background-color: #0b0f17;" alt="Tetons with wife">
+                        <img src="./assets/P/wedding_portrait.jpg" style="object-fit: contain; background-color: #0b0f17;" alt="Luke and Bailey wedding day">
                     </div>
                     <!-- Mountains Group -->
                     <div class="slide">

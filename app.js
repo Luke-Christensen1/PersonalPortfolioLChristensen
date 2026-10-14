@@ -130,6 +130,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- Agent Pipeline Mini-Switcher Logic ---
+    const agentSubBtns = document.querySelectorAll('.agent-sub-btn');
+    const agentSubPanes = document.querySelectorAll('.agent-subpane');
+
+    agentSubBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const subtabId = btn.dataset.subtab;
+            agentSubBtns.forEach(b => b.classList.toggle('active', b === btn));
+            agentSubPanes.forEach(pane => pane.classList.toggle('active', pane.id === subtabId));
+        });
+    });
+
     // --- Featured Work Category Filter Logic ---
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
