@@ -154,7 +154,7 @@
                             <h4>Automated E-Commerce Store</h4>
                             <p>Built an online store using AI tools to assist with product ideas, copy, and Pinterest marketing. Grew the account to ~30,000 monthly impressions in about 10 weeks.</p>
                         </div>
-                        <a href="#view-systems" class="track-link-cta" data-navigate="systems">
+                        <a href="#view-work" class="track-link-cta" data-navigate="work">
                             View Project <span>→</span>
                         </a>
                     </div>
@@ -185,14 +185,11 @@
                     <button class="tech-tab-btn active" data-tab="tech-sql">
                         Airline Merger (SQL)
                     </button>
-                    <button class="tech-tab-btn" data-tab="tech-agents">
-                        AI E-Commerce Store
+                    <button class="tech-tab-btn" data-tab="tech-census">
+                        Store Expansion (Python)
                     </button>
                     <button class="tech-tab-btn" data-tab="tech-r">
                         Airbnb Pricing (R)
-                    </button>
-                    <button class="tech-tab-btn" data-tab="tech-census">
-                        Store Expansion (Python)
                     </button>
                 </div>
 
@@ -209,9 +206,9 @@
                         <div class="tech-what-i-did">
                             <h4>What I Did</h4>
                             <ul>
-                                <li>Used PostgreSQL window functions to calculate carrier market shares by origin and destination airport pairs.</li>
+                                <li>Used PostgreSQL window functions to calculate carrier market shares by origin and destination airport pairs across 188 head-to-head markets.</li>
                                 <li>Calculated route market concentration (Herfindahl-Hirschman Index / HHI) before and after the proposed merger to see which specific routes would see the biggest drop in airline competition.</li>
-                                <li>Identified routes that exceeded regulatory thresholds, showing where passenger airfares were most vulnerable to price increases.</li>
+                                <li>Identified routes that exceeded DOJ regulatory thresholds (Post-HHI &gt; 2,500 and &Delta;HHI &ge; 200), demonstrating where airfares were legally and economically vulnerable to anti-competitive consolidation.</li>
                             </ul>
                         </div>
 
@@ -221,140 +218,49 @@
                                 <span style="font-size:0.75rem; color:var(--accent-blue);">Click to view</span>
                             </summary>
                             <pre><code>-- Airline Route Market Share & HHI Analysis
-WITH RoutePassengers AS (
-    SELECT 
-        origin, dest, carrier,
-        SUM(passengers) AS carrier_passengers,
-        SUM(SUM(passengers)) OVER (PARTITION BY origin, dest) AS total_route_passengers
-    FROM us_dot_db1b_flights
-    GROUP BY origin, dest, carrier
-),
-CarrierMarketShare AS (
-    SELECT 
-        origin, dest, carrier,
-        ROUND((carrier_passengers::numeric / total_route_passengers) * 100, 2) AS market_share_pct
-    FROM RoutePassengers
-),
-PrePostMergerHHI AS (
-    SELECT 
-        origin, dest,
-        ROUND(SUM(POWER(market_share_pct, 2)), 0) AS pre_hhi,
-        ROUND(SUM(POWER(
-            CASE WHEN carrier IN ('B6', 'NK') THEN 
-                SUM(CASE WHEN carrier IN ('B6', 'NK') THEN market_share_pct ELSE 0 END) OVER (PARTITION BY origin, dest)
-            ELSE market_share_pct END, 2)), 0) AS post_hhi
-    FROM CarrierMarketShare
-    GROUP BY origin, dest
-)
-SELECT origin, dest, pre_hhi, post_hhi, (post_hhi - pre_hhi) AS delta_hhi
-FROM PrePostMergerHHI
-WHERE post_hhi > 2500 AND (post_hhi - pre_hhi) >= 200
+-- Calculate market share per carrier on overlapping routes
+CREATE OR REPLACE VIEW overlap_market_shares AS
+SELECT origin, dest, unique_carrier_name, total_passengers,
+    ROUND((total_passengers::numeric / SUM(total_passengers) OVER (PARTITION BY origin, dest)) * 100, 2) AS market_share
+FROM overlap_route_passengers;
+
+-- Pre-merger HHI calculation across overlapping routes
+CREATE OR REPLACE VIEW pre_merger_hhi AS
+SELECT origin, dest,
+    ROUND(SUM(POWER(market_share, 2)), 0) AS hhi
+FROM overlap_market_shares
+GROUP BY origin, dest;
+
+-- Post-merger HHI combining JetBlue (B6) and Spirit (NK)
+CREATE OR REPLACE VIEW post_merger_hhi AS
+SELECT origin, dest,
+    ROUND(SUM(POWER(market_share, 2)), 0) AS post_hhi
+FROM post_merger_market_shares
+GROUP BY origin, dest;
+
+-- Flag routes exceeding DOJ antitrust presumption (Post-HHI > 2500 & Delta >= 200)
+SELECT p.origin, p.dest, p.hhi AS pre_hhi, m.post_hhi, (m.post_hhi - p.hhi) AS delta_hhi
+FROM pre_merger_hhi p
+JOIN post_merger_hhi m ON p.origin = m.origin AND p.dest = m.dest
+WHERE m.post_hhi > 2500 AND (m.post_hhi - p.hhi) >= 200
 ORDER BY delta_hhi DESC;</code></pre>
                         </details>
                     </div>
 
-                    <!-- TAB 2: AI E-COMMERCE STORE -->
-                    <div class="tech-pane" id="tech-agents">
-                        <div class="tech-pane-top">
-                            <div class="tech-context-tag">Independent Venture</div>
-                            <h3>AI E-Commerce Automation</h3>
-                            <p>Built and ran an automated online storefront on Etsy using Printify and AI tools for product research, copy generation, and social media distribution.</p>
-                        </div>
-
-                        <div class="tech-what-i-did">
-                            <h4>What I Did</h4>
-                            <ul>
-                                <li>Used AI to help brainstorm unserved product niches and write SEO-optimized titles, tags, and product descriptions.</li>
-                                <li>Integrated with print-on-demand suppliers via Printify to fulfill orders automatically as they came in.</li>
-                                <li>Automated marketing content on Pinterest, growing account traffic from 0 to ~30,000 monthly impressions in about 10 weeks.</li>
-                                <li>Made first sales on the day of launch with zero paid ad spend.</li>
-                            </ul>
-                        </div>
-
-                        <details class="clean-code-drawer">
-                            <summary>
-                                <span>View Python Automation Script</span>
-                                <span style="font-size:0.75rem; color:var(--accent-blue);">Click to view</span>
-                            </summary>
-                            <pre><code># Automated Listing & Marketing Pipeline
-import asyncio
-
-class ProductPipeline:
-    def __init__(self, claude_client, printify_client, pinterest_client):
-        self.claude = claude_client
-        self.printify = printify_client
-        self.pinterest = pinterest_client
-
-    async def create_listing(self, niche_keyword):
-        # Generate SEO title and tags
-        copy = await self.generate_copy(niche_keyword)
-        
-        # Publish product to print provider
-        product = await self.printify.create_product(copy)
-        
-        # Schedule Pinterest pin to drive organic discovery
-        await self.pinterest.schedule_pin(product)
-        return product</code></pre>
-                        </details>
-                    </div>
-
-                    <!-- TAB 3: AIRBNB PRICING (R) -->
-                    <div class="tech-pane" id="tech-r">
-                        <div class="tech-pane-top">
-                            <div class="tech-context-tag">BYU STRATEGY 402 &bull; Econometrics</div>
-                            <h3>Airbnb Pricing &amp; Demand Modeling</h3>
-                            <p>Analyzed a large multi-city dataset of Airbnb listings in R to study how nightly pricing impacts booking demand and host revenue.</p>
-                        </div>
-
-                        <div class="tech-what-i-did">
-                            <h4>What I Did</h4>
-                            <ul>
-                                <li>Cleaned and prepared listing data in R, controlling for factors like property size, bedrooms, superhost status, and review scores.</li>
-                                <li>Ran multivariate regressions with neighborhood fixed effects to isolate the true relationship between price and estimated bookings.</li>
-                                <li>Found that demand in major markets was slightly elastic (a 10% price increase led to roughly a 10.5% drop in bookings), showing the trade-offs hosts make between occupancy and revenue.</li>
-                            </ul>
-                        </div>
-
-                        <details class="clean-code-drawer">
-                            <summary>
-                                <span>View R Regression Code</span>
-                                <span style="font-size:0.75rem; color:var(--accent-blue);">Click to view</span>
-                            </summary>
-                            <pre><code># Airbnb Demand Regression in R
-library(tidyverse)
-library(fixest)
-
-# Clean and filter listing data
-airbnb_data &lt;- read_csv("airbnb_multicity.csv") %&gt;%
-  filter(price &gt; 15 &amp; price &lt; 2500, estimated_bookings_30d &gt; 0) %&gt;%
-  mutate(log_bookings = log(estimated_bookings_30d), log_price = log(price))
-
-# Multivariate regression with neighborhood fixed effects
-model &lt;- feols(
-  log_bookings ~ log_price + accommodates + bedrooms + review_scores_rating | 
-                 metro_market^neighbourhood_cleansed,
-  data = airbnb_data,
-  vcov = "cluster" ~ neighbourhood_cleansed
-)
-
-summary(model)</code></pre>
-                        </details>
-                    </div>
-
-                    <!-- TAB 4: STORE EXPANSION (PYTHON) -->
+                    <!-- TAB 2: STORE EXPANSION (PYTHON) -->
                     <div class="tech-pane" id="tech-census">
                         <div class="tech-pane-top">
                             <div class="tech-context-tag">BYU STRATEGY 412 &bull; Geospatial Analysis</div>
-                            <h3>Grocery Store Expansion Analysis</h3>
+                            <h3>Grocery Store Expansion Pipeline</h3>
                             <p>Built a data pipeline to identify high-potential expansion zip codes for Sprouts Farmers Market by combining store locations with US Census demographic data.</p>
                         </div>
 
                         <div class="tech-what-i-did">
                             <h4>What I Did</h4>
                             <ul>
-                                <li>Scraped location coordinates for existing grocery competitors (Sprouts, Whole Foods, Trader Joe's).</li>
-                                <li>Pulled demographic data (median household income, population) from the US Census Bureau API by zip code.</li>
-                                <li>Calculated competitor proximity within a 3-mile trade radius around candidate areas and visualized the ranked results in Tableau.</li>
+                                <li>Built automated scrapers to collect nationwide store locations and addresses for major organic grocers (Sprouts, Whole Foods, Trader Joe's).</li>
+                                <li>Batch-queried the US Census Bureau API (ACS 5-Year data) to enrich each zip code with median household income and population figures.</li>
+                                <li>Merged competitor density and demographic data in Pandas to score underserved markets and exported clean datasets for Tableau visualization.</li>
                             </ul>
                         </div>
 
@@ -363,27 +269,88 @@ summary(model)</code></pre>
                                 <span>View Python Pipeline Snippet</span>
                                 <span style="font-size:0.75rem; color:var(--accent-blue);">Click to view</span>
                             </summary>
-                            <pre><code># Store Location & Census Pipeline
-import requests, pandas as pd
-from geopy.distance import geodesic
+                            <pre><code># US Census Bureau API Batch Ingestion & Demographic Pipeline
+import pandas as pd
+import requests
 
 CENSUS_API_URL = "https://api.census.gov/data/2022/acs/acs5"
+CENSUS_VARS = {"B19013_001E": "median_income", "B01003_001E": "total_population"}
 
-def score_locations(candidate_zips, competitors, census_df):
-    results = []
-    for _, zip_row in candidate_zips.iterrows():
-        coord = (zip_row["lat"], zip_row["lon"])
-        
-        # Count competitors within 3 miles
-        competitor_count = sum(
-            geodesic(coord, (c["lat"], c["lon"])).miles &lt;= 3.0 
-            for _, c in competitors.iterrows()
-        )
-        
-        income = census_df.loc[census_df["zip"] == zip_row["zip_code"]]["median_income"].values[0]
-        results.append({**zip_row, "competitors_3mi": competitor_count, "income": income})
-        
-    return pd.DataFrame(results)</code></pre>
+def fetch_census_batch(zip_codes, api_key, batch_size=50):
+    all_data = []
+    for i in range(0, len(zip_codes), batch_size):
+        batch = zip_codes[i:i + batch_size]
+        params = {
+            "get": f"NAME,{','.join(CENSUS_VARS.keys())}",
+            "for": f"zip code tabulation area:{','.join(batch)}",
+            "key": api_key
+        }
+        resp = requests.get(CENSUS_API_URL, params=params)
+        if resp.status_code == 200:
+            raw = resp.json()
+            df_batch = pd.DataFrame(raw[1:], columns=raw[0])
+            all_data.append(df_batch)
+    return pd.concat(all_data, ignore_index=True)
+
+# Merge store coordinates with Census demographic metrics
+df_census = fetch_census_batch(unique_zips, api_key=CENSUS_KEY)
+candidate_trade_areas = df_all_stores.merge(
+    df_census, left_on="zip_clean", right_on="zip code tabulation area"
+)</code></pre>
+                        </details>
+                    </div>
+
+                    <!-- TAB 3: AIRBNB PRICING (R) -->
+                    <div class="tech-pane" id="tech-r">
+                        <div class="tech-pane-top">
+                            <div class="tech-context-tag">BYU STRATEGY 402 &bull; Econometrics</div>
+                            <h3>Airbnb Pricing &amp; Demand Modeling</h3>
+                            <p>Analyzed multi-city Airbnb listing data in R to evaluate price elasticity of demand and model optimal nightly pricing across metropolitan markets.</p>
+                        </div>
+
+                        <div class="tech-what-i-did">
+                            <h4>What I Did</h4>
+                            <ul>
+                                <li>Filtered listing data to city-specific interquartile ranges (IQR) to clean out extreme pricing outliers across five major metros.</li>
+                                <li>Estimated linear demand functions for each metropolitan market in R using ordinary least squares regression.</li>
+                                <li>Calculated own-price elasticity of demand (OPE) at median prices (finding Los Angeles at -1.05) to advise hosts on revenue-maximizing pricing strategies.</li>
+                            </ul>
+                        </div>
+
+                        <details class="clean-code-drawer">
+                            <summary>
+                                <span>View R Regression Code</span>
+                                <span style="font-size:0.75rem; color:var(--accent-blue);">Click to view</span>
+                            </summary>
+                            <pre><code># Airbnb Demand Schedule & Elasticity in R
+library(dplyr)
+library(ggplot2)
+
+metros &lt;- c("Austin", "Chicago", "DC", "LA", "Minneapolis")
+results &lt;- data.frame()
+
+for (m in metros) {
+  metro_data &lt;- airbnb_2019 %&gt;% filter(metro == m)
+  p25 &lt;- quantile(metro_data$price, 0.25)
+  p75 &lt;- quantile(metro_data$price, 0.75)
+  
+  demand &lt;- metro_data %&gt;%
+    mutate(bookings = number_of_reviews_ltm * (2/4)) %&gt;%
+    mutate(nights_booked = if_else(bookings * 3 &gt; 63, 63, bookings * 3)) %&gt;%
+    filter(price &gt;= p25, price &lt;= p75) %&gt;%
+    group_by(price) %&gt;%
+    summarize(demand = sum(nights_booked), .groups = "drop")
+  
+  # Demand regression: Q = a + b*P
+  model &lt;- lm(demand ~ price, data = demand)
+  dQ_dP &lt;- coef(model)[2]
+  P &lt;- median(metro_data$price)
+  Q &lt;- coef(model)[1] + coef(model)[2] * P
+  
+  # Own-Price Elasticity of Demand (OPE) at median price
+  OPE &lt;- dQ_dP * P / Q
+  results &lt;- rbind(results, data.frame(metro = m, OPE = OPE))
+}</code></pre>
                         </details>
                     </div>
 
@@ -587,6 +554,18 @@ def score_locations(candidate_zips, competitors, census_df):
                             <a href="assets/work/The_Cougar_Planner.pdf" class="view-pdf-btn project-link">
                                 View Spec PDF
                             </a>
+                        </div>
+                    </div>
+
+                    <!-- Automated E-Commerce Store -->
+                    <div class="work-card">
+                        <div class="work-card-image">
+                            <img src="assets/work/ecom_agents_thumb.png" alt="Automated E-Commerce Store">
+                        </div>
+                        <div class="work-card-info">
+                            <span class="work-card-tag">AI &bull; Entrepreneurship</span>
+                            <h3>Automated E-Commerce Store</h3>
+                            <p>Launched an automated online apparel storefront on Etsy using Printify and AI tools for market research, SEO copy, and Pinterest distribution. Scaled to ~30,000 monthly impressions and achieved day-one sales with $0 ad spend.</p>
                         </div>
                     </div>
 
