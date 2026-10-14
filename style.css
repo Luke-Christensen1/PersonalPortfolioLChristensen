@@ -1365,40 +1365,13 @@ footer {
 .tech-canvas,
 .cert-card-clean,
 .track-card {
-    background: rgba(20, 22, 28, 0.65) !important;
-    backdrop-filter: blur(26px) saturate(190%) !important;
-    -webkit-backdrop-filter: blur(26px) saturate(190%) !important;
-    border: 1px solid rgba(255, 255, 255, 0.16) !important;
+    background: rgba(16, 18, 24, 0.88) !important;
+    backdrop-filter: blur(28px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(28px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45) !important;
     position: relative;
     overflow: hidden;
-}
-
-/* Subtle mouse tracking ambient sheen inside each frosted card */
-.highlight-card::before,
-.work-card::before,
-.timeline-card::before,
-.tech-canvas::before,
-.cert-card-clean::before,
-.track-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: radial-gradient(450px circle at var(--mouse-card-x, 50%) var(--mouse-card-y, 50%), rgba(41, 151, 255, 0.18), transparent 60%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.highlight-card:hover::before,
-.work-card:hover::before,
-.timeline-card:hover::before,
-.tech-canvas:hover::before,
-.cert-card-clean:hover::before,
-.track-card:hover::before {
-    opacity: 1;
 }
 
 .work-card:hover,
