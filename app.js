@@ -164,6 +164,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- Make Work Cards Fully Clickable ---
+    document.querySelectorAll('.work-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+            if (!e.target.closest('a') && !e.target.closest('button')) {
+                const primaryLink = card.querySelector('a');
+                if (primaryLink) {
+                    primaryLink.click();
+                }
+            }
+        });
+    });
+
     // --- Slideshow Logic ---
     let slideIndex = 1;
     let slideInterval;

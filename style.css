@@ -875,6 +875,7 @@ h1, h2, h3, h4, h5 {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
     transition: all 0.25s ease;
 }
 
@@ -1407,67 +1408,4 @@ footer {
     transform: translateY(-4px) !important;
     border-color: #2997ff !important;
     box-shadow: 0 16px 40px -10px rgba(41, 151, 255, 0.35), 0 0 1px 1px rgba(41, 151, 255, 0.4) !important;
-}
-
-/* Mockup Browser & Device Frames for Portfolio Showcases */
-.mockup-browser-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.45rem 0.85rem;
-    background: #141416;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    font-size: 0.68rem;
-}
-
-.browser-dots {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.browser-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    display: inline-block;
-}
-
-.dot-red { background: #ff5f56; }
-.dot-yellow { background: #ffbd2e; }
-.dot-green { background: #27c93f; }
-
-.browser-url {
-    background: rgba(255, 255, 255, 0.06);
-    padding: 0.15rem 0.55rem;
-    border-radius: 5px;
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    color: #86868b;
-    max-width: 200px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.mockup-mobile-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.4rem 0.85rem;
-    background: #141416;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.mobile-notch {
-    width: 44px;
-    height: 5px;
-    background: #2c2c2e;
-    border-radius: 9999px;
-}
-
-.mobile-app-name {
-    font-size: 0.68rem;
-    color: #86868b;
-    font-weight: 500;
 }
