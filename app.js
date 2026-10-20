@@ -1,358 +1,423 @@
-// Intersection Observer for scroll animations (fade in)
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.12
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, observerOptions);
+/**
+ * Luke Christensen Portfolio — Interactive Interactions & Carousel
+ * Exact Framer-style Motion & Controls
+ */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Smart Navbar Hide on Scroll Down, Show on Scroll Up ---
-    let lastScrollTop = 0;
-    const navbar = document.getElementById('navbar');
-    
-    window.addEventListener('scroll', () => {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > lastScrollTop && scrollTop > 120) {
-            navbar.classList.add('hide');
-        } else {
-            navbar.classList.remove('hide');
-        }
-        lastScrollTop = Math.max(0, scrollTop);
-    });
-
-    // --- Guided View Controller Logic (Progressive Disclosure) ---
-    const viewPanes = document.querySelectorAll('.view-pane');
-    const navLinks = document.querySelectorAll('.nav-links a[href^="#view-"]');
-
-    function activateView(viewId, updateHash = true) {
-        if (!viewId) viewId = 'overview';
-        const cleanId = viewId.replace(/^#?view-?/, '');
-        const targetPane = document.getElementById(`view-${cleanId}`) || document.getElementById('view-overview');
-        
-        if (!targetPane) return;
-
-        // Switch active view
-        viewPanes.forEach(pane => pane.classList.remove('active'));
-        targetPane.classList.add('active');
-
-        // Update nav active indicators
-        navLinks.forEach(link => {
-            const linkHref = link.getAttribute('href');
-            if (linkHref === `#view-${cleanId}`) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
-        });
-
-        // Trigger animations
-        targetPane.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-        if (updateHash) {
-            history.pushState(null, '', `#view-${cleanId}`);
-        }
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    window.activateView = activateView;
-
-    // Handle view navigation on data-navigate elements & nav links
-    document.querySelectorAll('[data-navigate]').forEach(el => {
-        el.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetView = el.dataset.navigate;
-            activateView(targetView);
-        });
-    });
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const viewId = link.getAttribute('href').replace('#view-', '');
-            activateView(viewId);
-        });
-    });
-
-    // Handle browser back/forward buttons
-    window.addEventListener('hashchange', () => {
-        const hash = window.location.hash;
-        if (hash && hash.startsWith('#view-')) {
-            activateView(hash.replace('#view-', ''), false);
-        } else if (!hash || hash === '#overview' || hash === '#') {
-            activateView('overview', false);
-        }
-    });
-
-    // Check initial hash on load
-    const initialHash = window.location.hash;
-    if (initialHash && initialHash.startsWith('#view-')) {
-        activateView(initialHash.replace('#view-', ''), false);
-    } else {
-        activateView('overview', false);
-    }
-
-    // --- Technical Work Simple Tabs Logic ---
-    const techTabs = document.querySelectorAll('.tech-tab-btn');
-    const techPanes = document.querySelectorAll('.tech-pane');
-
-    window.switchTechTab = function(tabId) {
-        techTabs.forEach(tab => {
-            if (tab.dataset.tab === tabId) {
-                tab.classList.add('active');
-            } else {
-                tab.classList.remove('active');
-            }
-        });
-
-        techPanes.forEach(pane => {
-            if (pane.id === tabId) {
-                pane.classList.add('active');
-            } else {
-                pane.classList.remove('active');
-            }
-        });
-    };
-
-    techTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const tabId = tab.dataset.tab;
-            if (tabId) {
-                window.switchTechTab(tabId);
-            }
-        });
-    });
-
-    // --- Agent Pipeline Mini-Switcher Logic ---
-    const agentSubBtns = document.querySelectorAll('.agent-sub-btn');
-    const agentSubPanes = document.querySelectorAll('.agent-subpane');
-
-    agentSubBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const subtabId = btn.dataset.subtab;
-            agentSubBtns.forEach(b => b.classList.toggle('active', b === btn));
-            agentSubPanes.forEach(pane => pane.classList.toggle('active', pane.id === subtabId));
-        });
-    });
-
-    // --- Featured Work Category Filter Logic ---
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
-
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterButtons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            const filter = btn.dataset.filter;
-            projectCards.forEach(card => {
-                const category = card.dataset.category;
-                if (filter === 'all' || category === filter) {
-                    card.style.display = 'flex';
-                    card.classList.add('visible');
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    });
-
-    // --- Make Work Cards & Cert Cards Fully Clickable ---
-    document.querySelectorAll('.work-card, .cert-card-clean').forEach(card => {
-        card.addEventListener('click', (e) => {
-            if (!e.target.closest('a') && !e.target.closest('button')) {
-                const primaryLink = card.querySelector('a');
-                if (primaryLink) {
-                    primaryLink.click();
-                }
-            }
-        });
-    });
-
-    // --- Slideshow Logic ---
-    let slideIndex = 1;
-    let slideInterval;
-    
-    window.changeSlide = function(n) {
-        showSlides(slideIndex += n);
-        resetInterval();
-    };
-
-    window.currentSlide = function(n) {
-        showSlides(slideIndex = n);
-        resetInterval();
-    };
-
-    function showSlides(n) {
-        let slides = document.querySelectorAll(".slide");
-        let dots = document.querySelectorAll(".dot");
-        
-        if (slides.length === 0) return;
-        
-        if (n > slides.length) { slideIndex = 1; }    
-        if (n < 1) { slideIndex = slides.length; }
-        
-        slides.forEach(slide => slide.classList.remove("active"));
-        dots.forEach(dot => dot.classList.remove("active"));
-        
-        slides[slideIndex - 1].classList.add("active");  
-        if (dots[slideIndex - 1]) {
-            dots[slideIndex - 1].classList.add("active");
-        }
-    }
-
-    function resetInterval() {
-        clearInterval(slideInterval);
-        slideInterval = setInterval(() => { window.changeSlide(1); }, 6000);
-    }
-
-    showSlides(slideIndex);
-    resetInterval();
-
-    // --- Document Viewer Modal Logic ---
-    const viewerModal = document.getElementById('viewerModal');
-    const closeViewer = document.getElementById('closeViewer');
-    const viewerFrame = document.getElementById('viewerFrame');
-    const viewerTitle = document.getElementById('viewerTitle');
-    const viewerExternalLink = document.getElementById('viewerExternalLink');
-
-    const isMobile = () => window.innerWidth <= 768 || ('ontouchstart' in window && window.innerWidth <= 1024);
-
-    const docLinks = document.querySelectorAll('.project-link, .view-doc-link');
-
-    docLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            const href = link.getAttribute('href');
-            if (!href) return;
-            const isPdf = href.toLowerCase().endsWith('.pdf');
-
-            if (isPdf) {
-                e.preventDefault();
-
-                if (isMobile()) {
-                    window.open(href, '_blank');
-                } else {
-                    const card = link.closest('.project-card') || link.closest('.timeline-item') || link.closest('.cert-card');
-                    const title = card ? (card.querySelector('h3') ? card.querySelector('h3').innerText : "Document Viewer") : "Document Viewer";
-                    viewerTitle.innerText = title;
-                    viewerExternalLink.href = href;
-
-                    viewerModal.classList.add('open');
-                    document.body.style.overflow = 'hidden';
-                    viewerFrame.src = href;
-                }
-            }
-        });
-    });
-
-    const hideViewer = () => {
-        viewerModal.classList.remove('open');
-        viewerFrame.src = '';
-        document.body.style.overflow = '';
-    };
-
-    if (closeViewer) closeViewer.addEventListener('click', hideViewer);
-    if (viewerModal) {
-        viewerModal.addEventListener('click', (e) => {
-            if (e.target === viewerModal) hideViewer();
-        });
-    }
-
-    // --- Contact Modal Logic ---
-    const contactModal = document.getElementById('contactModal');
-    const openBtns = document.querySelectorAll('.open-modal-btn');
-    const closeModal = document.getElementById('closeModal');
-    const submitModal = document.getElementById('submitModal');
-    
-    openBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            contactModal.classList.add('open');
-        });
-    });
-
-    const hideContact = () => {
-        contactModal.classList.remove('open');
-    };
-
-    if (closeModal) closeModal.addEventListener('click', hideContact);
-    if (contactModal) {
-        contactModal.addEventListener('click', (e) => {
-            if (e.target === contactModal) hideContact();
-        });
-    }
-
-    if (submitModal) {
-        submitModal.addEventListener('click', () => {
-            const name = document.getElementById('contactName').value.trim();
-            const message = document.getElementById('contactMessage').value.trim();
-            
-            if (!message) {
-                alert('Please write a message!');
-                return;
-            }
-
-            const targetEmail = "luke.r.christensen@gmail.com";
-            const subject = encodeURIComponent(`Portfolio Connect: ${name ? name : "New Inquiry"}`);
-            const body = encodeURIComponent(`Hi Luke,\n\n${message}\n\n${name ? `- ${name}` : ""}`);
-            
-            window.location.href = `mailto:${targetEmail}?subject=${subject}&body=${body}`;
-            hideContact();
-        });
-    }
-
-    // --- Interactive UI Style Switcher Controller ---
-    const stylePicker = document.getElementById('stylePicker');
-    const styleChoiceBtns = document.querySelectorAll('.style-choice-btn');
-    const hidePickerBtn = document.getElementById('hidePickerBtn');
-    const showPickerBtn = document.getElementById('showPickerBtn');
-
-    function applyUITheme(themeName) {
-        document.body.dataset.uiTheme = themeName;
-        styleChoiceBtns.forEach(btn => {
-            if (btn.dataset.style === themeName) {
-                btn.classList.add('active');
-            } else {
-                btn.classList.remove('active');
-            }
-        });
-        localStorage.setItem('preferred-ui-theme', themeName);
-    }
-
-    const savedTheme = localStorage.getItem('preferred-ui-theme') || 'studio';
-    applyUITheme(savedTheme);
-
-    styleChoiceBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const style = btn.dataset.style;
-            applyUITheme(style);
-        });
-    });
-
-    if (hidePickerBtn && stylePicker && showPickerBtn) {
-        hidePickerBtn.addEventListener('click', () => {
-            stylePicker.style.display = 'none';
-            showPickerBtn.style.display = 'block';
-        });
-
-        showPickerBtn.addEventListener('click', () => {
-            stylePicker.style.display = 'flex';
-            showPickerBtn.style.display = 'none';
-        });
-    }
-
-    // Interactive Spotlight Tracking on Mouse Move
-    window.addEventListener('mousemove', (e) => {
-        const x = Math.round((e.clientX / window.innerWidth) * 100);
-        const y = Math.round((e.clientY / window.innerHeight) * 100);
-        document.documentElement.style.setProperty('--spot-x', `${x}%`);
-        document.documentElement.style.setProperty('--spot-y', `${y}%`);
-    });
+  initScrollAnimations();
+  initProgressBars();
+  initAboutCarousel();
+  initNavScroll();
+  initCounterAnimation();
+  initParallaxTilt();
+  initPageTransitions();
+  initBorderGlow();
 });
+
+/**
+ * Scroll Reveal Animations
+ * Replicating Framer Motion appearance: translateY(16px) -> translateY(0)
+ */
+function initScrollAnimations() {
+  const elements = document.querySelectorAll('.framer-appear');
+  if (!elements.length) return;
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '0px 0px -40px 0px',
+      threshold: 0.1
+    });
+
+    elements.forEach(el => observer.observe(el));
+  } else {
+    elements.forEach(el => el.classList.add('in-view'));
+  }
+}
+
+/**
+ * Animated Progress Bars (FamilySearch 21% -> 35%)
+ */
+function initProgressBars() {
+  const progressFills = document.querySelectorAll('.progress-fill');
+  if (!progressFills.length) return;
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const target = entry.target.getAttribute('data-target');
+          if (target) {
+            entry.target.style.width = `${target}%`;
+          }
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    progressFills.forEach(fill => observer.observe(fill));
+  } else {
+    progressFills.forEach(fill => {
+      fill.style.width = `${fill.getAttribute('data-target')}%`;
+    });
+  }
+}
+
+/**
+ * Interactive Carousel in Section 02 / A Little About Me (Screenshot 4)
+ */
+function initAboutCarousel() {
+  const activeImg = document.getElementById('aboutActivePhoto');
+  const prevBtn = document.getElementById('photoPrevBtn');
+  const nextBtn = document.getElementById('photoNextBtn');
+  const dots = document.querySelectorAll('#aboutMiniDots .card-mini-dot');
+  const container = document.getElementById('aboutPhotoContainer');
+
+  if (!activeImg || !prevBtn || !nextBtn) return;
+
+  const photos = [
+    { src: 'assets/framer/s5RyWX2objIjIKytZvBmXwbtIuY.jpg', alt: 'Luke Christensen wedding day' },
+    { src: 'assets/framer/4aZ8oul49WObIeNxKiWrsqyZ1wo.jpg', alt: 'Mountains with family and friends' },
+    { src: 'assets/framer/SRGAef9TFuSoURaD5jP2aCSnPy8.jpg', alt: 'BYU performance group on stage' },
+    { src: 'assets/framer/iWIk6eLuaUV3TVGkhsGcqTB2s.jpg', alt: 'Dancing on stage' },
+    { src: 'assets/framer/32zmRJGw6PEp5R63kMTKKsy4GtQ.jpg', alt: 'Young Ambassadors performance' },
+    { src: 'assets/framer/TyPUGeKKkpiLIjVj1mDxd3RTqH0.jpeg', alt: 'Iguazu Falls boat trip' }
+  ];
+
+  // Preload photos for instant transitions
+  photos.forEach(p => {
+    const img = new Image();
+    img.src = p.src;
+  });
+
+  let currentIndex = 2; // Default to BYU performance group as in Screenshot 4!
+
+  const renderPhoto = (idx) => {
+    if (idx < 0) idx = photos.length - 1;
+    if (idx >= photos.length) idx = 0;
+    currentIndex = idx;
+
+    activeImg.style.opacity = '0.2';
+    activeImg.style.transform = 'scale(0.98)';
+
+    setTimeout(() => {
+      activeImg.src = photos[currentIndex].src;
+      activeImg.alt = photos[currentIndex].alt;
+      activeImg.style.opacity = '1';
+      activeImg.style.transform = 'scale(1)';
+    }, 140);
+
+    dots.forEach((d, i) => {
+      if (i === currentIndex) {
+        d.classList.add('active');
+      } else {
+        d.classList.remove('active');
+      }
+    });
+  };
+
+  prevBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    renderPhoto(currentIndex - 1);
+  });
+
+  nextBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    renderPhoto(currentIndex + 1);
+  });
+
+  dots.forEach(d => {
+    d.addEventListener('click', () => {
+      const idx = parseInt(d.getAttribute('data-idx') || '0', 10);
+      renderPhoto(idx);
+    });
+  });
+
+  // Touch Swipe Support
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  if (container) {
+    container.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    container.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+  }
+
+  function handleSwipe() {
+    if (touchEndX < touchStartX - 40) {
+      renderPhoto(currentIndex + 1);
+    }
+    if (touchEndX > touchStartX + 40) {
+      renderPhoto(currentIndex - 1);
+    }
+  }
+}
+
+/**
+ * Smooth Navigation & Active Link Highlighting
+ */
+function initNavScroll() {
+  const nav = document.getElementById('mainNav');
+  const navLinks = document.querySelectorAll('.site-nav a[href^="#"]');
+  const sections = document.querySelectorAll('section[id], footer[id]');
+
+  // Dynamic shadow on scroll
+  window.addEventListener('scroll', () => {
+    if (nav) {
+      if (window.scrollY > 20) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    }
+  }, { passive: true });
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const targetId = link.getAttribute('href');
+      if (targetId && targetId !== '#') {
+        const targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          const offsetTop = targetEl.getBoundingClientRect().top + window.pageYOffset - 70;
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      }
+    });
+  });
+
+  if ('IntersectionObserver' in window && sections.length) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach(link => {
+            if (link.getAttribute('href') === `#${id}`) {
+              link.classList.add('active');
+            } else {
+              link.classList.remove('active');
+            }
+          });
+        }
+      });
+    }, {
+      rootMargin: '-20% 0px -70% 0px'
+    });
+
+    sections.forEach(sec => observer.observe(sec));
+  }
+}
+
+/**
+ * 01. Animated Number Counter
+ * Smoothly counts up metrics (e.g. ~30K, 21%, 35%, 160+, -60%) on scroll
+ */
+function initCounterAnimation() {
+  const counterEls = document.querySelectorAll('[data-counter]');
+  if (!counterEls.length) return;
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return;
+  }
+
+  const animateCounter = (el) => {
+    const targetVal = parseFloat(el.getAttribute('data-counter'));
+    if (isNaN(targetVal)) return;
+
+    const prefix = el.getAttribute('data-counter-prefix') || '';
+    const suffix = el.getAttribute('data-counter-suffix') || '';
+    const duration = 1300; // ms
+    const startTime = performance.now();
+
+    const update = (now) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Framer cubic ease-out
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(targetVal * eased);
+
+      el.textContent = `${prefix}${current}${suffix}`;
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        el.textContent = `${prefix}${targetVal}${suffix}`;
+      }
+    };
+
+    requestAnimationFrame(update);
+  };
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    counterEls.forEach(el => observer.observe(el));
+  } else {
+    counterEls.forEach(animateCounter);
+  }
+}
+
+/**
+ * 02. Subtle 3D Parallax Tilt
+ * Subtle, hardware-accelerated 3D perspective tracking with smooth spring return
+ */
+function initParallaxTilt() {
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  // Pure 3D parallax perspective tilt without awkward vertical sliding
+  const tiltCards = document.querySelectorAll(
+    '.profile-contact-card, .case-card-visual, .more-card, .case-diagram-card'
+  );
+  if (!tiltCards.length) return;
+
+  tiltCards.forEach(card => {
+    let isHovering = false;
+    let ticking = false;
+    let targetX = 0;
+    let targetY = 0;
+
+    const maxTilt = 3.5; // Subtle 3.5 degrees for clean, elegant micro-tilt
+
+    card.addEventListener('mouseenter', () => {
+      isHovering = true;
+      card.style.transition = 'transform 0.08s ease-out, box-shadow 0.25s ease';
+      card.style.willChange = 'transform';
+    });
+
+    card.addEventListener('mousemove', (e) => {
+      if (!isHovering) return;
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const xPercent = (x / rect.width) * 2 - 1; // -1 to +1
+      const yPercent = (y / rect.height) * 2 - 1; // -1 to +1
+
+      targetX = -yPercent * maxTilt;
+      targetY = xPercent * maxTilt;
+
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          if (isHovering) {
+            // Pure 3D rotation following the mouse — zero awkward vertical sliding
+            card.style.transform = `perspective(1000px) rotateX(${targetX.toFixed(2)}deg) rotateY(${targetY.toFixed(2)}deg)`;
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    card.addEventListener('mouseleave', () => {
+      isHovering = false;
+      card.style.transition = 'transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease';
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+      setTimeout(() => {
+        if (!isHovering) {
+          card.style.willChange = 'auto';
+        }
+      }, 500);
+    });
+  });
+}
+
+/**
+ * 03. Page Route Transitions
+ * Seamless cross-page fade without flashes, simulating a native SPA
+ */
+function initPageTransitions() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  document.body.classList.remove('page-fading-out');
+
+  window.addEventListener('pageshow', () => {
+    document.body.classList.remove('page-fading-out');
+  });
+
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (!link) return;
+
+    if (
+      link.target === '_blank' ||
+      link.hasAttribute('download') ||
+      link.getAttribute('rel') === 'external'
+    ) return;
+
+    const href = link.getAttribute('href');
+    if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+    if (link.origin && link.origin !== window.location.origin) return;
+
+    // Check if in-page anchor jump on same page
+    try {
+      const url = new URL(link.href, window.location.href);
+      if (url.pathname === window.location.pathname && url.hash) {
+        return;
+      }
+    } catch (err) {
+      // fallback
+    }
+
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+    e.preventDefault();
+    document.body.classList.add('page-fading-out');
+
+    setTimeout(() => {
+      window.location.href = link.href;
+    }, 180);
+  });
+}
+
+/**
+ * 04. Soft Border Glow
+ * Edge-only ambient spotlight tracking cursor without background flood
+ */
+function initBorderGlow() {
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+  const glowElements = document.querySelectorAll(
+    '.profile-contact-card, .case-card, .more-card, .about-photo-card, .case-diagram-card, .case-section-box, .timeline-item'
+  );
+  if (!glowElements.length) return;
+
+  glowElements.forEach(el => {
+    el.addEventListener('mousemove', (e) => {
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      el.style.setProperty('--mouse-x', `${x}px`);
+      el.style.setProperty('--mouse-y', `${y}px`);
+
+      const visual = el.querySelector('.case-card-visual');
+      if (visual) {
+        const vRect = visual.getBoundingClientRect();
+        visual.style.setProperty('--mouse-x', `${e.clientX - vRect.left}px`);
+        visual.style.setProperty('--mouse-y', `${e.clientY - vRect.top}px`);
+      }
+    }, { passive: true });
+  });
+}
